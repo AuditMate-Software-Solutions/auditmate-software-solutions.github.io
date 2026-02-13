@@ -5,16 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AuditMate – Complete System Auditing</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem; max-width: 900px; background-color: #f9f9f9; color: #2c3e50; }
-    h1, h2, h3 { color: #2c3e50; margin-top: 1.5rem; }
-    pre { background: #f4f4f4; padding: 1rem; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+    body { 
+      font-family: Arial, sans-serif; 
+      line-height: 1.6; 
+      margin: 2rem; 
+      max-width: 900px; 
+      background-color: #f9f9f9; 
+      color: #2c3e50; 
+    }
+    h1, h2, h3 { 
+      color: #2c3e50; 
+      margin-top: 1.5rem; 
+    }
+    pre { 
+      background: #f4f4f4; 
+      padding: 1rem; 
+      overflow-x: auto; 
+      white-space: pre; 
+      word-wrap: normal; 
+    }
     code { font-family: monospace; }
     ul, ol { margin-left: 2rem; }
-    table { border-collapse: collapse; margin-left: 0; width: 100%; }
-    table, th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+    table { 
+      border-collapse: collapse; 
+      margin-left: 0; 
+      width: 100%; 
+    }
+    table, th, td { 
+      border: 1px solid #ccc; 
+      padding: 0.5rem; 
+      text-align: left; 
+    }
     a { color: #2980b9; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    nav { margin-bottom: 2rem; }
+    nav { 
+      margin-bottom: 2rem; 
+      position: sticky; 
+      top: 0; 
+      background-color: #f9f9f9; 
+      padding: 1rem 0; 
+      border-bottom: 1px solid #ccc;
+      z-index: 999;
+    }
     nav a { margin-right: 1.5rem; font-weight: bold; }
   </style>
 </head>
@@ -156,7 +188,7 @@ Warnings:
 
 Baseline saved to: auditmate-output/baseline.json
 AuditMate scan completed with exit code 2
-======================================
+========================================
 </code></pre>
 
 </body>
