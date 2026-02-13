@@ -5,26 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AuditMate – Complete System Auditing</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem; max-width: 900px; }   
-    h1, h2, h3 { color: #2c3e50; }
-    pre { 
-      background: #f4f4f4; 
-      padding: 1rem; 
-      overflow-x: auto; 
-      white-space: pre; 
-      border-radius: 4px;
-    }
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem; max-width: 900px; background-color: #f9f9f9; color: #2c3e50; }
+    h1, h2, h3 { color: #2c3e50; margin-top: 1.5rem; }
+    pre { background: #f4f4f4; padding: 1rem; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
     code { font-family: monospace; }
     ul, ol { margin-left: 2rem; }
-    table { border-collapse: collapse; margin-left: 2rem; }
-    table, th, td { border: 1px solid #ccc; padding: 0.5rem; }
+    table { border-collapse: collapse; margin-left: 0; width: 100%; }
+    table, th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+    a { color: #2980b9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { margin-bottom: 2rem; }
+    nav a { margin-right: 1.5rem; font-weight: bold; }
   </style>
 </head>
 <body>
 
-<h1>AuditMate – Complete System Auditing</h1>
+<nav>
+  <a href="#home">Home</a>
+  <a href="https://github.com/auditmate-software/auditmate">GitHub Repo</a>
+  <a href="mailto:audit-mate@proton.me">Contact</a>
+</nav>
+
+<h1 id="home">AuditMate – Complete System Auditing</h1>
 
 <p>AuditMate is an automated system auditing tool designed to give administrators full visibility into their systems. It monitors system health, detects security issues, tracks changes over time, and provides actionable warnings—all with minimal setup.</p>
+
+<hr>
 
 <h2>Open Source Core</h2>
 <p>AuditMate’s core functionality is open source. You can:</p>
@@ -34,6 +40,8 @@
   <li>Run the core offline, fully free.</li>
 </ul>
 <p>Advanced features like JSON export, premium license features, and detailed reports are part of the paid version and remain closed source. This allows AuditMate to stay sustainable while keeping the core transparent and community-friendly.</p>
+
+<hr>
 
 <h2>Key Features</h2>
 
@@ -51,12 +59,13 @@
 </ul>
 
 <h3>2. Change Tracking</h3>
-<p>Baseline Comparison: AuditMate saves a snapshot of your system to a baseline file (<code>baseline.json</code>) and compares future scans to it.</p>
-<p>Diff Detection: Changes are highlighted, showing what was added, removed, or modified since the last baseline.</p>
-<p>Critical Alerts: Certain changes, such as new admin accounts or an open SSH port, trigger critical warnings.</p>
+<ul>
+  <li><strong>Baseline Comparison:</strong> AuditMate saves a snapshot of your system to a baseline file (<code>baseline.json</code>) and compares future scans to it.</li>
+  <li><strong>Diff Detection:</strong> Changes are highlighted, showing what was added, removed, or modified since the last baseline.</li>
+  <li><strong>Critical Alerts:</strong> Certain changes, such as new admin accounts or an open SSH port, trigger critical warnings.</li>
+</ul>
 
 <h3>3. Warnings</h3>
-<p>AuditMate detects and flags potential security and system issues:</p>
 <ul>
   <li>Multiple admin users detected</li>
   <li>SSH port 22 open</li>
@@ -65,7 +74,6 @@
 </ul>
 
 <h3>4. Automation</h3>
-<p>AuditMate supports fully automated scanning using cron or system scheduler:</p>
 <ul>
   <li>Schedule scans daily, hourly, weekly, yearly, or at custom minute intervals.</li>
   <li>Multiple scan times can be set for daily, weekly, or yearly schedules.</li>
@@ -97,11 +105,13 @@
 
 <h3>7. Flexibility</h3>
 <ul>
-  <li>Designed to run on a wide range of systems with minimal dependencies.</li>
+  <li>Designed to run on any system with minimal dependencies.</li>
   <li>Can be scheduled automatically but also run manually.</li>
   <li>Works in fully offline environments.</li>
   <li>Highly configurable for multiple scan frequencies and times per day.</li>
 </ul>
+
+<hr>
 
 <h2>Pricing</h2>
 <table>
@@ -113,8 +123,9 @@
 </table>
 <p>For early access or to become a founding member, contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
 
+<hr>
+
 <h2>Why AuditMate?</h2>
-<p>AuditMate is designed for system administrators who need:</p>
 <ul>
   <li>Automated monitoring without constant oversight</li>
   <li>Quick detection of security risks</li>
@@ -122,9 +133,10 @@
   <li>A lightweight tool that doesn’t overload your system</li>
 </ul>
 
+<hr>
+
 <h2>Example Output</h2>
-<pre>
-========== AuditMate Summary ==========
+<pre><code>========== AuditMate Summary ==========
 Hostname: hp
 OS: Ubuntu 24.04.3 LTS
 Kernel: 6.6.87.2-microsoft-standard-WSL2
@@ -145,7 +157,7 @@ Warnings:
 Baseline saved to: auditmate-output/baseline.json
 AuditMate scan completed with exit code 2
 ======================================
-</pre>
+</code></pre>
 
 </body>
 </html>
