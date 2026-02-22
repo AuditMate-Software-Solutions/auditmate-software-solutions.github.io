@@ -168,27 +168,38 @@
 <hr>
 
 <h2>Example Output</h2>
-<pre><code>========== AuditMate Summary ==========
-Hostname: hp
-OS: Ubuntu 24.04.3 LTS
-Kernel: 6.6.87.2-microsoft-standard-WSL2
-Uptime: up 17 hours
+<pre><code>
+============== AuditMate Report ==============
+--------------------------------------------------
+SYSTEM INFORMATION
+--------------------------------------------------
+Hostname  : hp
+OS        : Ubuntu 24.04.3 LTS
+Kernel    : 6.6.87.2-microsoft-standard-WSL2
+Uptime    : up 3 hours, 58 minutes
 
-Admins: [root]
-Regular Users: [nobody ubuntu]
+USER ACCOUNTS
+--------------------------------------------------
+Administrators:
+  - root
 
-Services running: 3
-Packages installed: 3
-Open ports: 15
+Regular Users:
+  - nobody
+  - ubuntu
 
-Warnings:
-- Firewall is inactive or disabled
-- System updates are available
-- SSH port 22 is open
+SYSTEM SUMMARY
+--------------------------------------------------
+Services Running  : 29
+Packages Installed: 1772
+Open Ports        : 11
+Firewall State    : inactive
 
-Baseline saved to: auditmate-output/baseline.json
-AuditMate scan completed with exit code 2
-========================================
+BASELINE COMPARISON
+--------------------------------------------------
+No changes detected.
+
+================================================
+Report saved to: auditmate-output/audit_report.txt
 </code></pre>
 
 </body>
