@@ -1,97 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AuditMate — System Audit Tool</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuditMate — Portable System Audit Tool</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<h1>AuditMate</h1>
-<p class="sub">Deterministic, Offline, Verifiable System Evidence</p>
-<div class="buttons">
-<a href="https://github.com/auditmate-software/auditmate" class="btn primary">View on GitHub</a>
-<a href="#example-output" class="btn primary">Example Output</a>
-</div>
-</header>
+  <header>
+    <h1>AuditMate</h1>
+    <p class="sub">Deterministic, Offline, Verifiable System Evidence</p>
+    <div class="buttons">
+      <a href="https://github.com/AuditMate-Software/AuditMate" target="_blank" class="btn blue">View on GitHub</a>
+      <a href="#example-output" class="btn green">Example Output</a>
+    </div>
+  </header>
 
-<main>
-<section id="features">
-<h2>Features</h2>
-<ul>
-<li>Automated system snapshots</li>
-<li>Baseline comparison & diff</li>
-<li>Historical tracking</li>
-<li>Offline & verifiable</li>
-<li>SOC2 CC6 & CC7 technical evidence support</li>
-</ul>
-</section>
+  <main>
+    <section id="about">
+      <h2>Why AuditMate?</h2>
+      <ul>
+        <li><strong>Automated Monitoring:</strong> Continuous visibility into your systems without manual checks.</li>
+        <li><strong>Security & Compliance:</strong> Detect critical changes like new admin users, open ports, or disabled firewalls.</li>
+        <li><strong>Historical Tracking:</strong> Save snapshots (baselines) of your systems and compare over time.</li>
+        <li><strong>Audit Ready:</strong> Covers 80–90% of tasks for SOC 2 CC6 & CC7 readiness.</li>
+        <li><strong>Lightweight & Offline:</strong> Works anywhere, without requiring an internet connection.</li>
+      </ul>
+    </section>
 
-<section id="example-output">
-<h2>Example Output</h2>
-<pre>
+    <section id="plans">
+      <h2>Plans & Pricing</h2>
+      <table>
+        <tr><th>Plan</th><th>Price</th><th>Notes</th></tr>
+        <tr><td>Free</td><td>$0</td><td>View users, services, ports, and updates, fully offline</td></tr>
+        <tr><td>Monthly</td><td>$25</td><td>Full premium features</td></tr>
+        <tr><td>Yearly</td><td>$250</td><td>Full premium features</td></tr>
+        <tr><td>Founding Member</td><td>$200</td><td>Price lock for life (single server, limited to first 100 signups)</td></tr>
+      </table>
+    </section>
+
+    <section id="example-output">
+      <h2>Example Output</h2>
+      <pre>
 ============== AuditMate Report ==============
-
 SYSTEM INFORMATION
---------------------------------------------------
-Hostname  : hp
-Host ID   : b577b2d675174a94b735d3b2e3e47683
+Hostname         : HP
+Host ID          : b577b2d675174a94b735d3b2e3e47683
 Baseline Created : 2026-03-29T09:44:20Z
 Current Snapshot : 2026-03-29T09:44:20Z
-OS        : Ubuntu 24.04.3 LTS
-Kernel    : 6.6.87.2-microsoft-standard-WSL2
-Uptime    : up 1 hour, 40 minutes
+OS               : Ubuntu 24.04.3 LTS
+Kernel           : 6.6.87.2-microsoft-standard-WSL2
+Uptime           : up 1 hour, 40 minutes
 
 USER ACCOUNTS
---------------------------------------------------
 Administrators:
   - root
-
 Regular Users:
   - nobody
   - ubuntu
 
 SYSTEM SUMMARY
---------------------------------------------------
 Services Running  : 30
 Packages Installed: 1772
 Open Ports        : 11
 Firewall State    : inactive
 
 BASELINE COMPARISON
---------------------------------------------------
 No changes detected.
-
 ================================================
 Report saved to: auditmate-output/audit_report.txt
-</pre>
-</section>
+      </pre>
+    </section>
+  </main>
 
-<section id="pricing">
-<h2>Pricing & Access</h2>
-<table>
-<tr><th>Plan</th><th>Price</th><th>Notes</th></tr>
-<tr><td>Free</td><td>$0</td><td>Core system visibility, fully offline</td></tr>
-<tr><td>Monthly</td><td>$25</td><td>Premium features & reporting</td></tr>
-<tr><td>Yearly</td><td>$250</td><td>Premium features & reporting</td></tr>
-<tr><td>Founding Member</td><td>$200</td><td>Price lock for life (single server)</td></tr>
-</table>
-</section>
-
-<section id="trust">
-<h2>Trust & Security</h2>
-<ul>
-<li>Free version fully open source</li>
-<li>Offline by design, no network connections</li>
-<li>Deterministic, verifiable outputs</li>
-<li>Professional reports ready for audit review</li>
-</ul>
-</section>
-</main>
-
-<footer>
-<p>&copy; 2026 AuditMate Software</p>
-</footer>
+  <footer>
+    <p>&copy; 2026 AuditMate Software — Veteran-owned & operated</p>
+  </footer>
 </body>
 </html>
