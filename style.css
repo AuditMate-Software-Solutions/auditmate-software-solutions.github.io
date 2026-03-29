@@ -1,144 +1,93 @@
-/* Reset and base styles */
-body, h1, h2, h3, p, ul, li, pre {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 body {
-    background: #0f1b2c;
-    color: #f0f0f0;
-    line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-/* Header */
 header {
-    background: #14243c;
-    padding: 20px;
-    text-align: center;
+  background-color: #1a73e8;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
 }
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.logo {
-    width: 100px;
-    margin-bottom: 10px;
-}
+
 header h1 {
-    font-size: 2em;
-}
-header .tagline {
-    font-size: 1em;
-    color: #a0c4ff;
-}
-nav a {
-    color: #a0c4ff;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
-nav a:hover {
-    text-decoration: underline;
+  margin: 0;
+  font-size: 2.2rem;
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 40px 20px;
+header p {
+  margin: 0.5rem 0 1rem;
+  font-style: italic;
 }
-.cta-buttons {
-    margin-top: 20px;
+
+.buttons {
+  margin-top: 1rem;
 }
+
 .btn {
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 5px;
-}
-.btn-primary {
-    background: #1e90ff;
-    color: white;
-}
-.btn-secondary {
-    background: white;
-    color: #1e90ff;
+  display: inline-block;
+  background-color: #fff;
+  color: #1a73e8;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* Sections */
+.btn:hover {
+  background-color: #e0f0ff;
+}
+
 section {
-    padding: 40px 20px;
-}
-.feature-grid, .feature-grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-.feature-grid div, .feature-grid-2 div {
-    background: #1f2a40;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Founding Members Section */
-.founding {
-    background: #1b2a45;
-    text-align: center;
-    padding: 30px 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-.founding p {
-    margin: 10px 0;
+section h2 {
+  color: #1a73e8;
+  margin-top: 0;
 }
 
-/* Sample Report Section */
-.report-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-.report {
-    background: #1f2a40;
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-}
-.report h3 {
-    margin-bottom: 10px;
-}
-.report ul {
-    list-style: none;
-}
-.report ul li::before {
-    content: "✔";
-    color: #1e90ff;
-    margin-right: 5px;
+pre {
+  background-color: #272822;
+  color: #f8f8f2;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
 }
 
-/* Terminal output style */
-.terminal-output {
-    background: #000000;
-    color: #00ff00;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px;
-    overflow-x: auto;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
 }
 
-/* Footer */
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+}
+
+table th {
+  background-color: #1a73e8;
+  color: #fff;
+  text-align: left;
+}
+
 footer {
-    text-align: center;
-    padding: 20px;
-    background: #14243c;
-    margin-top: 40px;
-}
-footer a {
-    color: #1e90ff;
-    text-decoration: none;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1a73e8;
+  color: #fff;
+  margin-top: 2rem;
 }
