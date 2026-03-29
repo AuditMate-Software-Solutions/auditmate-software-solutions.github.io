@@ -1,63 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AuditMate Software Solutions — Portable System Audit Tool</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditMate Software Solutions</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>AuditMate Software Solutions (ASS)</h1>
-    <p class="sub">Deterministic, Offline, Verifiable System Evidence</p>
-    <div class="buttons">
-      <a href="https://github.com/AuditMate-Software/AuditMate" target="_blank" class="btn blue">View on GitHub</a>
-      <a href="#example-output" class="btn blue">Example Output</a>
-    </div>
-  </header>
+    <header>
+        <div class="logo-container">
+            <img src="mobius.png" alt="AuditMate Logo" class="logo">
+            <h1>AuditMate Software Solutions</h1>
+            <p class="tagline">ASS — Secure Your Systems</p>
+        </div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#download">Download</a>
+            <a href="mailto:audit-mate@proton.me">Contact Us</a>
+        </nav>
+    </header>
 
-  <main>
-    <section id="about">
-      <h2>Why AuditMate?</h2>
-      <ul>
-        <li><strong>Automated Monitoring:</strong> Continuous visibility into your systems without manual checks.</li>
-        <li><strong>Security & Compliance:</strong> Detect critical changes like new admin users, open ports, or disabled firewalls.</li>
-        <li><strong>Historical Tracking:</strong> Save snapshots (baselines) of your systems and compare over time.</li>
-        <li><strong>Audit Ready:</strong> Covers 80–90% of tasks for SOC 2 CC6 & CC7 readiness.</li>
-        <li><strong>Lightweight & Offline:</strong> Works anywhere, without requiring an internet connection.</li>
-      </ul>
+    <section class="hero">
+        <h2>Deterministic System Audit Evidence</h2>
+        <p>Portable, Offline, Verifiable Audit Tool for Baseline and Change Detection.</p>
+        <div class="cta-buttons">
+            <a href="#download" class="btn btn-primary">Download AuditMate</a>
+            <a href="https://github.com/auditmate-software" class="btn btn-secondary">View on GitHub</a>
+        </div>
     </section>
 
-    <section id="plans">
-      <h2>Plans & Pricing</h2>
-      <table>
-        <tr><th>Plan</th><th>Price</th><th>Notes</th></tr>
-        <tr><td>Free</td><td>$0</td><td>View users, services, ports, and updates, fully offline</td></tr>
-        <tr><td>Monthly</td><td>$25</td><td>Full premium features</td></tr>
-        <tr><td>Yearly</td><td>$250</td><td>Full premium features</td></tr>
-        <tr><td>Founding Member</td><td>$200</td><td>Price lock for life (single server, limited to first 100 signups)</td></tr>
-      </table>
+    <section id="features">
+        <h2>What is AuditMate?</h2>
+        <p>AuditMate is a lightweight, offline audit tool that captures <em>verifiable</em> snapshots of system state.</p>
+        <div class="feature-grid">
+            <div>Offline & Portable</div>
+            <div>Deterministic Reports</div>
+            <div>Baseline Tracking</div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <h2>Why Choose AuditMate?</h2>
+        <div class="feature-grid-2">
+            <div>No Agents Required</div>
+            <div>Automation Friendly</div>
+            <div>Full Transparency</div>
+            <div>Baseline & Diff Checks</div>
+            <div>Auditor Approved</div>
+        </div>
+    </section>
+
+    <section class="founding">
+        <h2>Founding Members Limited Offer</h2>
+        <p>Free Pro Licenses for the First 100 Founding Members</p>
+        <p>Veteran Owned and Operated 🇺🇸</p>
+        <a href="#download" class="btn btn-primary">Claim Your Spot</a>
     </section>
 
     <section id="example-output">
-      <h2>Example Output</h2>
-      <pre>
+        <h2>Sample Report Output</h2>
+        <div class="report-container">
+            <div class="report free">
+                <h3>Free Version</h3>
+                <ul>
+                    <li>System Scans</li>
+                    <li>Baseline Snapshots</li>
+                    <li>Diff Detection</li>
+                </ul>
+            </div>
+            <div class="report pro">
+                <h3>Pro Version</h3>
+                <ul>
+                    <li>Signed Evidence</li>
+                    <li>Historical Tracking</li>
+                    <li>License Deployment</li>
+                </ul>
+            </div>
+        </div>
+        <pre class="terminal-output">
 ============== AuditMate Report ==============
 SYSTEM INFORMATION
-Hostname         : HP
-Host ID          : b577b2d675174a94b735d3b2e3e47683
-Baseline Created : 2026-03-29T09:44:20Z
-Current Snapshot : 2026-03-29T09:44:20Z
-OS               : Ubuntu 24.04.3 LTS
-Kernel           : 6.6.87.2-microsoft-standard-WSL2
-Uptime           : up 1 hour, 40 minutes
-
-USER ACCOUNTS
-Administrators:
-  - root
-Regular Users:
-  - nobody
-  - ubuntu
+Hostname          : server
+Host ID           : 2ff660af...
+Baseline Created  : 2026-03-29T09:44:20Z
+Current Snapshot  : 2026-03-29T09:44:20Z
+OS                : Ubuntu 24.04 LTS
+Kernel            : 6.6.87.2
+Uptime            : 2 hours
 
 SYSTEM SUMMARY
 Services Running  : 30
@@ -68,24 +98,11 @@ Firewall State    : inactive
 BASELINE COMPARISON
 No changes detected.
 ================================================
-Report saved to: auditmate-output/audit_report.txt
-      </pre>
+        </pre>
     </section>
 
-    <section id="trust">
-      <h2>Trust & Transparency</h2>
-      <p>AuditMate is built on the principle that <strong>system auditing tools must themselves be auditable</strong>.</p>
-      <ul>
-        <li>Fully offline — no cloud, no API calls</li>
-        <li>Explicit read-only behavior</li>
-        <li>Open source core for Free tier</li>
-        <li>Deterministic output, verifiable and repeatable</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 AuditMate Software Solutions (ASS) — Veteran-owned & operated</p>
-  </footer>
+    <footer>
+        <p>&copy; 2026 AuditMate Software Solutions — <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
+    </footer>
 </body>
 </html>
