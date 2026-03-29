@@ -31,16 +31,11 @@ header .buttons {
   border-radius: 5px;
   font-weight: bold;
   display: inline-block;
+  color: #fff;
 }
 
 .btn.blue {
   background-color: #007bff;
-  color: #fff;
-}
-
-.btn.green {
-  background-color: #28a745;
-  color: #fff;
 }
 
 main {
@@ -52,6 +47,10 @@ main {
 h2 {
   color: #1a1a1a;
   margin-top: 2rem;
+}
+
+ul {
+  padding-left: 1.5rem;
 }
 
 table {
@@ -72,6 +71,7 @@ pre {
   padding: 1rem;
   overflow-x: auto;
   border-radius: 5px;
+  font-family: monospace;
 }
 
 footer {
