@@ -1,118 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AuditMate Software Solutions</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditMate Software Solutions</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>AuditMate Software Solutions (ASS)</h1>
-    <p>Veteran-owned & operated</p>
-    <div class="buttons">
-      <a href="https://github.com/auditmate-software/auditmate" class="btn">View on GitHub</a>
-      <a href="#example-output" class="btn">Example Output</a>
-    </div>
-  </header>
+    <header>
+        <h1>AuditMate Software Solutions (ASS)</h1>
+        <p>Portable System Audit Evidence Tool</p>
+        <div class="buttons">
+            <a href="https://github.com/auditmate-software" class="btn">View on GitHub</a>
+            <a href="#example-output" class="btn btn-primary">Example Output</a>
+        </div>
+    </header>
 
-  <section id="about">
-    <h2>About AuditMate</h2>
-    <p>
-      AuditMate is a portable, offline system audit tool that produces deterministic, verifiable snapshots of system state.
-      It captures factual system evidence that can be reviewed by humans, compared over time, and used directly for audits,
-      incident response, and system trust.
-    </p>
-  </section>
+    <section id="about">
+        <h2>About</h2>
+        <p>AuditMate Software Solutions (ASS) is a portable, offline system audit tool that produces deterministic, verifiable snapshots of system state. It captures factual system evidence that can be reviewed by humans, compared over time, and used directly for audits, incident response, and system trust.</p>
+        <p><strong>Veteran-owned and operated</strong></p>
+    </section>
 
-  <section id="why">
-    <h2>Why AuditMate?</h2>
-    <ul>
-      <li><strong>Automated Monitoring:</strong> Continuous visibility into your systems without manual checks.</li>
-      <li><strong>Security & Compliance:</strong> Detect critical changes like new admin users, open ports, or disabled firewalls.</li>
-      <li><strong>Historical Tracking:</strong> Save snapshots (baselines) of your systems and compare them over time.</li>
-      <li><strong>Audit Ready:</strong> Covers 80–90% of tasks for SOC 2 CC6 & CC7 readiness.</li>
-      <li><strong>Lightweight & Offline:</strong> Works anywhere, without requiring an internet connection.</li>
-    </ul>
-  </section>
+    <section id="tiers">
+        <h2>Product Tiers</h2>
+        <div class="tier">
+            <h3>Free Tier – $0</h3>
+            <ul>
+                <li>System info: hostname, OS, kernel, uptime</li>
+                <li>User accounts: admins and regular users</li>
+                <li>Services running</li>
+                <li>Installed packages</li>
+                <li>Open ports</li>
+                <li>Firewall state</li>
+                <li>Pending updates</li>
+                <li>Baseline comparisons & critical alerts</li>
+                <li>Terminal summary and exit codes</li>
+                <li>Fully offline, open source, verifiable</li>
+            </ul>
+        </div>
+        <div class="tier">
+            <h3>Paid / Premium Tier – $25 / month or $250 / year</h3>
+            <ul>
+                <li>Everything in Free, plus advanced reporting and audit-ready features</li>
+                <li>Full historical tracking and trends</li>
+                <li>JSON / CSV / HTML export of reports</li>
+                <li>Detailed human-readable reports for audits</li>
+                <li>Multi-system aggregation for centralized management</li>
+                <li>Notifications & alerts (email, Slack, webhooks)</li>
+                <li>Premium license support for multiple devices</li>
+                <li>Closed source with secure updates</li>
+            </ul>
+        </div>
+    </section>
 
-  <section id="tiers">
-    <h2>Product Tiers</h2>
+    <section id="founding-members">
+        <h2>Founding Member Offer</h2>
+        <p>Price lock for life (single server) <strong>limited to first 100 signups</strong></p>
+        <p>Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
+    </section>
 
-    <h3>Free Tier – $0</h3>
-    <p>Designed for admins or hobbyists who want <strong>core system visibility</strong>.</p>
-    <ul>
-      <li>System info: hostname, OS, kernel, uptime</li>
-      <li>User accounts: admins and regular users</li>
-      <li>Services running</li>
-      <li>Installed packages</li>
-      <li>Open ports</li>
-      <li>Firewall state</li>
-      <li>Pending updates</li>
-      <li>Baseline comparisons & critical alerts</li>
-      <li>Terminal summary and exit codes</li>
-      <li>Fully offline, open source, verifiable</li>
-    </ul>
-
-    <h3>Paid / Premium Tier – $25 / month or $250 / year</h3>
-    <p>Everything in Free, plus <strong>advanced reporting and audit-ready features</strong> for companies or professional admins.</p>
-    <ul>
-      <li>Full historical tracking and trends</li>
-      <li>JSON / CSV / HTML export of reports</li>
-      <li>Detailed human-readable reports for audits</li>
-      <li>Multi-system aggregation for centralized management</li>
-      <li>Notifications & alerts (email, Slack, webhooks)</li>
-      <li>Premium license support for multiple devices</li>
-      <li>Closed source with secure updates</li>
-    </ul>
-  </section>
-
-  <section id="pricing">
-    <h2>Pricing & Access</h2>
-    <table>
-      <tr>
-        <th>Plan</th>
-        <th>Price</th>
-        <th>Notes</th>
-      </tr>
-      <tr>
-        <td>Free</td>
-        <td>$0</td>
-        <td>View users, services, ports, and updates, fully offline</td>
-      </tr>
-      <tr>
-        <td>Monthly</td>
-        <td>$25</td>
-        <td>Full premium features</td>
-      </tr>
-      <tr>
-        <td>Yearly</td>
-        <td>$250</td>
-        <td>Full premium features</td>
-      </tr>
-      <tr>
-        <td>Founding Member</td>
-        <td>$200</td>
-        <td>Price lock for life (single server) – limited to first 100 signups</td>
-      </tr>
-    </table>
-    <p>For early access or founding membership, contact: <strong><a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></strong></p>
-  </section>
-
-  <section id="example-output">
-    <h2>Example Output</h2>
-    <pre>
+    <section id="example-output">
+        <h2>Example Output</h2>
+        <pre>
 ============== AuditMate Report ==============
 --------------------------------------------------
 SYSTEM INFORMATION
 --------------------------------------------------
-Hostname           : hp
-Host ID            : b577b2d675174a94b735d3b2e3e47683
-Baseline Created   : 2026-03-29T09:44:20Z
-Current Snapshot   : 2026-03-29T09:44:20Z
-OS                 : Ubuntu 24.04.3 LTS
-Kernel             : 6.6.87.2-microsoft-standard-WSL2
-Uptime             : up 1 hour, 40 minutes
+Hostname          : hp
+Host ID           : b577b2d675174a94b735d3b2e3e47683
+Baseline Created  : 2026-03-29T09:44:20Z
+Current Snapshot  : 2026-03-29T09:44:20Z
+OS                : Ubuntu 24.04.3 LTS
+Kernel            : 6.6.87.2-microsoft-standard-WSL2
+Uptime            : up 1 hour, 40 minutes
 
 USER ACCOUNTS
 --------------------------------------------------
@@ -125,10 +86,10 @@ Regular Users:
 
 SYSTEM SUMMARY
 --------------------------------------------------
-Services Running   : 30
-Packages Installed : 1772
-Open Ports         : 11
-Firewall State     : inactive
+Services Running  : 30
+Packages Installed: 1772
+Open Ports        : 11
+Firewall State    : inactive
 
 BASELINE COMPARISON
 --------------------------------------------------
@@ -136,24 +97,8 @@ No changes detected.
 
 ================================================
 Report saved to: auditmate-output/audit_report.txt
-    </pre>
-  </section>
+        </pre>
+    </section>
 
-  <section id="trust">
-    <h2>Trust & Transparency</h2>
-    <p>AuditMate is built on the principle that <strong>system auditing tools must themselves be auditable</strong>.</p>
-    <ul>
-      <li>Offline by design: No internet, no cloud, no external APIs, no background agents</li>
-      <li>Explicit behavior: Executes OS commands, reads system state, writes output locally, exits immediately</li>
-      <li>Open source core: Free tier fully open source, auditable line-by-line</li>
-      <li>Deterministic output: Consistent results given same system state</li>
-      <li>Free vs Professional: Same collectors, professional features focus on output handling and evidence delivery</li>
-    </ul>
-    <p>Intended audience: system admins, security/compliance teams, incident response teams</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 AuditMate Software Solutions (ASS) — Veteran-owned & operated</p>
-  </footer>
 </body>
 </html>
