@@ -114,15 +114,11 @@
 
     <p><strong>$200 / year (Normally $250)</strong></p>
 
-    <p>
-        Founding customers receive:
-    </p>
-
     <ul>
         <li>$200 yearly price (save $50)</li>
         <li>Price locked for life</li>
         <li>Single server license</li>
-        <li>Early customer status</li>
+        <li>Founding customer status</li>
     </ul>
 
     <p>This offer is limited to the first 100 yearly purchases.</p>
@@ -137,19 +133,47 @@
 <h2>Example Output</h2>
 
 <pre>
-========== AuditMate Summary ==========
-Hostname: hp
-OS: Ubuntu 24.04.3 LTS
-Kernel: 6.6.87.2
-Services running: 28
-Packages installed: 1766
-Open ports: 11
+./auditmate-pro
 
-========== Baseline Diff ==========
-+ ssh
-+ cron
+============== AuditMate Report ==============
+--------------------------------------------------
+SYSTEM INFORMATION
+--------------------------------------------------
+Hostname  : hp
+Host ID   : b577b2d675174a94b735d3b2e3e47683
+Baseline Created : 2026-04-09T01:25:04Z
+Current Snapshot : 2026-04-09T03:55:42Z
+OS        : Ubuntu 24.04.3 LTS
+Kernel    : 6.6.87.2-microsoft-standard-WSL2
+Uptime    : up 20 hours, 47 minutes
 
-=====================================
+USER ACCOUNTS
+--------------------------------------------------
+Administrators:
+  - root
+  - hacker
+
+Regular Users:
+  - nobody
+  - ubuntu
+
+SYSTEM SUMMARY
+--------------------------------------------------
+Services Running  : 30
+Packages Installed: 1787
+Open Ports        : 11
+Firewall State    : inactive
+
+BASELINE COMPARISON
+--------------------------------------------------
+Changes detected:
+
+  Administrators:
+  + hacker (NEW ADMINISTRATOR)
+
+================================================
+
+JSON report saved to: auditmate-output/audit_report.json
 </pre>
 
 </section>
