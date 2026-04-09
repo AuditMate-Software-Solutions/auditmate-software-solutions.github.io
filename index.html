@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuditMate Software Solutions</title>
+    <title>AuditMate</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>AuditMate</h1>
-        <p>Detect Unauthorized System Changes — No Agents, No Cloud, Fully Offline</p>
+        <p>Portable, Offline, Verifiable System Truth</p>
         <div class="buttons">
             <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">View on GitHub</a>
             <a href="#founding-members" class="btn btn-primary">Get Early Access</a>
@@ -17,16 +17,19 @@
     </header>
 
     <section id="about">
-        <h2>About</h2>
-        <p>AuditMate is a portable, offline system audit tool that produces deterministic, verifiable snapshots of system state. Capture factual system evidence for audits, incident response, and system trust.</p>
+        <h2>What AuditMate Does</h2>
+        <p>AuditMate is a portable, offline system audit tool that produces deterministic, verifiable snapshots of system state.</p>
 
-        <h3>Built For</h3>
+        <p>It answers one core question:</p>
+        <p><strong>"What was true about this system at this exact point in time?"</strong></p>
+
+        <h3>No SaaS. No Agents. No Phone Home.</h3>
         <ul>
-            <li>System Administrators</li>
-            <li>MSPs</li>
-            <li>Security Consultants</li>
-            <li>IT Departments</li>
-            <li>Compliance Teams</li>
+            <li>Single binary</li>
+            <li>No installation</li>
+            <li>Fully offline</li>
+            <li>Deterministic output</li>
+            <li>Human readable evidence</li>
         </ul>
 
         <p><strong>Veteran-owned and operated</strong></p>
@@ -34,35 +37,41 @@
 
     <section id="tiers">
         <h2>Product Tiers</h2>
+
         <div class="tier">
-            <h3>Free Tier – $0</h3>
+            <h3>Free Edition — $0</h3>
             <ul>
                 <li>System info: hostname, OS, kernel, uptime</li>
-                <li>User accounts: admins and regular users</li>
-                <li>Services running</li>
+                <li>User accounts</li>
+                <li>Running services</li>
                 <li>Installed packages</li>
                 <li>Open ports</li>
                 <li>Firewall state</li>
                 <li>Pending updates</li>
-                <li>Baseline comparisons & critical alerts</li>
-                <li>Terminal summary and exit codes</li>
-                <li>Fully offline, open source, verifiable</li>
+                <li>Baseline creation</li>
+                <li>Baseline diffing</li>
+                <li>Human-readable output</li>
+                <li>Exit codes</li>
+                <li>Fully offline</li>
             </ul>
         </div>
 
         <div class="tier">
-            <h3>Premium Tier – $25 / month or $250 / year</h3>
+            <h3>Paid Edition — $25 / month or $250 / year</h3>
             <ul>
                 <li>Everything in Free</li>
-                <li>Full historical tracking and trends</li>
-                <li>JSON / CSV / HTML export</li>
-                <li>Audit-ready human readable reports</li>
-                <li>Multi-system aggregation</li>
-                <li>Email / Slack / Webhook alerts</li>
-                <li>Multi-device license</li>
-                <li>Closed source with secure updates</li>
+                <li>Cryptographic signing of outputs</li>
+                <li>Tamper-proof evidence</li>
+                <li>Scheduled execution</li>
+                <li>Batch / fleet runs</li>
+                <li>Evidence packaging (ZIP bundles)</li>
+                <li>Historical retention</li>
+                <li>Auditor attestation metadata</li>
+                <li>Multi-system reporting</li>
+                <li>Fully offline licensed version</li>
             </ul>
         </div>
+
     </section>
 
     <section id="founding-members">
@@ -71,7 +80,8 @@
         <h3 style="color:#d9534f;">Currently Accepting Early Customers</h3>
         <h2 style="margin-top:0;">0 / 100 Spots Filled</h2>
 
-        <p><strong>Founding customers receive lifetime pricing (single server).</strong></p>
+        <p><strong>Founding customers receive lifetime pricing.</strong></p>
+
         <p>This offer is limited to the first 100 customers.</p>
 
         <h3>Get Early Access</h3>
@@ -81,28 +91,26 @@
     <section id="example-output">
         <h2>Example Output</h2>
         <pre>
-============== AuditMate Report ==============
---------------------------------------------------
-SYSTEM INFORMATION
---------------------------------------------------
-Hostname          : hp
-Host ID           : b577b2d675174a94b735d3b2e3e47683
-Baseline Created  : 2026-03-29T09:44:20Z
-Current Snapshot  : 2026-03-29T09:44:20Z
-OS                : Ubuntu 24.04.3 LTS
-Kernel            : 6.6.87.2-microsoft-standard-WSL2
-Uptime            : up 1 hour, 40 minutes
+========== AuditMate Summary ==========
+Hostname: hp
+OS: Ubuntu 24.04.3 LTS
+Kernel: 6.6.87.2-microsoft-standard-WSL2
+Uptime: up 12 hours, 16 minutes
+Admins: [root]
+Regular Users: [nobody ubuntu]
+Services running: 28
+Packages installed: 1766
+Open ports: 11
 
-SYSTEM SUMMARY
---------------------------------------------------
-Services Running  : 30
-Packages Installed: 1772
-Open Ports        : 11
-Firewall State    : inactive
+========== Baseline Diff ==========
+Services changed:
++ ssh
++ cron
 
-BASELINE COMPARISON
---------------------------------------------------
-No changes detected.
+Open ports changed:
++ 22/tcp
+
+======================================
         </pre>
     </section>
 
