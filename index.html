@@ -133,43 +133,43 @@
 <h2>Example Output</h2>
 
 <pre>
-C:\> auditmate-pro.exe
+PS C:\Users\Administrator\Desktop> .\auditmate-pro.exe
 
 ============== AuditMate Report ==============
 --------------------------------------------------
 SYSTEM INFORMATION
 --------------------------------------------------
-Hostname          : DESKTOP-HP
-Host ID           : b577b2d675174a94b735d3b2e3e47683
-Baseline Created  : 2026-04-09T01:25:04Z
-Current Snapshot  : 2026-04-09T03:55:42Z
-OS                : Windows 11 Pro
-Kernel            : 10.0.22631
-Uptime            : 1 day, 3 hours, 12 minutes
+Hostname  : OFFICE-PC
+Host ID   : 95d745cd88a246bc8242d909c273a666
+Baseline Created : 2026-04-08T09:43:09Z
+Current Snapshot : 2026-04-09T04:16:01Z
+OS        : Microsoft Windows 11 Pro
+Kernel    : 10.0.26200
+Uptime    : up 1 day, 6 hours, 39 minutes
 
 USER ACCOUNTS
 --------------------------------------------------
 Administrators:
-  - Administrator
-  - hacker
+  - office\administrator
+  - office\hacker
 
 Regular Users:
-  - hp
-  - Guest
+  - office\john
+  - office\guest
 
 SYSTEM SUMMARY
 --------------------------------------------------
-Services Running  : 128
-Installed Programs: 94
-Open Ports        : 8
-Firewall State    : enabled
+Services Running  : 136
+Packages Installed: 200
+Open Ports        : 14
+Firewall State    : active
 
 BASELINE COMPARISON
 --------------------------------------------------
 Changes detected:
 
   Administrators:
-  + hacker (NEW ADMINISTRATOR)
+  + office\hacker (NEW ADMINISTRATOR)
 
 ================================================
 
