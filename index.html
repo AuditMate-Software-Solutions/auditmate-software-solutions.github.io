@@ -67,42 +67,6 @@
 
     <p><strong>Veteran-owned and operated</strong></p>
 
-</section>
-
-<section id="tiers">
-
-    <h2>Product Tiers</h2>
-
-    <div class="tier">
-        <h3>Free Edition — $0</h3>
-        <ul>
-            <li>System info</li>
-            <li>Users & admins</li>
-            <li>Services</li>
-            <li>Installed packages</li>
-            <li>Open ports</li>
-            <li>Firewall state</li>
-            <li>Baseline creation</li>
-            <li>Baseline diffing</li>
-            <li>Human-readable output</li>
-            <li>Exit codes</li>
-        </ul>
-    </div>
-
-    <div class="tier">
-        <h3>Professional Edition — $25 / month or $250 / year</h3>
-        <ul>
-            <li>Everything in Free</li>
-            <li>Cryptographic signing</li>
-            <li>Tamper-proof evidence</li>
-            <li>Scheduled execution</li>
-            <li>Batch / fleet runs</li>
-            <li>Evidence packaging</li>
-            <li>Historical retention</li>
-            <li>Auditor metadata</li>
-        </ul>
-    </div>
-
 <section id="example-output">
     <h2>Example Output</h2>
     <pre>
@@ -112,30 +76,31 @@ C:\> auditmate-pro.exe
 --------------------------------------------------
 SYSTEM INFORMATION
 --------------------------------------------------
-Hostname          : HP
-Host ID           : 95d745cd88a246bc8242d909c273a666
-Baseline Created  : 2026-04-08T09:43:09Z
-Current Snapshot  : 2026-04-09T04:16:01Z
-OS                : Windows 11 Home
-Kernel            : 10.0.26200
-Uptime            : 1 day, 6 hours, 39 minutes
+Hostname          : MY-LAPTOP
+Host ID           : b577b2d675174a94b735d3b2e3e47683
+Baseline Created  : 2026-04-09T01:25:04Z
+Current Snapshot  : 2026-04-09T03:55:42Z
+OS                : Windows 11 Pro
+Kernel            : 10.0.22631
+Uptime            : 1 day, 3 hours, 12 minutes
 
 USER ACCOUNTS
 --------------------------------------------------
 Administrators:
-  - hp\administrator
-  - hp\windows
+  - Administrator
   - hacker
+  - john
 
 Regular Users:
-  - windows
+  - JOHN
+  - Guest
 
 SYSTEM SUMMARY
 --------------------------------------------------
-Services Running  : 136
-Installed Programs: 200
-Open Ports        : 14
-Firewall State    : active
+Services Running   : 130
+Installed Programs : 95
+Open Ports         : 8
+Firewall State     : enabled
 
 BASELINE COMPARISON
 --------------------------------------------------
@@ -144,15 +109,13 @@ Changes detected:
   Administrators:
   + hacker (NEW ADMINISTRATOR)
 
-  Open Ports:
-  + 22/tcp (SSH OPEN)
-
   Services:
-  + protonvpn
-  + wireguard
-  + seclogon
-  + w32time
-  + wcncsvc
+  + sshd (NEW SERVICE)
+  + backdoor-svc (NEW SERVICE)
+
+  Open Ports:
+  + 22/tcp (SSH enabled)
+  + 3389/tcp (RDP enabled)
 
 ================================================
 
