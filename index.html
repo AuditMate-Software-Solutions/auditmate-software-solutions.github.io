@@ -6,6 +6,7 @@
     <title>AuditMate Software Solutions</title>
 
     <link rel="stylesheet" href="style.css">
+
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
 </head>
@@ -17,52 +18,57 @@
         <img src="logo.png" alt="AuditMate Logo" class="logo">
         <div>
             <h1>AuditMate Software Solutions</h1>
-            <p>Offline system auditing • No installation required • Clear reporting</p>
+            <p>Offline system auditing • No installation required • Fast local reporting</p>
         </div>
     </div>
 
     <div class="buttons">
-        <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">GitHub</a>
-        <button class="btn btn-primary" id="downloadBtn">Download Free</button>
+        <a href="https://github.com/AuditMate-Software-Solutions/auditmate" class="btn">View Source</a>
+        <a href="downloads/auditmate.exe" class="btn btn-primary">Download Free</a>
     </div>
 </header>
 
 <section id="about">
     <h2>About</h2>
-    <p>
-        AuditMate is a portable system auditing tool that snapshots your system state and compares changes over time.
-        It works fully offline and produces clear audit reports.
-    </p>
+    <p>AuditMate captures and records the state of a system at a point in time for auditing and change tracking.</p>
 
     <ul>
-        <li>System users and permissions</li>
+        <li>System hostname, OS, uptime</li>
+        <li>Users (admins + standard users)</li>
         <li>Running services</li>
         <li>Installed packages</li>
         <li>Open ports</li>
-        <li>Change detection between runs</li>
+        <li>Baseline comparison (drift detection)</li>
     </ul>
+
+    <p>Runs completely <strong>offline</strong> and outputs structured reports for inspection and debugging.</p>
 </section>
 
 <section id="tiers">
-    <h2>Free Version</h2>
+    <h2>Product</h2>
 
     <div class="tier">
-        <h3>AuditMate Free</h3>
+        <h3>Free Version</h3>
         <ul>
-            <li>System snapshot (OS, hostname, uptime)</li>
-            <li>User accounts overview</li>
-            <li>Services & processes</li>
-            <li>Installed packages</li>
-            <li>Open ports</li>
-            <li>Baseline comparison</li>
-            <li>Offline reporting</li>
+            <li>System snapshot collection</li>
+            <li>Baseline creation and comparison</li>
+            <li>Drift detection (changes only)</li>
+            <li>Terminal output summary</li>
+            <li>Local JSON report generation</li>
         </ul>
     </div>
 </section>
 
-<section id="example-output">
-    <h2>Example Output (Windows)</h2>
+<section id="founding-members">
+    <h2>Founding Member Offer</h2>
+    <p><strong>$200/year</strong> per server. Limited early access tier.</p>
+    <p>Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
+</section>
 
+<section id="example-output">
+<h2>Example Output (Windows)</h2>
+
+<h3>Clean System</h3>
 <pre>
 C:\> auditmate.exe
 
@@ -70,7 +76,7 @@ AuditMate
 -----------------------------------
 Hostname : WORKSTATION-01
 OS       : Windows 11 Pro
-Uptime   : up 1 day, 3 hours
+Uptime   : up 1 day, 2 hours
 
 Users    : 3
 Services : 128
@@ -86,28 +92,44 @@ Report   : auditmate-output\audit.json
 Duration : 52ms
 </pre>
 
+<h3>Drift Detected</h3>
+<pre>
+C:\> auditmate.exe
+
+AuditMate
+-----------------------------------
+Hostname : WORKSTATION-01
+OS       : Windows 11 Pro
+Uptime   : up 1 day, 3 hours
+
+Users    : 4
+Services : 130
+Packages : 96
+Ports    : 8
+
+Status   : Drift detected
+
+Changes:
+ + Users:
+  + hacker (admin)
+
+ + Services:
+  + sshd
+  + remote-control
+
+ + Open ports:
+  + 22/tcp
+  + 3389/tcp
+
+-----------------------------------
+Warnings : 1
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 61ms
+</pre>
+
 </section>
-
-<script>
-document.getElementById("downloadBtn").addEventListener("click", function () {
-
-    const isWindows = navigator.userAgent.includes("Win");
-
-    let file = "auditmate"; // default Linux/macOS
-    if (isWindows) {
-        file = "auditmate.exe";
-    }
-
-    const url = "downloads/" + file;
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = file;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-});
-</script>
 
 </body>
 </html>
