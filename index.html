@@ -6,199 +6,113 @@
     <title>AuditMate Software Solutions</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
 </head>
 
 <body>
-
-<header class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-left">
-            <img src="logo.png" class="logo" alt="AuditMate Logo">
-
-            <div>
-                <h1>AuditMate</h1>
-                <p class="subtitle">Offline System Auditing Tool</p>
-            </div>
-        </div>
-
-        <p class="tagline">
-            Capture system state. Detect drift. No cloud. No telemetry. No installation.
-        </p>
-
-        <ul class="hero-points">
-            <li>Fully offline</li>
-            <li>Open-source Free version</li>
-            <li>Windows & Linux binaries</li>
-            <li>Real-time drift detection</li>
-        </ul>
-
-        <div class="download-card">
-
-            <div class="download-title">Download AuditMate (Free)</div>
-            <div class="download-subtitle">Automatically detects your system</div>
-
-            <a class="download-btn" onclick="downloadAuditMate()">
-                Download Now
-            </a>
-
-            <div class="download-meta">
-                Windows → .exe • Linux → binary
-            </div>
-
-            <div class="download-links">
-                <a href="https://github.com/AuditMate-Software-Solutions/auditmate" target="_blank">
-                    View on GitHub
-                </a>
-            </div>
-
-        </div>
-
-        <p class="veteran">Veteran-owned and operated</p>
-
-    </div>
-
-</header>
-
-<section id="about">
-    <h2>About</h2>
-
-    <p>
-        AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
-    </p>
-
-    <ul>
-        <li>Users and administrator accounts</li>
-        <li>Running services</li>
-        <li>Installed packages</li>
-        <li>Open ports</li>
-        <li>Firewall state</li>
-        <li>System drift detection</li>
-    </ul>
-
-    <p><strong>Fully offline • No installation required • Portable binary</strong></p>
-</section>
-
-<section id="privacy">
-    <h2>Privacy & Security</h2>
-
-    <ul>
-        <li>No telemetry</li>
-        <li>No background communication</li>
-        <li>No cloud dependency</li>
-        <li>No data leaves your machine</li>
-        <li>Fully offline execution</li>
-    </ul>
-
-    <p>All analysis is performed locally.</p>
-</section>
-
-<section id="tiers">
-
-    <h2>Product Tiers</h2>
-
-    <div class="tier">
-        <h3>Free Version</h3>
-        <ul>
-            <li>System information (OS, hostname, uptime)</li>
-            <li>User accounts and permissions</li>
-            <li>Services inventory</li>
-            <li>Installed packages</li>
-            <li>Open ports</li>
-            <li>Baseline comparison (drift detection)</li>
-            <li>Fully offline operation</li>
-            <li>Open source (GitHub available)</li>
-        </ul>
-    </div>
-
-    <div class="tier">
-        <h3>Pro Version</h3>
-        <ul>
-            <li>Historical change tracking</li>
-            <li>System timelines</li>
-            <li>Export reports (JSON / CSV / HTML)</li>
-            <li>Audit-ready reporting formats</li>
-            <li>Multi-system comparison</li>
-            <li>Cryptographic signing of outputs</li>
-            <li>Tamper-evident logs</li>
-        </ul>
-    </div>
-
-</section>
-
-<section id="founding-members">
-
-    <h2>Founding Member Offer</h2>
-
-    <p>
-        Early access pricing: <strong>$200/year</strong> (limited to first 100 users)
-    </p>
-
-    <p>
-        Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a>
-    </p>
-
-</section>
 
 <section id="example-output">
 
 <h2>Example Output (Windows)</h2>
 
-<h3>Live Simulation</h3>
-
 <div class="terminal">
-    <div id="terminal-output"></div>
+    <pre id="terminal-output"></pre>
 </div>
 
 </section>
 
 <script>
-function downloadAuditMate() {
-    const ua = navigator.userAgent.toLowerCase();
-    let file = "/downloads/auditmate.exe";
-
-    if (ua.includes("linux")) {
-        file = "/downloads/auditmate";
-    }
-
-    window.location.href = file;
-}
-
-/* TERMINAL ANIMATION */
-const lines = [
-"C:\\> auditmate.exe",
+const cleanOutput = [
+".\\bin\\auditmate.exe",
+"AuditMate",
+"-----------------------------------",
+"Hostname : hp",
+"OS       : Microsoft Windows [Version 10.0.26200.8246]",
+"Uptime   : Statistics since 4/22/2026 12:09:00 AM",
 "",
-"AuditMate initializing...",
-"Scanning system...",
-"Checking users...",
-"Checking services...",
-"Checking packages...",
-"Checking open ports...",
+"Users    : 3",
+"Services : 127",
+"Packages : 211",
+"Ports    : 15",
 "",
-"Status: Clean",
+"Status   : Clean",
+"-----------------------------------",
+"Warnings : 0",
+"Errors   : false",
+"Reset    : false",
+"Report   : auditmate-output\\audit.json",
+"Duration : 3.0313884s",
 "",
-"Warnings: 0",
-"Errors: false",
-"Report: auditmate-output\\audit.json",
-"Duration: 52ms"
+"PS Microsoft.PowerShell.Core\\FileSystem::\\\\wsl.localhost\\Ubuntu\\home\\ubuntu\\auditmate>"
 ];
 
-let i = 0;
+const driftOutput = [
+"",
+"",
+".\\bin\\auditmate.exe",
+"AuditMate",
+"-----------------------------------",
+"Hostname : hp",
+"OS       : Microsoft Windows [Version 10.0.26200.8246]",
+"",
+"Users    : 4",
+"Services : 129",
+"Packages : 211",
+"Ports    : 17",
+"",
+"Status   : Drift detected",
+"",
+"Changes:",
+" + Users:",
+"   + hacker",
+"",
+" + Services:",
+"   + sshd",
+"   + remote-control",
+"",
+"-----------------------------------",
+"Warnings : 1",
+"Errors   : false",
+"Reset    : false",
+"Report   : auditmate-output\\audit.json",
+"Duration : 3.331s",
+"",
+"PS Microsoft.PowerShell.Core\\FileSystem::\\\\wsl.localhost\\Ubuntu\\home\\ubuntu\\auditmate>"
+];
 
-function typeLine() {
-    const output = document.getElementById("terminal-output");
-    if (!output || i >= lines.length) return;
+const outputEl = document.getElementById("terminal-output");
 
-    output.innerHTML += lines[i] + "\n";
-    i++;
+let lineIndex = 0;
+let charIndex = 0;
+let currentLines = cleanOutput;
 
-    setTimeout(typeLine, 300);
+function type() {
+    if (lineIndex >= currentLines.length) {
+        if (currentLines === cleanOutput) {
+            setTimeout(() => {
+                currentLines = driftOutput;
+                lineIndex = 0;
+                charIndex = 0;
+                type();
+            }, 1200);
+        }
+        return;
+    }
+
+    const line = currentLines[lineIndex];
+
+    if (charIndex < line.length) {
+        outputEl.textContent += line.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 15);
+    } else {
+        outputEl.textContent += "\n";
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(type, 80);
+    }
 }
 
-window.addEventListener("load", typeLine);
+window.onload = type;
 </script>
 
 </body>
