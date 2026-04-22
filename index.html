@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuditMate Software Solutions</title>
 
-    <link rel="stylesheet" href="./style.css">
-
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
 </head>
@@ -17,33 +16,34 @@
     <div class="header-left">
         <img src="logo.png" alt="AuditMate Logo" class="logo">
         <div>
-            <h1>AuditMate</h1>
-            <p>Offline system auditing • No agents • No cloud dependency</p>
+            <h1>AuditMate Software Solutions</h1>
+            <p>Offline system auditing • No installation required • Clear audit reports</p>
         </div>
     </div>
 
     <div class="buttons">
-        <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">GitHub Repo</a>
-        <a href="#founding-members" class="btn btn-primary">Founding Access</a>
+        <a href="https://github.com/AuditMate-Software-Solutions/auditmate-software-solutions.github.io" class="btn">View on GitHub</a>
+        <a href="#download" class="btn btn-primary">Download</a>
     </div>
 </header>
 
 <section id="about">
-    <h2>Overview</h2>
+    <h2>About</h2>
+
     <p>
-        AuditMate captures and compares system state snapshots for auditing, security analysis, and change detection.
+        AuditMate is a lightweight system auditing tool that snapshots and compares the state of a machine locally.
     </p>
 
     <ul>
-        <li>User accounts and privilege changes</li>
-        <li>Running services and installed packages</li>
-        <li>Open ports and network exposure</li>
-        <li>System drift detection over time</li>
+        <li>Detect users, services, packages, and open ports</li>
+        <li>Compare system changes over time (baseline vs current state)</li>
+        <li>Works completely offline</li>
+        <li>No installation required (single binary)</li>
+        <li>Produces clean terminal and JSON reports</li>
     </ul>
 
     <p>
-        Fully offline. No telemetry. No background agents.
-        Designed for security auditing, debugging, and system verification.
+        Designed for audits, debugging, and system verification without cloud dependencies.
     </p>
 
     <p><strong>Veteran-owned and operated</strong></p>
@@ -53,49 +53,50 @@
     <h2>Product Tiers</h2>
 
     <div class="tier">
-        <h3>Free Tier</h3>
+        <h3>Free Tier – $0</h3>
         <ul>
-            <li>System snapshot (OS, hostname, uptime)</li>
-            <li>User accounts (admins + regular users)</li>
-            <li>Services and installed packages</li>
-            <li>Open ports and firewall state</li>
+            <li>System info (hostname, OS, uptime)</li>
+            <li>Users (admins + regular users)</li>
+            <li>Running services</li>
+            <li>Installed packages</li>
+            <li>Open ports</li>
+            <li>Firewall state detection</li>
             <li>Baseline comparison (drift detection)</li>
-            <li>Local report generation</li>
+            <li>Terminal output + exit codes</li>
+            <li>Offline operation</li>
         </ul>
     </div>
 
     <div class="tier">
-        <h3>Pro Tier</h3>
+        <h3>Pro Tier – $25/month or $250/year</h3>
         <ul>
             <li>Everything in Free</li>
-            <li>Historical comparisons and trend tracking</li>
-            <li>JSON / CSV / HTML exports</li>
-            <li>Audit-ready reporting format</li>
-            <li>Multi-system comparison</li>
-            <li>Alerts via email, Slack, webhooks</li>
-            <li>Signed outputs for integrity verification</li>
-            <li>Tamper-evident audit logs</li>
+            <li>Historical baseline tracking</li>
+            <li>JSON export</li>
+            <li>Audit-friendly reporting format</li>
+            <li>Multi-system aggregation</li>
+            <li>Cryptographic signing of reports</li>
+            <li>Tamper-evident outputs</li>
+            <li>Offline-first design (no SaaS dependency)</li>
         </ul>
     </div>
 </section>
 
-<section id="founding-members">
-    <h2>Founding License</h2>
-    <p>
-        Limited launch offer: <strong>$200/year per server</strong><br>
-        Lifetime price lock for first <strong>100 systems</strong>.
-    </p>
+<section id="download">
+    <h2>Download</h2>
 
-    <p>
-        Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a>
-    </p>
+    <p>Download the correct version for your system:</p>
+
+    <div class="download-box">
+        <button class="btn btn-primary" onclick="downloadBinary()">Download for My System</button>
+        <p id="detected"></p>
+    </div>
 </section>
 
 <section id="example-output">
-<h2>Example Output (Windows)</h2>
+    <h2>Example Output (Windows)</h2>
 
-<h3>Clean System</h3>
-<pre>
+    <pre>
 C:\> auditmate.exe
 
 AuditMate
@@ -116,10 +117,9 @@ Errors   : false
 Reset    : false
 Report   : auditmate-output\audit.json
 Duration : 52ms
-</pre>
+    </pre>
 
-<h3>Drift Detected</h3>
-<pre>
+    <pre>
 C:\> auditmate.exe
 
 AuditMate
@@ -153,9 +153,28 @@ Errors   : false
 Reset    : false
 Report   : auditmate-output\audit.json
 Duration : 61ms
-</pre>
-
+    </pre>
 </section>
+
+<script>
+function downloadBinary() {
+    const platform = navigator.platform.toLowerCase();
+    let file = "";
+
+    if (platform.includes("win")) {
+        file = "auditmate.exe";
+    } else if (platform.includes("linux")) {
+        file = "auditmate";
+    } else {
+        file = "auditmate";
+    }
+
+    document.getElementById("detected").innerText =
+        "Detected system: " + platform + " → downloading " + file;
+
+    window.location.href = "./bin/" + file;
+}
+</script>
 
 </body>
 </html>
