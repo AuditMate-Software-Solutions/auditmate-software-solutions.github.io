@@ -36,18 +36,23 @@
             <li>Real-time drift detection</li>
         </ul>
 
+        <!-- DOWNLOAD SECTION (2 BUTTONS ONLY) -->
         <div class="download-card">
 
             <div class="download-title">Download AuditMate (Free)</div>
-            <div class="download-subtitle">Automatically detects your system</div>
+            <div class="download-subtitle">Choose your platform</div>
 
-            <a class="download-btn" onclick="downloadAuditMate()">
-                Download Now
+            <a class="download-btn" href="/downloads/auditmate.exe">
+                Download for Windows
             </a>
 
-            <div class="download-meta">
-                Windows → .exe • Linux → binary
-            </div>
+            <div class="download-note">64-bit (x86_64)</div>
+
+            <a class="download-btn" href="/downloads/auditmate">
+                Download for Linux
+            </a>
+
+            <div class="download-note">64-bit (x86_64)</div>
 
             <div class="download-links">
                 <a href="https://github.com/AuditMate-Software-Solutions/auditmate" target="_blank">
@@ -196,19 +201,6 @@ Changes:
 </pre>
 
 </section>
-
-<script>
-function downloadAuditMate() {
-    const ua = navigator.userAgent.toLowerCase();
-    let file = "/downloads/auditmate.exe";
-
-    if (ua.includes("linux")) {
-        file = "/downloads/auditmate";
-    }
-
-    window.location.href = file;
-}
-</script>
 
 </body>
 </html>
