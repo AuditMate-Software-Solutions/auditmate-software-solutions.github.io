@@ -1,20 +1,20 @@
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f2fb;
-    color: #1b1b1f;
+    font-family: "Segoe UI", sans-serif;
     margin: 0;
     padding: 0;
+    background: #f7f6fb;
+    color: #1a1a1a;
 }
 
-/* Header */
+/* HEADER */
 .site-header {
+    background: linear-gradient(90deg, #4c1d95, #6d28d9);
+    color: white;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2rem;
-    background: #2b1b3f;
-    color: white;
 }
 
 .header-left {
@@ -24,23 +24,22 @@ body {
 }
 
 .logo {
-    width: 52px;
-    height: 52px;
-    object-fit: contain;
+    width: 48px;
+    height: 48px;
 }
 
+/* TEXT */
 h1 {
     margin: 0;
     font-size: 2rem;
-    color: #d7b3ff;
 }
 
 header p {
     margin: 0;
-    color: #cfc7dd;
+    opacity: 0.9;
 }
 
-/* Buttons */
+/* BUTTONS */
 .buttons {
     display: flex;
     gap: 1rem;
@@ -48,37 +47,34 @@ header p {
 
 .btn {
     padding: 0.6rem 1.2rem;
+    background: rgba(255,255,255,0.15);
+    color: white;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    background: #3b2a52;
-    color: #e9ddff;
-    transition: 0.2s;
 }
 
 .btn:hover {
-    background: #4a3566;
+    background: rgba(255,255,255,0.25);
 }
 
 .btn-primary {
-    background: #a855f7;
-    color: white;
+    background: white;
+    color: #4c1d95;
 }
 
-/* Sections */
+/* SECTIONS */
 section {
     max-width: 900px;
-    margin: 0 auto;
+    margin: auto;
     padding: 2rem;
 }
 
 h2 {
-    color: #6d28d9;
-    border-bottom: 2px solid #c4b5fd;
-    padding-bottom: 0.5rem;
+    color: #4c1d95;
 }
 
-/* Tier box */
+/* BOXES */
 .tier {
     background: white;
     border: 1px solid #e5e7eb;
@@ -86,29 +82,25 @@ h2 {
     border-radius: 10px;
 }
 
-/* Code block */
+/* CODE */
 pre {
-    background: #1e1b2e;
-    color: #d8b4fe;
+    background: #1f1f1f;
+    color: #d1b3ff;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow-x: auto;
 }
 
-/* Links */
-a {
-    color: #7c3aed;
-}
-
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
     .site-header {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
 
     .buttons {
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
     }
 }
