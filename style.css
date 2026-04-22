@@ -12,12 +12,14 @@ body {
 }
 
 .hero-content {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 18px;
+    text-align: center;
 }
 
 /* BRAND */
@@ -43,7 +45,6 @@ h1 {
     color: #555;
 }
 
-/* TAGLINE */
 .tagline {
     margin: 0;
     color: #333;
@@ -53,8 +54,10 @@ h1 {
 .hero-points {
     list-style: none;
     padding: 0;
+
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
 }
 
@@ -66,11 +69,30 @@ h1 {
     font-size: 0.85rem;
 }
 
-/* MAIN BLOCK */
-.hero-main {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+/* TERMINAL */
+.terminal-card {
+    width: 100%;
+    max-width: 520px;
+
+    background: #0f0f10;
+    color: #00ff99;
+
+    border-radius: 12px;
+    padding: 14px;
+
+    font-family: monospace;
+    text-align: left;
+}
+
+.terminal-header {
+    color: #aaa;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
 }
 
 /* DOWNLOAD */
@@ -93,32 +115,12 @@ h1 {
     text-decoration: none;
 }
 
-/* TERMINAL */
-.terminal-card {
-    flex: 1;
-    background: #0f0f10;
-    color: #00ff99;
-    border-radius: 12px;
-    padding: 14px;
-    font-family: monospace;
-}
-
-.terminal-header {
-    color: #aaa;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-}
-
-pre {
-    margin: 0;
-    white-space: pre-wrap;
-}
-
-/* ABOUT */
+/* SECTIONS */
 section {
     max-width: 900px;
     margin: auto;
     padding: 2rem;
+    text-align: left;
 }
 
 h2 {
@@ -130,15 +132,4 @@ h2 {
 .veteran {
     font-size: 0.9rem;
     color: #666;
-}
-
-/* MOBILE */
-@media (max-width: 800px) {
-    .hero-main {
-        flex-direction: column;
-    }
-
-    .download-card {
-        width: 100%;
-    }
 }
