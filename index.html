@@ -12,33 +12,55 @@
 
 <body>
 
-<header class="site-header">
-    <div class="header-left">
-        <img src="logo.png" alt="AuditMate Logo" class="logo">
-        <div>
-            <h1>AuditMate Software Solutions</h1>
-            <p>Works offline • No installation required • Generates clear system reports</p>
+<!-- HERO SECTION -->
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-left">
+            <img src="logo.png" class="logo" alt="AuditMate Logo">
+
+            <div>
+                <h1>AuditMate</h1>
+                <p class="subtitle">Offline System Auditing Tool</p>
+            </div>
         </div>
+
+        <p class="tagline">
+            Capture system state. Detect drift. No cloud. No telemetry. No installation.
+        </p>
+
+        <div class="hero-points">
+            <span>✔ Fully offline</span>
+            <span>✔ Open-source Free version</span>
+            <span>✔ Windows & Linux binaries</span>
+            <span>✔ Real-time drift detection</span>
+        </div>
+
+        <div class="buttons">
+            <a class="btn btn-primary" onclick="downloadAuditMate()">
+                Download AuditMate
+            </a>
+
+            <a href="https://github.com/AuditMate-Software-Solutions/auditmate" class="btn">
+                View on GitHub
+            </a>
+        </div>
+
+        <p class="veteran">
+            Veteran-owned and operated
+        </p>
+
     </div>
 
-    <div class="buttons">
-
-        <a class="btn btn-primary" onclick="downloadAuditMate()">
-            Download AuditMate
-        </a>
-
-        <a href="https://github.com/AuditMate-Software-Solutions/auditmate" class="btn">
-            View on GitHub
-        </a>
-
-    </div>
 </header>
 
+<!-- ABOUT -->
 <section id="about">
     <h2>About</h2>
 
     <p>
-        AuditMate is a portable system auditing tool that captures the exact state of a machine at a point in time.
+        AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
     </p>
 
     <ul>
@@ -47,29 +69,30 @@
         <li>Installed packages</li>
         <li>Open ports</li>
         <li>Firewall state</li>
-        <li>Change / drift detection</li>
+        <li>System drift detection</li>
     </ul>
 
     <p><strong>Fully offline • No installation required • Portable binary</strong></p>
-    <p><strong>Veteran-owned and operated</strong></p>
 </section>
 
+<!-- PRIVACY -->
 <section id="privacy">
     <h2>Privacy & Security</h2>
 
     <ul>
         <li>No telemetry</li>
-        <li>No background network communication</li>
+        <li>No background communication</li>
         <li>No cloud dependency</li>
         <li>No data leaves your machine</li>
         <li>Fully offline execution</li>
     </ul>
 
     <p>
-        AuditMate is designed for local-only execution. All analysis stays on-device.
+        All analysis is performed locally on the system being audited.
     </p>
 </section>
 
+<!-- TIERS -->
 <section id="tiers">
 
     <h2>Product Tiers</h2>
@@ -91,32 +114,34 @@
     <div class="tier">
         <h3>Pro Version</h3>
         <ul>
-            <li>Everything in Free</li>
             <li>Historical change tracking</li>
-            <li>Full system timelines</li>
+            <li>System timelines</li>
             <li>Export reports (JSON / CSV / HTML)</li>
-            <li>Audit-ready formatted reports</li>
+            <li>Audit-ready reporting formats</li>
             <li>Multi-system comparison</li>
             <li>Cryptographic signing of outputs</li>
-            <li>Tamper-evident audit logs</li>
-            <li>Enterprise offline auditing</li>
+            <li>Tamper-evident logs</li>
         </ul>
     </div>
 
 </section>
 
+<!-- FOUNDING -->
 <section id="founding-members">
+
     <h2>Founding Member Offer</h2>
 
     <p>
-        Special launch pricing: <strong>$200/year</strong> (limited to first 100 users)
+        Early access pricing: <strong>$200/year</strong> (limited to first 100 users)
     </p>
 
     <p>
         Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a>
     </p>
+
 </section>
 
+<!-- EXAMPLE OUTPUT -->
 <section id="example-output">
 
 <h2>Example Output (Windows)</h2>
