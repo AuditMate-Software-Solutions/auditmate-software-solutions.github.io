@@ -5,7 +5,6 @@ body {
     margin: 0;
 }
 
-/* HERO */
 .hero {
     background: linear-gradient(180deg, #ffffff, #f3f0ff);
     padding: 4rem 1.5rem;
@@ -22,7 +21,6 @@ body {
     text-align: center;
 }
 
-/* BRAND */
 .brand {
     display: flex;
     align-items: center;
@@ -50,11 +48,9 @@ h1 {
     color: #333;
 }
 
-/* FEATURES */
 .hero-points {
     list-style: none;
     padding: 0;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -69,17 +65,14 @@ h1 {
     font-size: 0.85rem;
 }
 
-/* TERMINAL */
+/* TERMINAL (STATIC) */
 .terminal-card {
     width: 100%;
     max-width: 520px;
-
     background: #0f0f10;
     color: #00ff99;
-
     border-radius: 12px;
     padding: 14px;
-
     font-family: monospace;
     text-align: left;
 }
@@ -115,7 +108,17 @@ pre {
     text-decoration: none;
 }
 
-/* SECTIONS */
+/* ANIMATED OUTPUT LOOK (NO LAYOUT SHIFT) */
+#example-output pre {
+    font-family: monospace;
+    background: #0f0f10;
+    color: #ffffff;
+    padding: 14px;
+    border-radius: 10px;
+    min-height: 220px;
+    white-space: pre-wrap;
+}
+
 section {
     max-width: 900px;
     margin: auto;
