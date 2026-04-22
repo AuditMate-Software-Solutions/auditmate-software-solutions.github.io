@@ -6,13 +6,13 @@ body {
     padding: 0;
 }
 
-/* Header Layout */
+/* Header */
+
 header {
     background-color: #1f1f1f;
     padding: 2rem;
 }
 
-/* New Header Layout for Logo */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -27,14 +27,12 @@ header {
     gap: 15px;
 }
 
-/* Logo */
 .logo {
     width: 50px;
     height: 50px;
     object-fit: contain;
 }
 
-/* Header text */
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
@@ -48,6 +46,7 @@ header p {
 }
 
 /* Buttons */
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -74,6 +73,7 @@ header p {
 }
 
 /* Sections */
+
 section {
     padding: 2rem;
     max-width: 900px;
@@ -87,7 +87,13 @@ h2 {
     color: #00aaff;
 }
 
+h3 {
+    color: #00aaff;
+    margin-top: 2rem;
+}
+
 /* Tier Cards */
+
 .tier {
     background-color: #1f1f1f;
     padding: 1rem;
@@ -100,20 +106,24 @@ h2 {
 }
 
 /* Example Output */
+
 pre {
     background-color: #1f1f1f;
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 8px;
     overflow-x: auto;
     color: #00ffff;
+    border: 1px solid #2a2a2a;
 }
 
 /* Links */
+
 a {
     color: #00aaff;
 }
 
-/* Responsive (Mobile Fix) */
+/* Responsive */
+
 @media (max-width: 768px) {
 
 .site-header {
