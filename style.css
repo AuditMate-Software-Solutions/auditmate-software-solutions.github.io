@@ -13,7 +13,6 @@ body {
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +64,6 @@ h1 {
     font-size: 0.85rem;
 }
 
-/* TERMINAL (STATIC) */
 .terminal-card {
     width: 100%;
     max-width: 520px;
@@ -88,7 +86,6 @@ pre {
     white-space: pre-wrap;
 }
 
-/* DOWNLOAD */
 .download-card {
     background: #fff;
     border: 1px solid #e6e6e6;
@@ -106,17 +103,6 @@ pre {
     text-align: center;
     border-radius: 10px;
     text-decoration: none;
-}
-
-/* ANIMATED OUTPUT LOOK (NO LAYOUT SHIFT) */
-#example-output pre {
-    font-family: monospace;
-    background: #0f0f10;
-    color: #ffffff;
-    padding: 14px;
-    border-radius: 10px;
-    min-height: 220px;
-    white-space: pre-wrap;
 }
 
 section {
