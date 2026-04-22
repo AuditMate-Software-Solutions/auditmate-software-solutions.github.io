@@ -18,81 +18,62 @@
         <img src="logo.png" alt="AuditMate Logo" class="logo">
         <div>
             <h1>AuditMate Software Solutions</h1>
-            <p>Works offline • No installation required • Generates clear system reports</p>
+            <p>Works offline • No installation required • Generates system reports</p>
         </div>
     </div>
 
     <div class="buttons">
-        <a href="https://github.com/AuditMate-Software-Solutions/auditmate" class="btn">View on GitHub</a>
-
-        <!-- FIXED DOWNLOAD BUTTON -->
-        <a href="https://auditmate-software-solutions.github.io/downloads/auditmate.exe" class="btn btn-primary">
-            Download Free Version
+        <button class="btn btn-primary" onclick="downloadAuditMate()">
+            Download Free
+        </button>
+        <a href="https://github.com/AuditMate-Software-Solutions/auditmate-software-solutions.github.io" class="btn">
+            GitHub
         </a>
     </div>
 </header>
 
 <section id="about">
     <h2>About</h2>
-    <p>AuditMate is a portable system tool that collects and records the exact state of your computer at a given moment. You can:</p>
+    <p>AuditMate is a portable system tool that collects and records the exact state of your computer at a given moment.</p>
+
     <ul>
-        <li>See exactly what users and administrators exist</li>
-        <li>Check running programs and services</li>
-        <li>Monitor open ports and firewall settings</li>
-        <li>Compare changes over time</li>
+        <li>Users and admin accounts</li>
+        <li>Running services</li>
+        <li>Installed packages</li>
+        <li>Open ports</li>
+        <li>Baseline comparison (drift detection)</li>
     </ul>
-    <p>Everything works <strong>offline</strong>, requires <strong>no installation</strong>, and produces clear, easy-to-read reports you can use for audits, debugging, or security checks.</p>
+
     <p><strong>Veteran-owned and operated</strong></p>
 </section>
 
 <section id="tiers">
-    <h2>Product Tiers</h2>
+    <h2>Free Tier</h2>
 
     <div class="tier">
-        <h3>Free Tier – $0</h3>
+        <h3>$0 – Free</h3>
         <ul>
-            <li>Basic system info: hostname, OS, kernel, uptime</li>
-            <li>User accounts: admins and regular users</li>
-            <li>Services running</li>
-            <li>Installed packages/programs</li>
+            <li>System info (OS, hostname, uptime)</li>
+            <li>Users and admin accounts</li>
+            <li>Services</li>
+            <li>Packages</li>
             <li>Open ports</li>
-            <li>Firewall state</li>
-            <li>Pending updates</li>
-            <li>Compare with previous baseline & see alerts</li>
-            <li>Terminal summary and exit codes</li>
-            <li>Fully offline, open source, verifiable</li>
+            <li>Baseline comparison</li>
+            <li>Offline operation</li>
         </ul>
     </div>
-
-    <div class="tier">
-        <h3>Paid / Premium Tier – $25 / month or $250 / year</h3>
-        <ul>
-            <li>Everything in Free, plus advanced reporting and audit-ready features</li>
-            <li>Full historical tracking and trends</li>
-            <li>JSON / CSV / HTML export of reports</li>
-            <li>Detailed human-readable reports for audits</li>
-            <li>Multi-system aggregation for centralized management</li>
-            <li>Notifications & alerts (removed from offline core focus if not implemented)</li>
-            <li>Premium license support for multiple devices</li>
-            <li>Cryptographic signing of outputs</li>
-            <li>Tamper-proof evidence</li>
-            <li>Offline & secure (no SaaS dependency)</li>
-        </ul>
-    </div>
-
 </section>
 
 <section id="founding-members">
     <h2>Founding Member Offer</h2>
-    <p>Special launch offer: <strong>$200/year</strong> (single server). Price locked for life. Limited to the first <strong>100 founding members</strong>.</p>
+    <p>Limited early access: <strong>$200/year</strong></p>
     <p>Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
 </section>
 
 <section id="example-output">
-<h2>Example Output (Windows)</h2>
+    <h2>Example Output</h2>
 
-<h3>Clean System</h3>
-<pre>
+    <pre>
 C:\> auditmate.exe
 
 AuditMate
@@ -113,46 +94,24 @@ Errors   : false
 Reset    : false
 Report   : auditmate-output\audit.json
 Duration : 52ms
-</pre>
-
-<h3>Drift Detected</h3>
-<pre>
-C:\> auditmate.exe
-
-AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : up 1 day, 3 hours
-
-Users    : 4
-Services : 130
-Packages : 96
-Ports    : 8
-
-Status   : Drift detected
-
-Changes:
- + Users:
-  + hacker (admin)
-
- + Services:
-  + sshd
-  + remote-control
-
- + Open ports:
-  + 22/tcp
-  + 3389/tcp
-
------------------------------------
-Warnings : 1
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 61ms
-</pre>
-
+    </pre>
 </section>
+
+<script>
+function downloadAuditMate() {
+    const ua = navigator.userAgent.toLowerCase();
+
+    let file = "auditmate.exe";
+
+    if (ua.includes("linux")) {
+        file = "auditmate-linux";
+    } else if (ua.includes("mac")) {
+        file = "auditmate-mac";
+    }
+
+    window.location.href = "./downloads/" + file;
+}
+</script>
 
 </body>
 </html>
