@@ -36,6 +36,18 @@
             <li>Real-time drift detection</li>
         </ul>
 
+        <!-- HERO ANIMATION PANEL -->
+        <div class="terminal-card">
+
+            <div class="terminal-header">AuditMate Live Scan</div>
+
+            <pre id="terminal">
+Initializing audit...
+            </pre>
+
+        </div>
+
+        <!-- DOWNLOAD -->
         <div class="download-card">
 
             <div class="download-title">Download AuditMate (Free)</div>
@@ -150,49 +162,16 @@
 <h3>Clean System</h3>
 <pre>
 C:\> auditmate.exe
-
 AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 2 hours
-
-Users    : 3
-Services : 128
-Packages : 94
-Ports    : 6
-
-Status   : Clean
+Status: Clean
 </pre>
 
 <h3>Drift Detected</h3>
 <pre>
 C:\> auditmate.exe
-
 AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 3 hours
-
-Users    : 4
-Services : 130
-Packages : 96
-Ports    : 8
-
-Status   : Drift detected
-
-Changes:
- + Users:
-  + hacker (admin)
-
- + Services:
-  + sshd
-  + remote-control
-
- + Open ports:
-  + 22/tcp
-  + 3389/tcp
+Status: Drift detected
+Changes detected in system state...
 </pre>
 
 </section>
@@ -208,6 +187,37 @@ function downloadAuditMate() {
 
     window.location.href = file;
 }
+
+/* HERO TERMINAL ANIMATION */
+const lines = [
+"Initializing AuditMate...",
+"Detecting OS: OK",
+"Scanning users...",
+"Scanning services...",
+"Checking installed packages...",
+"Mapping open ports...",
+"Comparing baseline...",
+"✔ No drift detected"
+];
+
+let i = 0;
+const terminal = document.getElementById("terminal");
+
+function runAnimation() {
+    if (i < lines.length) {
+        terminal.innerText += "\n" + lines[i];
+        i++;
+        setTimeout(runAnimation, 600);
+    } else {
+        setTimeout(() => {
+            terminal.innerText = "Initializing audit...\n";
+            i = 0;
+            runAnimation();
+        }, 2000);
+    }
+}
+
+runAnimation();
 </script>
 
 </body>
