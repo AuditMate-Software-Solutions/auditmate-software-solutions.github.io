@@ -85,7 +85,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .download-title {
@@ -98,8 +98,9 @@ h1 {
     color: #666;
 }
 
+/* BUTTONS */
 .download-btn {
-    display: inline-block;
+    display: block;
     padding: 10px 14px;
     border-radius: 10px;
     background: #5b2cff;
@@ -114,16 +115,20 @@ h1 {
     background: #4720c7;
 }
 
-.download-meta {
-    font-size: 0.8rem;
+/* ARCH NOTE (OPTION B) */
+.download-note {
+    font-size: 0.75rem;
     color: #777;
+    margin-top: -6px;
 }
 
+/* LINKS */
 .download-links {
     font-size: 0.85rem;
+    margin-top: 6px;
 }
 
-/* TERMINAL STYLE */
+/* TERMINAL */
 .terminal {
     background: #0d1117;
     color: #00ff9c;
