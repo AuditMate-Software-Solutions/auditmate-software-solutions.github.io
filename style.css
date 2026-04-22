@@ -2,14 +2,13 @@ body {
     font-family: "Segoe UI", sans-serif;
     margin: 0;
     padding: 0;
-    background: #f7f6fb;
-    color: #1a1a1a;
+    background: #ffffff;
+    color: #111827;
 }
 
-/* HEADER */
 .site-header {
-    background: linear-gradient(90deg, #4c1d95, #6d28d9);
-    color: white;
+    background: #f5f3ff;
+    border-bottom: 1px solid #e5e7eb;
     padding: 2rem;
     display: flex;
     justify-content: space-between;
@@ -28,18 +27,17 @@ body {
     height: 48px;
 }
 
-/* TEXT */
 h1 {
     margin: 0;
+    color: #4c1d95;
     font-size: 2rem;
 }
 
 header p {
     margin: 0;
-    opacity: 0.9;
+    color: #4b5563;
 }
 
-/* BUTTONS */
 .buttons {
     display: flex;
     gap: 1rem;
@@ -47,23 +45,22 @@ header p {
 
 .btn {
     padding: 0.6rem 1.2rem;
-    background: rgba(255,255,255,0.15);
-    color: white;
+    background: #ede9fe;
+    color: #4c1d95;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .btn:hover {
-    background: rgba(255,255,255,0.25);
+    background: #ddd6fe;
 }
 
 .btn-primary {
-    background: white;
-    color: #4c1d95;
+    background: #4c1d95;
+    color: white;
 }
 
-/* SECTIONS */
 section {
     max-width: 900px;
     margin: auto;
@@ -74,24 +71,21 @@ h2 {
     color: #4c1d95;
 }
 
-/* BOXES */
-.tier {
-    background: white;
+.box {
+    background: #f9fafb;
     border: 1px solid #e5e7eb;
     padding: 1rem;
     border-radius: 10px;
 }
 
-/* CODE */
 pre {
-    background: #1f1f1f;
-    color: #d1b3ff;
+    background: #f3f4f6;
     padding: 1rem;
     border-radius: 10px;
     overflow-x: auto;
+    border: 1px solid #e5e7eb;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
     .site-header {
         flex-direction: column;
@@ -101,6 +95,5 @@ pre {
 
     .buttons {
         justify-content: center;
-        flex-wrap: wrap;
     }
 }
