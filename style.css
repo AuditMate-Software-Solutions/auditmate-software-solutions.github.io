@@ -3,31 +3,36 @@ body {
     background: #f6f7fb;
     color: #1d1d1f;
     margin: 0;
-    padding: 0;
 }
 
-/* HERO */
+/* HERO GRID (THIS FIXES YOUR MOVING BUTTON ISSUE) */
 .hero {
     background: linear-gradient(180deg, #ffffff, #f3f0ff);
     padding: 4rem 1.5rem;
-    text-align: center;
 }
 
-.hero-content {
-    max-width: 900px;
+.hero-grid {
+    max-width: 1100px;
     margin: 0 auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    align-items: start;
 }
 
+/* LEFT SIDE */
 .hero-left {
     display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.brand {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .logo {
@@ -47,46 +52,65 @@ h1 {
 }
 
 .tagline {
-    margin: 10px 0;
     color: #333;
 }
 
-/* PILLS */
+/* PILL FEATURES */
 .hero-points {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
-
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 8px;
 }
 
 .hero-points li {
     background: #fff;
     border: 1px solid #e6e6e6;
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-/* TERMINAL ANIMATION */
+/* DOWNLOAD CARD */
+.download-card {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    padding: 16px;
+
+    max-width: 320px;
+}
+
+.download-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background: #5b2cff;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+/* TERMINAL (STATIC - NEVER MOVES ANYTHING) */
+.hero-right {
+    position: sticky;
+    top: 40px;
+}
+
 .terminal-card {
-    width: 100%;
-    max-width: 420px;
-    background: #111;
+    background: #0f0f10;
     color: #00ff99;
     border-radius: 12px;
-    padding: 12px;
-    text-align: left;
+    padding: 14px;
     font-family: monospace;
 }
 
 .terminal-header {
-    font-size: 0.8rem;
     color: #aaa;
-    margin-bottom: 8px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
 }
 
 pre {
@@ -94,99 +118,13 @@ pre {
     white-space: pre-wrap;
 }
 
-/* DOWNLOAD */
-.download-card {
-    background: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 14px;
-    padding: 18px;
+/* MOBILE FIX */
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
 
-    width: 100%;
-    max-width: 320px;
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.download-title {
-    font-weight: 700;
-    color: #5b2cff;
-}
-
-.download-subtitle {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 10px 14px;
-    border-radius: 10px;
-    background: #5b2cff;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    width: 100%;
-    text-align: center;
-}
-
-.download-btn:hover {
-    background: #4720c7;
-}
-
-.download-meta {
-    font-size: 0.8rem;
-    color: #777;
-}
-
-.download-links {
-    font-size: 0.85rem;
-}
-
-/* SECTIONS */
-section {
-    max-width: 900px;
-    margin: auto;
-    padding: 2rem;
-}
-
-h2 {
-    color: #5b2cff;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 6px;
-}
-
-.tier {
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-}
-
-pre {
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 1rem;
-    border-radius: 10px;
-    overflow-x: auto;
-}
-
-.veteran {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-a {
-    color: #5b2cff;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero-left {
-        flex-direction: column;
+    .hero-right {
+        position: static;
     }
 }
