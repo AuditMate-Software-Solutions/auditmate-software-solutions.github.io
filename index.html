@@ -12,7 +12,6 @@
 
 <body>
 
-<!-- HERO -->
 <header class="hero">
 
     <div class="hero-content">
@@ -37,14 +36,26 @@
             <li>Real-time drift detection</li>
         </ul>
 
-        <div class="buttons">
-            <a class="btn btn-primary" onclick="downloadAuditMate()">
-                Download AuditMate
+        <!-- DOWNLOAD CARD -->
+        <div class="download-card">
+
+            <div class="download-title">Download AuditMate (Free)</div>
+            <div class="download-subtitle">Automatically detects your system</div>
+
+            <a class="download-btn" onclick="downloadAuditMate()">
+                Download Now
             </a>
 
-            <a href="https://github.com/AuditMate-Software-Solutions/auditmate" class="btn">
-                View on GitHub
-            </a>
+            <div class="download-meta">
+                Windows → .exe • Linux → binary
+            </div>
+
+            <div class="download-links">
+                <a href="https://github.com/AuditMate-Software-Solutions/auditmate" target="_blank">
+                    View on GitHub
+                </a>
+            </div>
+
         </div>
 
         <p class="veteran">Veteran-owned and operated</p>
@@ -53,7 +64,6 @@
 
 </header>
 
-<!-- ABOUT -->
 <section id="about">
     <h2>About</h2>
 
@@ -73,7 +83,6 @@
     <p><strong>Fully offline • No installation required • Portable binary</strong></p>
 </section>
 
-<!-- PRIVACY -->
 <section id="privacy">
     <h2>Privacy & Security</h2>
 
@@ -85,12 +94,9 @@
         <li>Fully offline execution</li>
     </ul>
 
-    <p>
-        All analysis is performed locally on the system being audited.
-    </p>
+    <p>All analysis is performed locally on the system being audited.</p>
 </section>
 
-<!-- TIERS -->
 <section id="tiers">
 
     <h2>Product Tiers</h2>
@@ -124,7 +130,6 @@
 
 </section>
 
-<!-- FOUNDING -->
 <section id="founding-members">
 
     <h2>Founding Member Offer</h2>
@@ -139,7 +144,6 @@
 
 </section>
 
-<!-- EXAMPLE OUTPUT -->
 <section id="example-output">
 
 <h2>Example Output (Windows)</h2>
@@ -214,10 +218,6 @@ function downloadAuditMate() {
     let file = "/downloads/auditmate.exe";
 
     if (ua.includes("linux")) {
-        file = "/downloads/auditmate";
-    }
-
-    if (ua.includes("mac")) {
         file = "/downloads/auditmate";
     }
 
