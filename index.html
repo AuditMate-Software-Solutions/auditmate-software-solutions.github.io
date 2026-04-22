@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AuditMate Software Solutions</title>
+<title>AuditMate</title>
 
 <link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" href="logo.png">
 </head>
 
 <body>
@@ -25,81 +25,46 @@
 
     <div class="buttons">
         <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">GitHub</a>
-        <a id="downloadBtn" class="btn btn-primary" href="#">Download Free</a>
+        <a id="downloadBtn" class="btn btn-primary" href="/downloads/auditmate.exe">Download Free</a>
     </div>
 
 </header>
 
-
-<section id="about">
-
+<section>
 <h2>Overview</h2>
 
 <p>
-AuditMate is a lightweight system auditing tool that runs fully offline and records the state of a machine at a single point in time.
-</p>
-
-<p>
-It is designed for system visibility, drift detection, and baseline comparison without cloud services or external dependencies.
+AuditMate is a local system auditing tool that captures system state and compares it against a baseline snapshot.
 </p>
 
 <ul>
-    <li>Runs locally (no internet required)</li>
     <li>No installation required</li>
-    <li>Single executable binary</li>
-    <li>Generates structured audit reports</li>
-    <li>Compares system state against baseline snapshots</li>
+    <li>Fully offline</li>
+    <li>Single binary execution</li>
+    <li>Drift detection via baseline comparison</li>
 </ul>
 
 <p><strong>Veteran-owned and operated</strong></p>
-
 </section>
 
+<section>
+<h2>What it tracks</h2>
 
-<section id="features">
-
-<h2>What it captures</h2>
-
-<div class="tier">
+<div class="box">
 <ul>
-    <li>System identity (hostname, OS, kernel, uptime)</li>
-    <li>User accounts (admins and standard users)</li>
-    <li>Running services</li>
+    <li>Users and administrators</li>
+    <li>Services</li>
     <li>Installed packages</li>
     <li>Open ports</li>
-    <li>Firewall state</li>
-    <li>Baseline drift detection</li>
+    <li>System identity</li>
 </ul>
 </div>
-
 </section>
 
-
-<section id="download-info">
-
-<h2>Free Version</h2>
-
-<div class="tier">
-<p>
-AuditMate Free provides full local auditing and baseline comparison.
-All processing happens on-device. No cloud services. No telemetry.
-</p>
-
-<ul>
-    <li>Single machine auditing</li>
-    <li>Baseline snapshot creation</li>
-    <li>Drift detection between runs</li>
-    <li>JSON report output</li>
-</ul>
-</div>
-
-</section>
-
-
-<section id="example">
-
+<section>
 <h2>Example Output</h2>
 
+<h3>Clean System</h3>
 <pre>
 C:\> auditmate.exe
 
@@ -123,21 +88,58 @@ Report   : auditmate-output\audit.json
 Duration : 52ms
 </pre>
 
-</section>
+<h3>Drift Detected</h3>
+<pre>
+C:\> auditmate.exe
 
+AuditMate
+-----------------------------------
+Hostname : WORKSTATION-01
+OS       : Windows 11 Pro
+Uptime   : 1 day, 3 hours
+
+Users    : 4
+Services : 130
+Packages : 96
+Ports    : 8
+
+Status   : Drift detected
+
+Changes:
+ + Users:
+  + hacker (admin)
+
+ + Services:
+  + sshd
+  + remote-control
+
+ + Open ports:
+  + 22/tcp
+  + 3389/tcp
+
+-----------------------------------
+Warnings : 1
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 61ms
+</pre>
+
+</section>
 
 <script>
 const btn = document.getElementById("downloadBtn");
 
 const ua = navigator.userAgent.toLowerCase();
 
-// default = windows
 let download = "/downloads/auditmate.exe";
 
-// simple OS detection
-if (ua.includes("linux")) {
-    download = "/downloads/auditmate-linux";
-} else if (ua.includes("mac")) {
+if (
+    ua.includes("linux") ||
+    ua.includes("x11") ||
+    ua.includes("ubuntu") ||
+    ua.includes("debian")
+) {
     download = "/downloads/auditmate-linux";
 }
 
