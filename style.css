@@ -51,7 +51,7 @@ h1 {
     color: #333;
 }
 
-/* FEATURE PILLS */
+/* HERO POINTS */
 .hero-points {
     list-style: none;
     padding: 0;
@@ -80,7 +80,6 @@ h1 {
 
     width: 100%;
     max-width: 320px;
-    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -99,15 +98,16 @@ h1 {
 }
 
 .download-btn {
-    display: inline-block;
-    padding: 10px 14px;
+    display: block;
+    width: 100%;
+    padding: 10px;
     border-radius: 10px;
     background: #5b2cff;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 
 .download-btn:hover {
@@ -121,6 +121,35 @@ h1 {
 
 .download-links {
     font-size: 0.85rem;
+}
+
+.veteran {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* TERMINAL */
+.terminal {
+    background: #0f0f12;
+    color: #00ff9a;
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: Consolas, monospace;
+    text-align: left;
+    max-width: 900px;
+    margin: auto;
+    white-space: pre-wrap;
+    min-height: 220px;
+}
+
+.terminal::after {
+    content: "▍";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 /* SECTIONS */
@@ -150,11 +179,6 @@ pre {
     padding: 1rem;
     border-radius: 10px;
     overflow-x: auto;
-}
-
-.veteran {
-    font-size: 0.9rem;
-    color: #666;
 }
 
 a {
