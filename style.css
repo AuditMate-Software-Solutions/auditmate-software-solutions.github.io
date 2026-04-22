@@ -51,7 +51,7 @@ h1 {
     color: #333;
 }
 
-/* FEATURE PILLS */
+/* PILLS */
 .hero-points {
     list-style: none;
     padding: 0;
@@ -71,7 +71,30 @@ h1 {
     font-size: 0.9rem;
 }
 
-/* DOWNLOAD CARD */
+/* TERMINAL ANIMATION */
+.terminal-card {
+    width: 100%;
+    max-width: 420px;
+    background: #111;
+    color: #00ff99;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: left;
+    font-family: monospace;
+}
+
+.terminal-header {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* DOWNLOAD */
 .download-card {
     background: #fff;
     border: 1px solid #e6e6e6;
