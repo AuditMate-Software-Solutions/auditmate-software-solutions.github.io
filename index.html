@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuditMate Software Solutions</title>
 
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 
@@ -38,15 +38,20 @@
             <div class="terminal-header">System Snapshot</div>
             <pre>
 AuditMate initialized
-System state captured
-Status: ready
+
+System state captured:
+- Users
+- Services
+- Packages
+- Open ports
+
+Status: Snapshot complete
             </pre>
         </div>
 
         <div class="download-card">
 
             <div class="download-title">Download AuditMate (Free)</div>
-            <div class="download-subtitle">Automatically detects your system</div>
 
             <a class="download-btn" onclick="downloadAuditMate()">
                 Download Now
@@ -76,11 +81,55 @@ Status: ready
 
 <h3>Clean Snapshot</h3>
 
-<pre id="clean-output"></pre>
+<pre>
+C:\> auditmate.exe
+
+AuditMate
+-----------------------------------
+Hostname : WORKSTATION-01
+OS       : Windows 11 Pro
+Uptime   : 1 day, 2 hours
+
+Users    : 3
+Services : 128
+Packages : 94
+Ports    : 6
+
+Status   : Clean snapshot recorded
+-----------------------------------
+</pre>
 
 <h3>Drift Detected</h3>
 
-<pre id="drift-output"></pre>
+<pre>
+C:\> auditmate.exe
+
+AuditMate
+-----------------------------------
+Hostname : WORKSTATION-01
+OS       : Windows 11 Pro
+Uptime   : 1 day, 3 hours
+
+Users    : 4
+Services : 130
+Packages : 96
+Ports    : 8
+
+Status   : Drift detected
+
+Changes:
+ + Users:
+  + hacker (admin)
+
+ + Services:
+  + sshd
+  + remote-control
+
+ + Open ports:
+  + 22/tcp
+  + 3389/tcp
+-----------------------------------
+</pre>
 
 </section>
 
@@ -95,75 +144,6 @@ function downloadAuditMate() {
 
     window.location.href = file;
 }
-
-/* ===== ANIMATED OUTPUT (SAFE LINE REVEAL) ===== */
-
-const cleanLines = [
-"C:\\> auditmate.exe",
-"",
-"AuditMate",
-"-----------------------------------",
-"Hostname : WORKSTATION-01",
-"OS       : Windows 11 Pro",
-"Uptime   : 1 day, 2 hours",
-"",
-"Users    : 3",
-"Services : 128",
-"Packages : 94",
-"Ports    : 6",
-"",
-"Status   : Clean snapshot recorded",
-"-----------------------------------"
-];
-
-const driftLines = [
-"C:\\> auditmate.exe",
-"",
-"AuditMate",
-"-----------------------------------",
-"Hostname : WORKSTATION-01",
-"OS       : Windows 11 Pro",
-"Uptime   : 1 day, 3 hours",
-"",
-"Users    : 4",
-"Services : 130",
-"Packages : 96",
-"Ports    : 8",
-"",
-"Status   : Drift detected",
-"",
-"Changes:",
-" + Users:",
-"  + hacker (admin)",
-"",
-" + Services:",
-"  + sshd",
-"  + remote-control",
-"",
-" + Open ports:",
-"  + 22/tcp",
-"  + 3389/tcp",
-"-----------------------------------"
-];
-
-function typeLines(targetId, lines, speed = 35) {
-    const el = document.getElementById(targetId);
-    let i = 0;
-
-    function step() {
-        if (i < lines.length) {
-            el.innerText += lines[i] + "\n";
-            i++;
-            setTimeout(step, speed);
-        }
-    }
-
-    step();
-}
-
-typeLines("clean-output", cleanLines, 25);
-setTimeout(() => typeLines("drift-output", driftLines, 25), 900);
-
 </script>
 
 </body>
