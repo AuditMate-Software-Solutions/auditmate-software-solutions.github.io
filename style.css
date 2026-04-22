@@ -9,13 +9,19 @@ body {
 /* HERO */
 .hero {
     background: linear-gradient(180deg, #ffffff, #f3f0ff);
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
     text-align: center;
 }
 
 .hero-content {
     max-width: 900px;
-    margin: auto;
+    margin: 0 auto;
+
+    /* IMPORTANT FIX */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
 }
 
 .hero-left {
@@ -42,19 +48,20 @@ h1 {
 }
 
 .tagline {
-    margin: 15px 0;
+    margin: 10px 0;
     color: #333;
 }
 
-/* HERO POINTS */
+/* FEATURE PILLS */
 .hero-points {
     list-style: none;
     padding: 0;
-    margin: 15px 0;
+    margin: 10px 0;
+
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
-    align-items: center;
 }
 
 .hero-points li {
@@ -62,17 +69,24 @@ h1 {
     border: 1px solid #e6e6e6;
     padding: 6px 14px;
     border-radius: 20px;
+    font-size: 0.9rem;
 }
 
 /* DOWNLOAD CARD */
 .download-card {
-    margin-top: 20px;
     background: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 14px;
     padding: 18px;
-    display: inline-block;
-    min-width: 260px;
+
+    width: 100%;
+    max-width: 320px;   /* IMPORTANT FIX */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 .download-title {
@@ -83,12 +97,11 @@ h1 {
 .download-subtitle {
     font-size: 0.9rem;
     color: #666;
-    margin-top: 4px;
 }
 
 .download-btn {
-    display: block;
-    margin-top: 12px;
+    display: inline-block;
+    margin-top: 6px;
     padding: 10px 14px;
     border-radius: 10px;
     background: #5b2cff;
@@ -96,6 +109,8 @@ h1 {
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
+    text-align: center;
+    width: 100%;
 }
 
 .download-btn:hover {
@@ -103,13 +118,11 @@ h1 {
 }
 
 .download-meta {
-    margin-top: 8px;
     font-size: 0.8rem;
     color: #777;
 }
 
 .download-links {
-    margin-top: 10px;
     font-size: 0.85rem;
 }
 
@@ -143,7 +156,7 @@ pre {
 }
 
 .veteran {
-    margin-top: 15px;
+    margin-top: 5px;
     font-size: 0.9rem;
     color: #666;
 }
