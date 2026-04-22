@@ -1,15 +1,13 @@
 body {
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    background-color: #f6f4fb;
-    color: #1e1e2a;
+    font-family: "Segoe UI", sans-serif;
+    background: #181424;
+    color: #eae6ff;
     margin: 0;
     padding: 0;
 }
 
-/* Header */
 header {
-    background: linear-gradient(135deg, #6a4cff, #8b5cf6);
-    color: white;
+    background: #221a38;
     padding: 2rem;
 }
 
@@ -18,7 +16,6 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .header-left {
@@ -28,67 +25,67 @@ header {
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
 }
 
-/* Buttons */
+h1 {
+    color: #c7a6ff;
+}
+
+p {
+    color: #cfc7e6;
+}
+
 .buttons {
     display: flex;
     gap: 1rem;
 }
 
 .btn {
-    padding: 0.6rem 1.2rem;
+    padding: 10px 16px;
+    background: #2b2147;
+    color: #eae6ff;
     border-radius: 8px;
-    background: rgba(255,255,255,0.15);
-    color: white;
     text-decoration: none;
-    font-weight: bold;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: none;
     cursor: pointer;
 }
 
 .btn:hover {
-    background: rgba(255,255,255,0.25);
+    background: #3a2c66;
 }
 
 .btn-primary {
-    background: white;
-    color: #6a4cff;
+    background: #a855f7;
+    color: white;
 }
 
-/* Sections */
+.btn-primary:hover {
+    background: #9333ea;
+}
+
 section {
-    padding: 2rem;
     max-width: 900px;
     margin: auto;
+    padding: 2rem;
 }
 
 h2 {
-    color: #6a4cff;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 0.5rem;
+    color: #c7a6ff;
+    border-bottom: 1px solid #3a2c66;
+    padding-bottom: 5px;
 }
 
 .tier {
-    background: white;
+    background: #221a38;
     padding: 1rem;
     border-radius: 10px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Output */
 pre {
-    background: #1e1e2a;
-    color: #d7cfff;
+    background: #1a142b;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow-x: auto;
-}
-
-/* Links */
-a {
-    color: #6a4cff;
 }
