@@ -1,24 +1,20 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f8;
-    color: #1e1e1e;
+    background-color: #f4f2fb;
+    color: #1b1b1f;
     margin: 0;
     padding: 0;
 }
 
 /* Header */
-header {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-bottom: 1px solid #e5e5e5;
-}
-
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    padding: 2rem;
+    background: #2b1b3f;
+    color: white;
 }
 
 .header-left {
@@ -28,21 +24,20 @@ header {
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     object-fit: contain;
 }
 
-/* Typography */
-header h1 {
-    font-size: 2.2rem;
+h1 {
     margin: 0;
-    color: #5b2cff;
+    font-size: 2rem;
+    color: #d7b3ff;
 }
 
 header p {
-    font-size: 1rem;
-    color: #555;
+    margin: 0;
+    color: #cfc7dd;
 }
 
 /* Buttons */
@@ -53,72 +48,67 @@ header p {
 
 .btn {
     padding: 0.6rem 1.2rem;
-    text-decoration: none;
     border-radius: 8px;
-    background-color: #eee;
-    color: #5b2cff;
+    text-decoration: none;
     font-weight: bold;
+    background: #3b2a52;
+    color: #e9ddff;
     transition: 0.2s;
 }
 
 .btn:hover {
-    background-color: #e2dbff;
+    background: #4a3566;
 }
 
 .btn-primary {
-    background-color: #5b2cff;
+    background: #a855f7;
     color: white;
 }
 
 /* Sections */
 section {
-    padding: 2rem;
     max-width: 900px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 h2 {
-    color: #5b2cff;
-    border-bottom: 2px solid #ddd;
+    color: #6d28d9;
+    border-bottom: 2px solid #c4b5fd;
     padding-bottom: 0.5rem;
 }
 
-/* Cards */
+/* Tier box */
 .tier {
-    background-color: white;
+    background: white;
+    border: 1px solid #e5e7eb;
     padding: 1rem;
-    margin-bottom: 1.5rem;
     border-radius: 10px;
-    border: 1px solid #eee;
 }
 
 /* Code block */
 pre {
-    background-color: #ffffff;
+    background: #1e1b2e;
+    color: #d8b4fe;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow-x: auto;
-    border: 1px solid #eee;
-    color: #111;
 }
 
 /* Links */
 a {
-    color: #5b2cff;
+    color: #7c3aed;
 }
 
-/* Responsive */
+/* Mobile */
 @media (max-width: 768px) {
     .site-header {
         flex-direction: column;
         text-align: center;
     }
 
-    .header-left {
-        flex-direction: column;
-    }
-
     .buttons {
         flex-wrap: wrap;
+        justify-content: center;
     }
 }
