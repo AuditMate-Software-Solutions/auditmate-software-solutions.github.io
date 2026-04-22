@@ -6,6 +6,7 @@
     <title>AuditMate Software Solutions</title>
 
     <link rel="stylesheet" href="style.css">
+
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
 </head>
@@ -17,72 +18,81 @@
         <img src="logo.png" alt="AuditMate Logo" class="logo">
         <div>
             <h1>AuditMate Software Solutions</h1>
-            <p>Offline system auditing • No installation required • Deterministic reports</p>
+            <p>Works offline • No installation required • Generates clear system reports</p>
         </div>
     </div>
 
     <div class="buttons">
-        <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">View on GitHub</a>
-        <button class="btn btn-primary" onclick="downloadBinary()">Download</button>
+        <a href="https://github.com/AuditMate-Software-Solutions/auditmate" class="btn">View on GitHub</a>
+
+        <!-- FIXED DOWNLOAD BUTTON -->
+        <a href="https://auditmate-software-solutions.github.io/downloads/auditmate.exe" class="btn btn-primary">
+            Download Free Version
+        </a>
     </div>
 </header>
 
 <section id="about">
     <h2>About</h2>
-    <p>AuditMate is a portable system auditing tool that snapshots the exact state of a machine and compares changes over time.</p>
-
+    <p>AuditMate is a portable system tool that collects and records the exact state of your computer at a given moment. You can:</p>
     <ul>
-        <li>Users and privilege changes</li>
-        <li>Services and processes</li>
-        <li>Installed packages</li>
-        <li>Open ports and network exposure</li>
-        <li>Baseline comparison (drift detection)</li>
+        <li>See exactly what users and administrators exist</li>
+        <li>Check running programs and services</li>
+        <li>Monitor open ports and firewall settings</li>
+        <li>Compare changes over time</li>
     </ul>
-
-    <p><strong>Fully offline. No telemetry. No installation required.</strong></p>
+    <p>Everything works <strong>offline</strong>, requires <strong>no installation</strong>, and produces clear, easy-to-read reports you can use for audits, debugging, or security checks.</p>
+    <p><strong>Veteran-owned and operated</strong></p>
 </section>
 
 <section id="tiers">
     <h2>Product Tiers</h2>
 
     <div class="tier">
-        <h3>Free Tier</h3>
+        <h3>Free Tier – $0</h3>
         <ul>
-            <li>System snapshot (OS, hostname, uptime)</li>
-            <li>Users (admin + standard)</li>
-            <li>Services list</li>
-            <li>Installed packages</li>
+            <li>Basic system info: hostname, OS, kernel, uptime</li>
+            <li>User accounts: admins and regular users</li>
+            <li>Services running</li>
+            <li>Installed packages/programs</li>
             <li>Open ports</li>
-            <li>Baseline comparison (drift detection)</li>
-            <li>Terminal output + exit codes</li>
+            <li>Firewall state</li>
+            <li>Pending updates</li>
+            <li>Compare with previous baseline & see alerts</li>
+            <li>Terminal summary and exit codes</li>
+            <li>Fully offline, open source, verifiable</li>
         </ul>
     </div>
 
     <div class="tier">
-        <h3>Pro Tier</h3>
+        <h3>Paid / Premium Tier – $25 / month or $250 / year</h3>
         <ul>
-            <li>Everything in Free</li>
-            <li>Historical snapshots (local)</li>
-            <li>Export: JSON / CSV / HTML</li>
-            <li>Audit-ready reporting format</li>
-            <li>Multi-machine aggregation (local network/manual sync)</li>
-            <li>Cryptographic signing of reports</li>
-            <li>Tamper-evident logs</li>
+            <li>Everything in Free, plus advanced reporting and audit-ready features</li>
+            <li>Full historical tracking and trends</li>
+            <li>JSON / CSV / HTML export of reports</li>
+            <li>Detailed human-readable reports for audits</li>
+            <li>Multi-system aggregation for centralized management</li>
+            <li>Notifications & alerts (removed from offline core focus if not implemented)</li>
+            <li>Premium license support for multiple devices</li>
+            <li>Cryptographic signing of outputs</li>
+            <li>Tamper-proof evidence</li>
+            <li>Offline & secure (no SaaS dependency)</li>
         </ul>
     </div>
+
 </section>
 
 <section id="founding-members">
     <h2>Founding Member Offer</h2>
-    <p><strong>$200/year</strong> (single server license). Limited to first 100 members.</p>
+    <p>Special launch offer: <strong>$200/year</strong> (single server). Price locked for life. Limited to the first <strong>100 founding members</strong>.</p>
     <p>Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
 </section>
 
 <section id="example-output">
-    <h2>Example Output (Windows)</h2>
+<h2>Example Output (Windows)</h2>
 
-    <h3>Clean System</h3>
-    <pre>
+<h3>Clean System</h3>
+<pre>
 C:\> auditmate.exe
 
 AuditMate
@@ -103,10 +113,10 @@ Errors   : false
 Reset    : false
 Report   : auditmate-output\audit.json
 Duration : 52ms
-    </pre>
+</pre>
 
-    <h3>Drift Detected</h3>
-    <pre>
+<h3>Drift Detected</h3>
+<pre>
 C:\> auditmate.exe
 
 AuditMate
@@ -140,22 +150,9 @@ Errors   : false
 Reset    : false
 Report   : auditmate-output\audit.json
 Duration : 61ms
-    </pre>
+</pre>
+
 </section>
-
-<script>
-function downloadBinary() {
-    const platform = navigator.userAgent.toLowerCase();
-
-    if (platform.includes("win")) {
-        window.location.href = "/downloads/auditmate-windows-amd64.exe";
-    } else if (platform.includes("linux")) {
-        window.location.href = "/downloads/auditmate-linux-amd64";
-    } else {
-        window.location.href = "/downloads/";
-    }
-}
-</script>
 
 </body>
 </html>
