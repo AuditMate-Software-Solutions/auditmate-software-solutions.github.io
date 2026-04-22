@@ -1,12 +1,11 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f6f7fb;
+    background-color: #f7f8fc;
     color: #1a1a1a;
     margin: 0;
     padding: 0;
 }
 
-/* Header */
 header {
     background: linear-gradient(135deg, #6a11cb, #8e2de2);
     padding: 2rem;
@@ -33,18 +32,15 @@ header {
     object-fit: contain;
 }
 
-/* Title */
 header h1 {
     font-size: 2.2rem;
     margin: 0;
 }
 
 header p {
-    font-size: 1rem;
     opacity: 0.9;
 }
 
-/* Buttons */
 .buttons {
     display: flex;
     gap: 1rem;
@@ -55,15 +51,14 @@ header p {
     padding: 0.6rem 1.2rem;
     text-decoration: none;
     border-radius: 8px;
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255,255,255,0.2);
     color: white;
     font-weight: bold;
-    transition: 0.2s;
     border: 1px solid rgba(255,255,255,0.3);
 }
 
 .btn:hover {
-    background-color: rgba(255,255,255,0.25);
+    background-color: rgba(255,255,255,0.3);
 }
 
 .btn-primary {
@@ -71,7 +66,6 @@ header p {
     color: #6a11cb;
 }
 
-/* Sections */
 section {
     padding: 2rem;
     max-width: 900px;
@@ -84,25 +78,18 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-/* Cards */
 .tier {
     background: white;
     padding: 1rem;
-    margin-bottom: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
 }
 
-/* Code block */
 pre {
     background: #1e1e2f;
     color: #e0e0ff;
     padding: 1rem;
     border-radius: 10px;
     overflow-x: auto;
-}
-
-/* Links */
-a {
-    color: #6a11cb;
 }
