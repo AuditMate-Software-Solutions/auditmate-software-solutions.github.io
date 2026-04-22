@@ -23,7 +23,6 @@
 
     <div class="buttons">
 
-        <!-- SINGLE SMART DOWNLOAD BUTTON -->
         <a href="#" class="btn btn-primary" onclick="downloadAuditMate()">
             Download AuditMate
         </a>
@@ -51,16 +50,15 @@
         <li>System drift detection</li>
     </ul>
 
-    <p>
-        Works <strong>fully offline</strong>, requires <strong>no installation</strong>, and produces clean audit reports.
-    </p>
-
+    <p><strong>Works fully offline • No installation required • Portable audit tool</strong></p>
     <p><strong>Veteran-owned and operated</strong></p>
 </section>
 
 <section id="tiers">
-    <h2>Product Tier</h2>
 
+    <h2>Product Tiers</h2>
+
+    <!-- FREE -->
     <div class="tier">
         <h3>Free Version</h3>
         <ul>
@@ -73,6 +71,23 @@
             <li>Offline execution</li>
         </ul>
     </div>
+
+    <!-- PRO (RESTORED) -->
+    <div class="tier">
+        <h3>Pro Version</h3>
+        <ul>
+            <li>Everything in Free</li>
+            <li>Advanced historical tracking</li>
+            <li>Full system change timelines</li>
+            <li>Export reports (JSON, CSV, HTML)</li>
+            <li>Audit-ready formatted reports</li>
+            <li>Multi-system comparison</li>
+            <li>Cryptographic signing of reports</li>
+            <li>Tamper-evident audit logs</li>
+            <li>Enterprise-grade offline auditing</li>
+        </ul>
+    </div>
+
 </section>
 
 <section id="founding-members">
@@ -86,6 +101,7 @@
 </section>
 
 <section id="example-output">
+
 <h2>Example Output (Windows)</h2>
 
 <h3>Clean System</h3>
@@ -153,15 +169,15 @@ Duration : 61ms
 
 <script>
 function downloadAuditMate() {
-    const platform = navigator.userAgent.toLowerCase();
+    const ua = navigator.userAgent.toLowerCase();
 
-    let file = "/downloads/auditmate.exe"; // default Windows
+    let file = "/downloads/auditmate.exe";
 
-    if (platform.includes("linux")) {
+    if (ua.includes("linux")) {
         file = "/downloads/auditmate";
     }
 
-    if (platform.includes("mac")) {
+    if (ua.includes("mac")) {
         file = "/downloads/auditmate";
     }
 
