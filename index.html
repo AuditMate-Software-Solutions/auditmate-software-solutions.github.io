@@ -17,85 +17,71 @@
         <img src="logo.png" alt="AuditMate Logo" class="logo">
         <div>
             <h1>AuditMate Software Solutions</h1>
-            <p>Offline system auditing • No installation required • Clear audit reports</p>
+            <p>Offline system auditing • No installation required • Deterministic reports</p>
         </div>
     </div>
 
     <div class="buttons">
-        <a href="https://github.com/AuditMate-Software-Solutions/auditmate-software-solutions.github.io" class="btn">View on GitHub</a>
-        <a href="#download" class="btn btn-primary">Download</a>
+        <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">View on GitHub</a>
+        <button class="btn btn-primary" onclick="downloadBinary()">Download</button>
     </div>
 </header>
 
 <section id="about">
     <h2>About</h2>
-
-    <p>
-        AuditMate is a lightweight system auditing tool that snapshots and compares the state of a machine locally.
-    </p>
+    <p>AuditMate is a portable system auditing tool that snapshots the exact state of a machine and compares changes over time.</p>
 
     <ul>
-        <li>Detect users, services, packages, and open ports</li>
-        <li>Compare system changes over time (baseline vs current state)</li>
-        <li>Works completely offline</li>
-        <li>No installation required (single binary)</li>
-        <li>Produces clean terminal and JSON reports</li>
+        <li>Users and privilege changes</li>
+        <li>Services and processes</li>
+        <li>Installed packages</li>
+        <li>Open ports and network exposure</li>
+        <li>Baseline comparison (drift detection)</li>
     </ul>
 
-    <p>
-        Designed for audits, debugging, and system verification without cloud dependencies.
-    </p>
-
-    <p><strong>Veteran-owned and operated</strong></p>
+    <p><strong>Fully offline. No telemetry. No installation required.</strong></p>
 </section>
 
 <section id="tiers">
     <h2>Product Tiers</h2>
 
     <div class="tier">
-        <h3>Free Tier – $0</h3>
+        <h3>Free Tier</h3>
         <ul>
-            <li>System info (hostname, OS, uptime)</li>
-            <li>Users (admins + regular users)</li>
-            <li>Running services</li>
+            <li>System snapshot (OS, hostname, uptime)</li>
+            <li>Users (admin + standard)</li>
+            <li>Services list</li>
             <li>Installed packages</li>
             <li>Open ports</li>
-            <li>Firewall state detection</li>
             <li>Baseline comparison (drift detection)</li>
             <li>Terminal output + exit codes</li>
-            <li>Offline operation</li>
         </ul>
     </div>
 
     <div class="tier">
-        <h3>Pro Tier – $25/month or $250/year</h3>
+        <h3>Pro Tier</h3>
         <ul>
             <li>Everything in Free</li>
-            <li>Historical baseline tracking</li>
-            <li>JSON export</li>
-            <li>Audit-friendly reporting format</li>
-            <li>Multi-system aggregation</li>
+            <li>Historical snapshots (local)</li>
+            <li>Export: JSON / CSV / HTML</li>
+            <li>Audit-ready reporting format</li>
+            <li>Multi-machine aggregation (local network/manual sync)</li>
             <li>Cryptographic signing of reports</li>
-            <li>Tamper-evident outputs</li>
-            <li>Offline-first design (no SaaS dependency)</li>
+            <li>Tamper-evident logs</li>
         </ul>
     </div>
 </section>
 
-<section id="download">
-    <h2>Download</h2>
-
-    <p>Download the correct version for your system:</p>
-
-    <div class="download-box">
-        <button class="btn btn-primary" onclick="downloadBinary()">Download for My System</button>
-        <p id="detected"></p>
-    </div>
+<section id="founding-members">
+    <h2>Founding Member Offer</h2>
+    <p><strong>$200/year</strong> (single server license). Limited to first 100 members.</p>
+    <p>Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
 </section>
 
 <section id="example-output">
     <h2>Example Output (Windows)</h2>
 
+    <h3>Clean System</h3>
     <pre>
 C:\> auditmate.exe
 
@@ -119,6 +105,7 @@ Report   : auditmate-output\audit.json
 Duration : 52ms
     </pre>
 
+    <h3>Drift Detected</h3>
     <pre>
 C:\> auditmate.exe
 
@@ -158,21 +145,15 @@ Duration : 61ms
 
 <script>
 function downloadBinary() {
-    const platform = navigator.platform.toLowerCase();
-    let file = "";
+    const platform = navigator.userAgent.toLowerCase();
 
     if (platform.includes("win")) {
-        file = "auditmate.exe";
+        window.location.href = "/downloads/auditmate-windows-amd64.exe";
     } else if (platform.includes("linux")) {
-        file = "auditmate";
+        window.location.href = "/downloads/auditmate-linux-amd64";
     } else {
-        file = "auditmate";
+        window.location.href = "/downloads/";
     }
-
-    document.getElementById("detected").innerText =
-        "Detected system: " + platform + " → downloading " + file;
-
-    window.location.href = "./bin/" + file;
 }
 </script>
 
