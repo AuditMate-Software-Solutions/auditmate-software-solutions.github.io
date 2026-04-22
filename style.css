@@ -16,6 +16,7 @@ body {
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,6 +26,7 @@ body {
 .hero-left {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -46,51 +48,79 @@ h1 {
 
 .tagline {
     margin: 10px 0;
+    color: #333;
 }
 
+/* FEATURE PILLS */
 .hero-points {
     list-style: none;
     padding: 0;
+    margin: 10px 0;
+
     display: flex;
-    gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 8px;
 }
 
 .hero-points li {
     background: #fff;
-    border: 1px solid #ddd;
-    padding: 6px 12px;
+    border: 1px solid #e6e6e6;
+    padding: 6px 14px;
     border-radius: 20px;
+    font-size: 0.9rem;
 }
 
+/* DOWNLOAD CARD */
 .download-card {
     background: #fff;
-    border: 1px solid #ddd;
-    padding: 16px;
-    border-radius: 12px;
-    max-width: 320px;
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    padding: 18px;
+
     width: 100%;
-    text-align: center;
+    max-width: 320px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-title {
+    font-weight: 700;
+    color: #5b2cff;
+}
+
+.download-subtitle {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .download-btn {
-    display: block;
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 10px;
     background: #5b2cff;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
+    color: #fff;
     text-decoration: none;
-    margin-top: 8px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
 }
 
 .download-btn:hover {
     background: #4720c7;
 }
 
-.veteran {
-    font-size: 0.9rem;
-    color: #666;
+.download-meta {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.download-links {
+    font-size: 0.85rem;
 }
 
 /* SECTIONS */
@@ -102,22 +132,38 @@ section {
 
 h2 {
     color: #5b2cff;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 6px;
 }
 
 .tier {
     background: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #eee;
     padding: 1rem;
-    border-radius: 10px;
     margin-bottom: 1rem;
+    border-radius: 10px;
 }
 
-/* TERMINAL */
-.terminal {
-    background: #0f0f12;
-    color: #00ff9a;
+pre {
+    background: #fff;
+    border: 1px solid #eee;
     padding: 1rem;
     border-radius: 10px;
-    font-family: Consolas, monospace;
-    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.veteran {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+a {
+    color: #5b2cff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero-left {
+        flex-direction: column;
+    }
 }
