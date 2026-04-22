@@ -1,214 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuditMate Software Solutions</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
-</head>
-
-<body>
-
-<header class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-left">
-            <img src="logo.png" class="logo" alt="AuditMate Logo">
-
-            <div>
-                <h1>AuditMate</h1>
-                <p class="subtitle">Offline System Auditing Tool</p>
-            </div>
-        </div>
-
-        <p class="tagline">
-            Capture system state. Detect drift. No cloud. No telemetry. No installation.
-        </p>
-
-        <ul class="hero-points">
-            <li>Fully offline</li>
-            <li>Open-source Free version</li>
-            <li>Windows & Linux binaries</li>
-            <li>Real-time drift detection</li>
-        </ul>
-
-        <div class="download-card">
-
-            <div class="download-title">Download AuditMate (Free)</div>
-            <div class="download-subtitle">Automatically detects your system</div>
-
-            <a class="download-btn" onclick="downloadAuditMate()">
-                Download Now
-            </a>
-
-            <div class="download-meta">
-                Windows → .exe • Linux → binary
-            </div>
-
-            <div class="download-links">
-                <a href="https://github.com/AuditMate-Software-Solutions/auditmate" target="_blank">
-                    View on GitHub
-                </a>
-            </div>
-
-        </div>
-
-        <p class="veteran">Veteran-owned and operated</p>
-
-    </div>
-
-</header>
-
-<section id="about">
-    <h2>About</h2>
-
-    <p>
-        AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
-    </p>
-
-    <ul>
-        <li>Users and administrator accounts</li>
-        <li>Running services</li>
-        <li>Installed packages</li>
-        <li>Open ports</li>
-        <li>Firewall state</li>
-        <li>System drift detection</li>
-    </ul>
-
-    <p><strong>Fully offline • No installation required • Portable binary</strong></p>
-</section>
-
-<section id="privacy">
-    <h2>Privacy & Security</h2>
-
-    <ul>
-        <li>No telemetry</li>
-        <li>No background communication</li>
-        <li>No cloud dependency</li>
-        <li>No data leaves your machine</li>
-        <li>Fully offline execution</li>
-    </ul>
-
-    <p>All analysis is performed locally.</p>
-</section>
-
-<section id="tiers">
-
-    <h2>Product Tiers</h2>
-
-    <div class="tier">
-        <h3>Free Version</h3>
-        <ul>
-            <li>System information (OS, hostname, uptime)</li>
-            <li>User accounts and permissions</li>
-            <li>Services inventory</li>
-            <li>Installed packages</li>
-            <li>Open ports</li>
-            <li>Baseline comparison (drift detection)</li>
-            <li>Fully offline operation</li>
-            <li>Open source (GitHub available)</li>
-        </ul>
-    </div>
-
-    <div class="tier">
-        <h3>Pro Version</h3>
-        <ul>
-            <li>Historical change tracking</li>
-            <li>System timelines</li>
-            <li>Export reports (JSON / CSV / HTML)</li>
-            <li>Audit-ready reporting formats</li>
-            <li>Multi-system comparison</li>
-            <li>Cryptographic signing of outputs</li>
-            <li>Tamper-evident logs</li>
-        </ul>
-    </div>
-
-</section>
-
-<section id="founding-members">
-
-    <h2>Founding Member Offer</h2>
-
-    <p>
-        Early access pricing: <strong>$200/year</strong> (limited to first 100 users)
-    </p>
-
-    <p>
-        Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a>
-    </p>
-
-</section>
+<!-- ONLY SHOWING REPLACED SECTION + SCRIPT ADDED -->
 
 <section id="example-output">
 
 <h2>Example Output (Windows)</h2>
 
-<h3>Clean System</h3>
-<pre>
-C:\> auditmate.exe
+<h3>Live Simulation</h3>
 
-AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 2 hours
-
-Users    : 3
-Services : 128
-Packages : 94
-Ports    : 6
-
-Status   : Clean
-</pre>
-
-<h3>Drift Detected</h3>
-<pre>
-C:\> auditmate.exe
-
-AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 3 hours
-
-Users    : 4
-Services : 130
-Packages : 96
-Ports    : 8
-
-Status   : Drift detected
-
-Changes:
- + Users:
-  + hacker (admin)
-
- + Services:
-  + sshd
-  + remote-control
-
- + Open ports:
-  + 22/tcp
-  + 3389/tcp
-</pre>
+<div class="terminal">
+    <div id="terminal-output"></div>
+</div>
 
 </section>
 
 <script>
-function downloadAuditMate() {
-    const ua = navigator.userAgent.toLowerCase();
-    let file = "/downloads/auditmate.exe";
+const lines = [
+"C:\\> auditmate.exe",
+"",
+"AuditMate initializing...",
+"Scanning system state...",
+"Checking users...",
+"Checking services...",
+"Checking packages...",
+"Checking open ports...",
+"",
+"Status: Clean",
+"",
+"Warnings: 0",
+"Errors: false",
+"Report: auditmate-output\\audit.json",
+"Duration: 52ms"
+];
 
-    if (ua.includes("linux")) {
-        file = "/downloads/auditmate";
-    }
+let i = 0;
+const output = document.getElementById("terminal-output");
 
-    window.location.href = file;
+function typeLine() {
+    if (i >= lines.length) return;
+
+    output.innerHTML += lines[i] + "\n";
+    i++;
+
+    setTimeout(typeLine, 350);
 }
-</script>
 
-</body>
-</html>
+window.addEventListener("load", typeLine);
+</script>
