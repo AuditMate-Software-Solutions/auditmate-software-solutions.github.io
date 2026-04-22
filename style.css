@@ -1,7 +1,7 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #16181c;
+    color: #e6e6e6;
     margin: 0;
     padding: 0;
 }
@@ -9,8 +9,9 @@ body {
 /* Header */
 
 header {
-    background-color: #1f1f1f;
+    background-color: #1f232a;
     padding: 2rem;
+    border-bottom: 1px solid #2b313a;
 }
 
 .site-header {
@@ -33,43 +34,46 @@ header {
     object-fit: contain;
 }
 
+/* Typography */
+
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #00aaff;
+    font-size: 2.4rem;
+    margin-bottom: 0.3rem;
+    color: #4db8ff;
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: #ccc;
+    color: #b8c0cc;
 }
 
 /* Buttons */
 
 .buttons {
     display: flex;
-    justify-content: center;
     gap: 1rem;
 }
 
 .btn {
     padding: 0.6rem 1.2rem;
     text-decoration: none;
-    border-radius: 6px;
-    background-color: #333;
-    color: #00aaff;
-    font-weight: bold;
-    transition: 0.2s;
+    border-radius: 8px;
+    background-color: #2a2f38;
+    color: #4db8ff;
+    font-weight: 600;
+    transition: 0.2s ease;
+    border: 1px solid #343b46;
 }
 
 .btn:hover {
-    background-color: #444;
+    background-color: #353c48;
 }
 
 .btn-primary {
-    background-color: #00aaff;
-    color: #121212;
+    background-color: #4db8ff;
+    color: #0f1115;
+    border: none;
 }
 
 /* Sections */
@@ -81,45 +85,41 @@ section {
 }
 
 h2 {
-    border-bottom: 2px solid #00aaff;
+    border-bottom: 2px solid #4db8ff;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    color: #00aaff;
+    color: #4db8ff;
 }
 
-h3 {
-    color: #00aaff;
-    margin-top: 2rem;
-}
-
-/* Tier Cards */
+/* Cards */
 
 .tier {
-    background-color: #1f1f1f;
-    padding: 1rem;
+    background-color: #1f232a;
+    padding: 1.2rem;
     margin-bottom: 1.5rem;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 1px solid #2b313a;
 }
 
 .tier h3 {
-    color: #00aaff;
+    color: #4db8ff;
 }
 
 /* Example Output */
 
 pre {
-    background-color: #1f1f1f;
+    background-color: #1a1d22;
     padding: 1.2rem;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow-x: auto;
-    color: #00ffff;
-    border: 1px solid #2a2a2a;
+    color: #7fffd4;
+    border: 1px solid #2b313a;
 }
 
 /* Links */
 
 a {
-    color: #00aaff;
+    color: #4db8ff;
 }
 
 /* Responsive */
