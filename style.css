@@ -8,10 +8,9 @@ body {
 
 /* HERO */
 .hero {
-    background: linear-gradient(180deg, #ffffff 0%, #f3f0ff 100%);
+    background: linear-gradient(180deg, #ffffff, #f3f0ff);
     padding: 4rem 2rem;
     text-align: center;
-    border-bottom: 1px solid #e6e6e6;
 }
 
 .hero-content {
@@ -24,7 +23,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 10px;
 }
 
 .logo {
@@ -44,68 +42,75 @@ h1 {
 }
 
 .tagline {
-    font-size: 1.1rem;
     margin: 15px 0;
     color: #333;
 }
 
-/* FIXED HERO POINTS */
+/* HERO POINTS */
 .hero-points {
     list-style: none;
     padding: 0;
     margin: 15px 0;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 8px;
+    align-items: center;
 }
 
 .hero-points li {
-    background: #ffffff;
-    border: 1px solid #e5e5e5;
+    background: #fff;
+    border: 1px solid #e6e6e6;
     padding: 6px 14px;
     border-radius: 20px;
-    font-size: 0.95rem;
-    width: fit-content;
 }
 
-/* BUTTONS */
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
+/* DOWNLOAD CARD */
+.download-card {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    padding: 18px;
+    display: inline-block;
+    min-width: 260px;
 }
 
-.btn {
-    padding: 10px 16px;
-    border-radius: 8px;
+.download-title {
+    font-weight: 700;
+    color: #5b2cff;
+}
+
+.download-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.download-btn {
+    display: block;
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #5b2cff;
+    color: #fff;
     text-decoration: none;
-    background: #eee;
-    color: #333;
     font-weight: 600;
     cursor: pointer;
 }
 
-.btn:hover {
-    background: #e4e4e4;
+.download-btn:hover {
+    background: #4720c7;
 }
 
-.btn-primary {
-    background: #5b2cff;
-    color: white;
+.download-meta {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #777;
 }
 
-.btn-primary:hover {
-    background: #4a22d4;
-}
-
-/* VETERAN */
-.veteran {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: #666;
+.download-links {
+    margin-top: 10px;
+    font-size: 0.85rem;
 }
 
 /* SECTIONS */
@@ -122,19 +127,25 @@ h2 {
 }
 
 .tier {
-    background: #ffffff;
-    border: 1px solid #eaeaea;
+    background: #fff;
+    border: 1px solid #eee;
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
 }
 
 pre {
-    background: #ffffff;
-    border: 1px solid #eaeaea;
+    background: #fff;
+    border: 1px solid #eee;
     padding: 1rem;
     border-radius: 10px;
     overflow-x: auto;
+}
+
+.veteran {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 a {
@@ -143,12 +154,7 @@ a {
 
 /* MOBILE */
 @media (max-width: 768px) {
-
     .hero-left {
-        flex-direction: column;
-    }
-
-    .buttons {
         flex-direction: column;
     }
 }
