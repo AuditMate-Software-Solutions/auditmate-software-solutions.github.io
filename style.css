@@ -1,6 +1,6 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f1115;
+    background-color: #1a1c20;
     color: #e6e6e6;
     margin: 0;
     padding: 0;
@@ -14,9 +14,9 @@ body {
     flex-wrap: wrap;
     gap: 20px;
 
-    background-color: #161a22;
+    background-color: #22262c;
     padding: 2rem;
-    border-bottom: 1px solid #222836;
+    border-bottom: 1px solid #333;
 }
 
 .header-left {
@@ -26,46 +26,47 @@ body {
 }
 
 .logo {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
+/* Text */
 header h1 {
     font-size: 2.2rem;
     margin: 0;
-    color: #4da3ff;
+    color: #4db8ff;
 }
 
 header p {
-    margin: 0.3rem 0 0 0;
-    color: #b9c0cc;
+    margin: 5px 0 0;
+    color: #b8c0cc;
 }
 
 /* Buttons */
 .buttons {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
 }
 
 .btn {
     padding: 0.6rem 1.2rem;
     text-decoration: none;
-    border-radius: 8px;
-    background-color: #222836;
-    color: #4da3ff;
-    font-weight: 600;
+    border-radius: 6px;
+    background-color: #2f343c;
+    color: #4db8ff;
+    font-weight: bold;
     transition: 0.2s;
+    border: 1px solid #3a3f47;
 }
 
 .btn:hover {
-    background-color: #2b3242;
+    background-color: #3a3f47;
 }
 
 .btn-primary {
-    background-color: #4da3ff;
-    color: #0f1115;
+    background-color: #4db8ff;
+    color: #121212;
 }
 
 /* Sections */
@@ -76,56 +77,44 @@ section {
 }
 
 h2 {
-    color: #4da3ff;
-    border-bottom: 1px solid #2b3242;
+    border-bottom: 1px solid #4db8ff;
     padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #4db8ff;
 }
 
-/* Tier cards */
+/* Cards */
 .tier {
-    background-color: #161a22;
-    padding: 1.2rem;
+    background-color: #22262c;
+    padding: 1rem;
     margin-bottom: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid #222836;
+    border-radius: 8px;
+    border: 1px solid #333;
 }
 
 .tier h3 {
-    color: #4da3ff;
+    color: #4db8ff;
 }
 
-/* Code output */
+/* Output */
 pre {
-    background-color: #161a22;
+    background-color: #22262c;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow-x: auto;
-    color: #9fe6ff;
-    border: 1px solid #222836;
+    color: #9fe3ff;
+    border: 1px solid #333;
 }
 
-/* Links */
+/* Download box */
+.download-box {
+    background-color: #22262c;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
 a {
-    color: #4da3ff;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-
-    .site-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .header-left {
-        flex-direction: column;
-    }
-
-    .buttons {
-        justify-content: center;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
+    color: #4db8ff;
 }
