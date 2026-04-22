@@ -1,40 +1,22 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #16181c;
+    background-color: #0f1115;
     color: #e6e6e6;
     margin: 0;
     padding: 0;
 }
 
 /* Header */
-
-header {
-    background-color: #1f232a;
-    padding: 2rem;
-    border-bottom: 1px solid #2b313a;
-}
-body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1c2027; /* noticeably lighter */
-    color: #e8e8e8;
-    margin: 0;
-    padding: 0;
-}
-
-/* HEADER */
-
-header {
-    background-color: #252b34; /* lifted from background */
-    padding: 2rem;
-    border-bottom: 1px solid #333b47;
-}
-
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+
+    background-color: #161a22;
+    padding: 2rem;
+    border-bottom: 1px solid #222836;
 }
 
 .header-left {
@@ -49,183 +31,44 @@ header {
     object-fit: contain;
 }
 
-/* TYPOGRAPHY */
-
 header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.3rem;
-    color: #66c2ff; /* brighter blue */
+    font-size: 2.2rem;
+    margin: 0;
+    color: #4da3ff;
 }
 
 header p {
-    font-size: 1.1rem;
-    color: #c7d0db;
-}
-
-/* BUTTONS */
-
-.buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn {
-    padding: 0.65rem 1.2rem;
-    text-decoration: none;
-    border-radius: 10px;
-    background-color: #2f3642;
-    color: #66c2ff;
-    font-weight: 600;
-    border: 1px solid #3a4454;
-    transition: 0.2s ease;
-}
-
-.btn:hover {
-    background-color: #3a4251;
-}
-
-.btn-primary {
-    background-color: #66c2ff;
-    color: #12151a;
-    border: none;
-}
-
-/* SECTIONS */
-
-section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* HEADINGS */
-
-h2 {
-    border-bottom: 2px solid #66c2ff;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    color: #66c2ff;
-}
-
-/* CARDS */
-
-.tier {
-    background-color: #252b34; /* lighter than page */
-    padding: 1.3rem;
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #333b47;
-}
-
-.tier h3 {
-    color: #66c2ff;
-}
-
-/* OUTPUT BLOCK */
-
-pre {
-    background-color: #1f242c;
-    padding: 1.2rem;
-    border-radius: 12px;
-    overflow-x: auto;
-    color: #7fffd4;
-    border: 1px solid #333b47;
-}
-
-/* LINKS */
-
-a {
-    color: #66c2ff;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 768px) {
-
-.site-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.header-left {
-    flex-direction: column;
-}
-
-.buttons {
-    flex-wrap: wrap;
-}
-
-.logo {
-    width: 60px;
-    height: 60px;
-}
-
-}
-.site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-}
-
-/* Typography */
-
-header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.3rem;
-    color: #4db8ff;
-}
-
-header p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #b8c0cc;
+    margin: 0.3rem 0 0 0;
+    color: #b9c0cc;
 }
 
 /* Buttons */
-
 .buttons {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .btn {
     padding: 0.6rem 1.2rem;
     text-decoration: none;
     border-radius: 8px;
-    background-color: #2a2f38;
-    color: #4db8ff;
+    background-color: #222836;
+    color: #4da3ff;
     font-weight: 600;
-    transition: 0.2s ease;
-    border: 1px solid #343b46;
+    transition: 0.2s;
 }
 
 .btn:hover {
-    background-color: #353c48;
+    background-color: #2b3242;
 }
 
 .btn-primary {
-    background-color: #4db8ff;
+    background-color: #4da3ff;
     color: #0f1115;
-    border: none;
 }
 
 /* Sections */
-
 section {
     padding: 2rem;
     max-width: 900px;
@@ -233,64 +76,56 @@ section {
 }
 
 h2 {
-    border-bottom: 2px solid #4db8ff;
+    color: #4da3ff;
+    border-bottom: 1px solid #2b3242;
     padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    color: #4db8ff;
 }
 
-/* Cards */
-
+/* Tier cards */
 .tier {
-    background-color: #1f232a;
+    background-color: #161a22;
     padding: 1.2rem;
     margin-bottom: 1.5rem;
     border-radius: 10px;
-    border: 1px solid #2b313a;
+    border: 1px solid #222836;
 }
 
 .tier h3 {
-    color: #4db8ff;
+    color: #4da3ff;
 }
 
-/* Example Output */
-
+/* Code output */
 pre {
-    background-color: #1a1d22;
-    padding: 1.2rem;
+    background-color: #161a22;
+    padding: 1rem;
     border-radius: 10px;
     overflow-x: auto;
-    color: #7fffd4;
-    border: 1px solid #2b313a;
+    color: #9fe6ff;
+    border: 1px solid #222836;
 }
 
 /* Links */
-
 a {
-    color: #4db8ff;
+    color: #4da3ff;
 }
 
-/* Responsive */
-
+/* Mobile */
 @media (max-width: 768px) {
 
-.site-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.header-left {
-    flex-direction: column;
-}
+    .header-left {
+        flex-direction: column;
+    }
 
-.buttons {
-    flex-wrap: wrap;
-}
+    .buttons {
+        justify-content: center;
+    }
 
-.logo {
-    width: 60px;
-    height: 60px;
-}
-
+    header h1 {
+        font-size: 1.8rem;
+    }
 }
