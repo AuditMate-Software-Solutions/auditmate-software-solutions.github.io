@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuditMate Software Solutions</title>
 
-    <!-- CACHE BUSTER FIX -->
-    <link rel="stylesheet" href="style.css?v=1">
-
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 
@@ -36,17 +34,13 @@
             <li>Real-time drift detection</li>
         </ul>
 
+        <!-- TERMINAL (ANIMATED BUT STABLE) -->
         <div class="terminal-card">
             <div class="terminal-header">System Snapshot</div>
-            <pre>
-Collecting system state...
-Initializing baseline...
-Detecting system components...
-Building report...
-✔ Snapshot complete
-            </pre>
+            <pre id="terminal">Starting system snapshot...</pre>
         </div>
 
+        <!-- DOWNLOAD -->
         <div class="download-card">
 
             <div class="download-title">Download AuditMate (Free)</div>
@@ -103,18 +97,7 @@ Building report...
 C:\> auditmate.exe
 
 AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 2 hours
-
-Users    : 3
-Services : 128
-Packages : 94
-Ports    : 6
-
-Status   : Clean snapshot recorded
------------------------------------
+Status: Clean snapshot recorded
 </pre>
 
 <h3>Drift Detected</h3>
@@ -123,30 +106,7 @@ Status   : Clean snapshot recorded
 C:\> auditmate.exe
 
 AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 3 hours
-
-Users    : 4
-Services : 130
-Packages : 96
-Ports    : 8
-
-Status   : Drift detected
-
-Changes:
- + Users:
-  + hacker (admin)
-
- + Services:
-  + sshd
-  + remote-control
-
- + Open ports:
-  + 22/tcp
-  + 3389/tcp
------------------------------------
+Status: Drift detected
 </pre>
 
 </section>
@@ -162,6 +122,37 @@ function downloadAuditMate() {
 
     window.location.href = file;
 }
+
+/* SAFE ANIMATION (NO LAYOUT SHIFT) */
+const terminalLines = [
+"Starting system snapshot...",
+"Collecting system state...",
+"Reading users and permissions...",
+"Checking services...",
+"Inspecting packages...",
+"Mapping open ports...",
+"Finalizing report...",
+"✔ Snapshot complete"
+];
+
+let i = 0;
+const terminal = document.getElementById("terminal");
+
+function animateTerminal() {
+    if (i < terminalLines.length) {
+        terminal.innerText = terminalLines.slice(0, i + 1).join("\n");
+        i++;
+        setTimeout(animateTerminal, 500);
+    } else {
+        setTimeout(() => {
+            i = 0;
+            terminal.innerText = "";
+            animateTerminal();
+        }, 2500);
+    }
+}
+
+animateTerminal();
 </script>
 
 </body>
