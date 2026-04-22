@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditMate Software Solutions</title>
 
-<title>AuditMate</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
 </head>
 
 <body>
 
 <header class="site-header">
-
     <div class="header-left">
-        <img src="logo.png" class="logo" alt="AuditMate Logo">
-
+        <img src="logo.png" alt="AuditMate Logo" class="logo">
         <div>
-            <h1>AuditMate</h1>
-            <p>Offline system auditing • No installation • Local execution only</p>
+            <h1>AuditMate Software Solutions</h1>
+            <p>Offline • No installation • Local system auditing tool</p>
         </div>
     </div>
 
     <div class="buttons">
-        <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">GitHub</a>
-        <a id="downloadBtn" class="btn btn-primary" href="/downloads/auditmate.exe">Download Free</a>
+        <a href="/downloads/auditmate.exe" class="btn btn-primary" download>
+            Download Free Version (Windows)
+        </a>
+        <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">
+            View on GitHub
+        </a>
     </div>
-
 </header>
 
-<section>
-<h2>Overview</h2>
+<section id="about">
+    <h2>About</h2>
+    <p>AuditMate captures the exact state of a system at a point in time for auditing and security review.</p>
 
-<p>
-AuditMate is a local system auditing tool that captures system state and compares it against a baseline snapshot.
-</p>
+    <ul>
+        <li>User accounts (admins + regular users)</li>
+        <li>Running services</li>
+        <li>Installed packages</li>
+        <li>Open ports</li>
+        <li>System drift detection over time</li>
+    </ul>
 
-<ul>
-    <li>No installation required</li>
-    <li>Fully offline</li>
-    <li>Single binary execution</li>
-    <li>Drift detection via baseline comparison</li>
-</ul>
-
-<p><strong>Veteran-owned and operated</strong></p>
+    <p><strong>Works fully offline • No installation required • Portable executable</strong></p>
 </section>
 
-<section>
-<h2>What it tracks</h2>
+<section id="tiers">
+    <h2>Free Version</h2>
 
-<div class="box">
-<ul>
-    <li>Users and administrators</li>
-    <li>Services</li>
-    <li>Installed packages</li>
-    <li>Open ports</li>
-    <li>System identity</li>
-</ul>
-</div>
+    <div class="tier">
+        <h3>Included Features</h3>
+        <ul>
+            <li>System info (OS, hostname, uptime)</li>
+            <li>Users and admin accounts</li>
+            <li>Services running</li>
+            <li>Installed packages</li>
+            <li>Open ports</li>
+            <li>Baseline comparison (drift detection)</li>
+            <li>Terminal output report</li>
+        </ul>
+    </div>
 </section>
 
-<section>
-<h2>Example Output</h2>
+<section id="founding-members">
+    <h2>Founding Member Offer</h2>
+    <p>Early access tier: <strong>limited availability</strong></p>
+    <p>Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
+</section>
+
+<section id="example-output">
+<h2>Example Output (Windows)</h2>
 
 <h3>Clean System</h3>
 <pre>
@@ -126,25 +135,6 @@ Duration : 61ms
 </pre>
 
 </section>
-
-<script>
-const btn = document.getElementById("downloadBtn");
-
-const ua = navigator.userAgent.toLowerCase();
-
-let download = "/downloads/auditmate.exe";
-
-if (
-    ua.includes("linux") ||
-    ua.includes("x11") ||
-    ua.includes("ubuntu") ||
-    ua.includes("debian")
-) {
-    download = "/downloads/auditmate-linux";
-}
-
-btn.href = download;
-</script>
 
 </body>
 </html>
