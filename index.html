@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuditMate Software Solutions</title>
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=5">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 
@@ -34,13 +34,15 @@
             <li>Real-time drift detection</li>
         </ul>
 
-        <!-- TERMINAL (ANIMATED BUT STABLE) -->
         <div class="terminal-card">
             <div class="terminal-header">System Snapshot</div>
-            <pre id="terminal">Starting system snapshot...</pre>
+            <pre>
+AuditMate initialized
+System state captured
+Status: ready
+            </pre>
         </div>
 
-        <!-- DOWNLOAD -->
         <div class="download-card">
 
             <div class="download-title">Download AuditMate (Free)</div>
@@ -68,46 +70,17 @@
 
 </header>
 
-<section id="about">
-    <h2>About</h2>
-
-    <p>
-        AuditMate records a snapshot of system state at a moment in time.
-    </p>
-
-    <ul>
-        <li>Users and administrator accounts</li>
-        <li>Running services</li>
-        <li>Installed packages</li>
-        <li>Open ports</li>
-        <li>Firewall state</li>
-        <li>System drift detection</li>
-    </ul>
-
-    <p><strong>Fully offline • No installation required • Portable binary</strong></p>
-</section>
-
 <section id="example-output">
 
 <h2>Example Output (Windows)</h2>
 
 <h3>Clean Snapshot</h3>
 
-<pre>
-C:\> auditmate.exe
-
-AuditMate
-Status: Clean snapshot recorded
-</pre>
+<pre id="clean-output"></pre>
 
 <h3>Drift Detected</h3>
 
-<pre>
-C:\> auditmate.exe
-
-AuditMate
-Status: Drift detected
-</pre>
+<pre id="drift-output"></pre>
 
 </section>
 
@@ -123,36 +96,74 @@ function downloadAuditMate() {
     window.location.href = file;
 }
 
-/* SAFE ANIMATION (NO LAYOUT SHIFT) */
-const terminalLines = [
-"Starting system snapshot...",
-"Collecting system state...",
-"Reading users and permissions...",
-"Checking services...",
-"Inspecting packages...",
-"Mapping open ports...",
-"Finalizing report...",
-"✔ Snapshot complete"
+/* ===== ANIMATED OUTPUT (SAFE LINE REVEAL) ===== */
+
+const cleanLines = [
+"C:\\> auditmate.exe",
+"",
+"AuditMate",
+"-----------------------------------",
+"Hostname : WORKSTATION-01",
+"OS       : Windows 11 Pro",
+"Uptime   : 1 day, 2 hours",
+"",
+"Users    : 3",
+"Services : 128",
+"Packages : 94",
+"Ports    : 6",
+"",
+"Status   : Clean snapshot recorded",
+"-----------------------------------"
 ];
 
-let i = 0;
-const terminal = document.getElementById("terminal");
+const driftLines = [
+"C:\\> auditmate.exe",
+"",
+"AuditMate",
+"-----------------------------------",
+"Hostname : WORKSTATION-01",
+"OS       : Windows 11 Pro",
+"Uptime   : 1 day, 3 hours",
+"",
+"Users    : 4",
+"Services : 130",
+"Packages : 96",
+"Ports    : 8",
+"",
+"Status   : Drift detected",
+"",
+"Changes:",
+" + Users:",
+"  + hacker (admin)",
+"",
+" + Services:",
+"  + sshd",
+"  + remote-control",
+"",
+" + Open ports:",
+"  + 22/tcp",
+"  + 3389/tcp",
+"-----------------------------------"
+];
 
-function animateTerminal() {
-    if (i < terminalLines.length) {
-        terminal.innerText = terminalLines.slice(0, i + 1).join("\n");
-        i++;
-        setTimeout(animateTerminal, 500);
-    } else {
-        setTimeout(() => {
-            i = 0;
-            terminal.innerText = "";
-            animateTerminal();
-        }, 2500);
+function typeLines(targetId, lines, speed = 35) {
+    const el = document.getElementById(targetId);
+    let i = 0;
+
+    function step() {
+        if (i < lines.length) {
+            el.innerText += lines[i] + "\n";
+            i++;
+            setTimeout(step, speed);
+        }
     }
+
+    step();
 }
 
-animateTerminal();
+typeLines("clean-output", cleanLines, 25);
+setTimeout(() => typeLines("drift-output", driftLines, 25), 900);
+
 </script>
 
 </body>
