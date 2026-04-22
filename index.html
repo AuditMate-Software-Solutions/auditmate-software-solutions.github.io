@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Use same logo for favicon -->
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
 </head>
@@ -44,6 +43,7 @@
 
 <section id="tiers">
     <h2>Product Tiers</h2>
+
     <div class="tier">
         <h3>Free Tier – $0</h3>
         <ul>
@@ -75,6 +75,7 @@
             <li>Offline & secure (no updates, no SaaS)</li>
         </ul>
     </div>
+
 </section>
 
 <section id="founding-members">
@@ -84,59 +85,69 @@
 </section>
 
 <section id="example-output">
-    <h2>Example Output (Windows)</h2>
-    <pre>
-C:\> auditmate-pro.exe
+<h2>Example Output (Windows)</h2>
 
-============== AuditMate Report ==============
---------------------------------------------------
-SYSTEM INFORMATION
---------------------------------------------------
-Hostname          : MY-LAPTOP
-Host ID           : b577b2d675174a94b735d3b2e3e47683
-Baseline Created  : 2026-04-09T01:25:04Z
-Current Snapshot  : 2026-04-09T03:55:42Z
-OS                : Windows 11 Pro
-Kernel            : 10.0.22631
-Uptime            : 1 day, 3 hours, 12 minutes
+<h3>Clean System</h3>
+<pre>
+C:\> auditmate.exe
 
-USER ACCOUNTS
---------------------------------------------------
-Administrators:
-  - Administrator
-  - hacker
-  - john
+AuditMate
+-----------------------------------
+Hostname : WORKSTATION-01
+OS       : Windows 11 Pro
+Uptime   : up 1 day, 2 hours
 
-Regular Users:
-  - JOHN
-  - Guest
+Users    : 3
+Services : 128
+Packages : 94
+Ports    : 6
 
-SYSTEM SUMMARY
---------------------------------------------------
-Services Running   : 130
-Installed Programs : 95
-Open Ports         : 8
-Firewall State     : enabled
+Status   : Clean
+-----------------------------------
+Warnings : 0
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 52ms
+</pre>
 
-BASELINE COMPARISON
---------------------------------------------------
-Changes detected:
+<h3>Drift Detected</h3>
+<pre>
+C:\> auditmate.exe
 
-  Administrators:
-  + hacker (NEW ADMINISTRATOR)
+AuditMate
+-----------------------------------
+Hostname : WORKSTATION-01
+OS       : Windows 11 Pro
+Uptime   : up 1 day, 3 hours
 
-  Services:
-  + sshd (NEW SERVICE)
-  + backdoor-svc (NEW SERVICE)
+Users    : 4
+Services : 130
+Packages : 96
+Ports    : 8
 
-  Open Ports:
-  + 22/tcp (SSH enabled)
-  + 3389/tcp (RDP enabled)
+Status   : Drift detected
 
-================================================
+Changes:
+ + Users:
+  + hacker (admin)
 
-JSON report saved to: auditmate-output\audit_report.json
-    </pre>
+ + Services:
+  + sshd
+  + remote-control
+
+ + Open ports:
+  + 22/tcp
+  + 3389/tcp
+
+-----------------------------------
+Warnings : 1
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 61ms
+</pre>
+
 </section>
 
 </body>
