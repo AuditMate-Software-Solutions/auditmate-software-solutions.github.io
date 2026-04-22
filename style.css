@@ -123,6 +123,18 @@ h1 {
     font-size: 0.85rem;
 }
 
+/* TERMINAL STYLE */
+.terminal {
+    background: #0d1117;
+    color: #00ff9c;
+    font-family: Consolas, monospace;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    overflow-x: auto;
+    white-space: pre;
+}
+
 /* SECTIONS */
 section {
     max-width: 900px;
@@ -142,14 +154,6 @@ h2 {
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
-}
-
-pre {
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 1rem;
-    border-radius: 10px;
-    overflow-x: auto;
 }
 
 .veteran {
