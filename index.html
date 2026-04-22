@@ -6,7 +6,6 @@
     <title>AuditMate Software Solutions</title>
 
     <link rel="stylesheet" href="style.css">
-
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
 </head>
@@ -18,69 +17,60 @@
         <img src="logo.png" alt="AuditMate Logo" class="logo">
         <div>
             <h1>AuditMate Software Solutions</h1>
-            <p>Works offline • No installation required • Generates system reports</p>
+            <p>Offline system auditing • No installation required • Clear reporting</p>
         </div>
     </div>
 
     <div class="buttons">
-        <button class="btn btn-primary" onclick="downloadAuditMate()">
-            Download Free
-        </button>
-        <a href="https://github.com/AuditMate-Software-Solutions/auditmate-software-solutions.github.io" class="btn">
-            GitHub
-        </a>
+        <a href="https://github.com/auditmate-software-solutions/auditmate" class="btn">GitHub</a>
+        <button class="btn btn-primary" id="downloadBtn">Download Free</button>
     </div>
 </header>
 
 <section id="about">
     <h2>About</h2>
-    <p>AuditMate is a portable system tool that collects and records the exact state of your computer at a given moment.</p>
+    <p>
+        AuditMate is a portable system auditing tool that snapshots your system state and compares changes over time.
+        It works fully offline and produces clear audit reports.
+    </p>
 
     <ul>
-        <li>Users and admin accounts</li>
+        <li>System users and permissions</li>
         <li>Running services</li>
         <li>Installed packages</li>
         <li>Open ports</li>
-        <li>Baseline comparison (drift detection)</li>
+        <li>Change detection between runs</li>
     </ul>
-
-    <p><strong>Veteran-owned and operated</strong></p>
 </section>
 
 <section id="tiers">
-    <h2>Free Tier</h2>
+    <h2>Free Version</h2>
 
     <div class="tier">
-        <h3>$0 – Free</h3>
+        <h3>AuditMate Free</h3>
         <ul>
-            <li>System info (OS, hostname, uptime)</li>
-            <li>Users and admin accounts</li>
-            <li>Services</li>
-            <li>Packages</li>
+            <li>System snapshot (OS, hostname, uptime)</li>
+            <li>User accounts overview</li>
+            <li>Services & processes</li>
+            <li>Installed packages</li>
             <li>Open ports</li>
             <li>Baseline comparison</li>
-            <li>Offline operation</li>
+            <li>Offline reporting</li>
         </ul>
     </div>
 </section>
 
-<section id="founding-members">
-    <h2>Founding Member Offer</h2>
-    <p>Limited early access: <strong>$200/year</strong></p>
-    <p>Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
-</section>
-
 <section id="example-output">
-    <h2>Example Output</h2>
+    <h2>Example Output (Windows)</h2>
 
-    <pre>
+<pre>
 C:\> auditmate.exe
 
 AuditMate
 -----------------------------------
 Hostname : WORKSTATION-01
 OS       : Windows 11 Pro
-Uptime   : up 1 day, 2 hours
+Uptime   : up 1 day, 3 hours
 
 Users    : 3
 Services : 128
@@ -94,23 +84,29 @@ Errors   : false
 Reset    : false
 Report   : auditmate-output\audit.json
 Duration : 52ms
-    </pre>
+</pre>
+
 </section>
 
 <script>
-function downloadAuditMate() {
-    const ua = navigator.userAgent.toLowerCase();
+document.getElementById("downloadBtn").addEventListener("click", function () {
 
-    let file = "auditmate.exe";
+    const isWindows = navigator.userAgent.includes("Win");
 
-    if (ua.includes("linux")) {
-        file = "auditmate-linux";
-    } else if (ua.includes("mac")) {
-        file = "auditmate-mac";
+    let file = "auditmate"; // default Linux/macOS
+    if (isWindows) {
+        file = "auditmate.exe";
     }
 
-    window.location.href = "./downloads/" + file;
-}
+    const url = "downloads/" + file;
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = file;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
 </script>
 
 </body>
