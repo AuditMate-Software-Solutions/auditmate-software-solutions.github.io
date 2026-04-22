@@ -1,155 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuditMate Software Solutions</title>
+<div class="buttons">
 
-    <link rel="stylesheet" href="style.css">
+    <a href="#" class="btn btn-primary" onclick="downloadAuditMate()">
+        Download AuditMate
+    </a>
 
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
-</head>
+    <a href="https://github.com/AuditMate-Software-Solutions/auditmate" class="btn">
+        View on GitHub
+    </a>
 
-<body>
+</div>
 
-<header class="site-header">
-    <div class="header-left">
-        <img src="logo.png" alt="AuditMate Logo" class="logo">
-        <div>
-            <h1>AuditMate Software Solutions</h1>
-            <p>Works offline • No installation required • Generates clear system reports</p>
-        </div>
-    </div>
+<script>
+function downloadAuditMate() {
+    const platform = navigator.platform.toLowerCase();
 
-    <div class="buttons">
+    let url = "/downloads/auditmate.exe";
 
-        <a href="/downloads/auditmate.exe" class="btn btn-primary" download>
-            Download Windows
-        </a>
+    // Linux / Mac detection
+    if (platform.includes("linux") || platform.includes("mac")) {
+        url = "/downloads/auditmate";
+    }
 
-        <a href="/downloads/auditmate" class="btn btn-primary" download>
-            Download Linux
-        </a>
-
-        <a href="https://github.com/AuditMate-Software-Solutions/auditmate" class="btn">
-            View on GitHub
-        </a>
-
-    </div>
-</header>
-
-<section id="about">
-    <h2>About</h2>
-
-    <p>AuditMate is a portable system tool that collects and records the exact state of your computer at a given moment.</p>
-
-    <ul>
-        <li>Users and administrator accounts</li>
-        <li>Running services</li>
-        <li>Installed packages</li>
-        <li>Open ports</li>
-        <li>Firewall state</li>
-        <li>System changes over time</li>
-    </ul>
-
-    <p>
-        Everything works <strong>offline</strong>, requires <strong>no installation</strong>, and produces clear system audit reports.
-    </p>
-
-    <p><strong>Veteran-owned and operated</strong></p>
-</section>
-
-<section id="tiers">
-    <h2>Product Tier</h2>
-
-    <div class="tier">
-        <h3>Free Version</h3>
-        <ul>
-            <li>System info (OS, hostname, uptime)</li>
-            <li>Users and permissions</li>
-            <li>Services</li>
-            <li>Packages</li>
-            <li>Open ports</li>
-            <li>Change detection vs baseline</li>
-            <li>Offline execution</li>
-        </ul>
-    </div>
-</section>
-
-<section id="founding-members">
-    <h2>Founding Member Offer</h2>
-    <p>
-        Special launch offer: <strong>$200/year</strong> (single server). Limited to first 100 users.
-    </p>
-    <p>Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a></p>
-</section>
-
-<section id="example-output">
-<h2>Example Output (Windows)</h2>
-
-<h3>Clean System</h3>
-<pre>
-C:\> auditmate.exe
-
-AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : up 1 day, 2 hours
-
-Users    : 3
-Services : 128
-Packages : 94
-Ports    : 6
-
-Status   : Clean
------------------------------------
-Warnings : 0
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 52ms
-</pre>
-
-<h3>Drift Detected</h3>
-<pre>
-C:\> auditmate.exe
-
-AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : up 1 day, 3 hours
-
-Users    : 4
-Services : 130
-Packages : 96
-Ports    : 8
-
-Status   : Drift detected
-
-Changes:
- + Users:
-  + hacker (admin)
-
- + Services:
-  + sshd
-  + remote-control
-
- + Open ports:
-  + 22/tcp
-  + 3389/tcp
-
------------------------------------
-Warnings : 1
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 61ms
-</pre>
-
-</section>
-
-</body>
-</html>
+    window.location.href = url;
+}
+</script>
