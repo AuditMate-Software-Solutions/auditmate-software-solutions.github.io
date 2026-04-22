@@ -1,97 +1,62 @@
 body {
-    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
     background: #f6f7fb;
     color: #1d1d1f;
-    margin: 0;
 }
 
 .hero {
-    background: linear-gradient(180deg, #ffffff, #f3f0ff);
     padding: 4rem 1.5rem;
+    background: #ffffff;
 }
 
 .hero-content {
     max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
+    margin: auto;
     text-align: center;
 }
 
 .brand {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 12px;
 }
 
 .logo {
     width: 52px;
-    height: 52px;
 }
 
 h1 {
-    font-size: 2.6rem;
-    margin: 0;
     color: #5b2cff;
+    margin: 0;
 }
 
 .subtitle {
     margin: 0;
-    color: #555;
+    color: #666;
 }
 
 .tagline {
-    margin: 0;
-    color: #333;
+    margin: 1rem 0;
 }
 
 .hero-points {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
 }
 
 .hero-points li {
-    background: #fff;
-    border: 1px solid #e6e6e6;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-}
-
-.terminal-card {
-    width: 100%;
-    max-width: 520px;
-    background: #0f0f10;
-    color: #00ff99;
-    border-radius: 12px;
-    padding: 14px;
-    font-family: monospace;
-    text-align: left;
-}
-
-.terminal-header {
-    color: #aaa;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-}
-
-pre {
-    margin: 0;
-    white-space: pre-wrap;
+    margin: 4px 0;
 }
 
 .download-card {
-    background: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 14px;
+    margin-top: 20px;
     padding: 16px;
-    width: 320px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: inline-block;
+    background: white;
 }
 
 .download-btn {
@@ -100,25 +65,26 @@ pre {
     padding: 10px;
     background: #5b2cff;
     color: white;
-    text-align: center;
-    border-radius: 10px;
     text-decoration: none;
+    border-radius: 6px;
 }
 
 section {
     max-width: 900px;
     margin: auto;
     padding: 2rem;
-    text-align: left;
 }
 
-h2 {
-    color: #5b2cff;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 6px;
+pre {
+    background: #0f0f10;
+    color: #fff;
+    padding: 14px;
+    border-radius: 8px;
+    overflow-x: auto;
 }
 
 .veteran {
+    margin-top: 10px;
     font-size: 0.9rem;
     color: #666;
 }
