@@ -93,7 +93,7 @@
         <li>Fully offline execution</li>
     </ul>
 
-    <p>All analysis is performed locally on the system being audited.</p>
+    <p>All analysis is performed locally.</p>
 </section>
 
 <section id="tiers">
@@ -163,12 +163,6 @@ Packages : 94
 Ports    : 6
 
 Status   : Clean
------------------------------------
-Warnings : 0
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 52ms
 </pre>
 
 <h3>Drift Detected</h3>
@@ -199,13 +193,6 @@ Changes:
  + Open ports:
   + 22/tcp
   + 3389/tcp
-
------------------------------------
-Warnings : 1
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 61ms
 </pre>
 
 </section>
@@ -213,7 +200,6 @@ Duration : 61ms
 <script>
 function downloadAuditMate() {
     const ua = navigator.userAgent.toLowerCase();
-
     let file = "/downloads/auditmate.exe";
 
     if (ua.includes("linux")) {
