@@ -13,7 +13,155 @@ header {
     padding: 2rem;
     border-bottom: 1px solid #2b313a;
 }
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1c2027; /* noticeably lighter */
+    color: #e8e8e8;
+    margin: 0;
+    padding: 0;
+}
 
+/* HEADER */
+
+header {
+    background-color: #252b34; /* lifted from background */
+    padding: 2rem;
+    border-bottom: 1px solid #333b47;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+/* TYPOGRAPHY */
+
+header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.3rem;
+    color: #66c2ff; /* brighter blue */
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #c7d0db;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.65rem 1.2rem;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #2f3642;
+    color: #66c2ff;
+    font-weight: 600;
+    border: 1px solid #3a4454;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #3a4251;
+}
+
+.btn-primary {
+    background-color: #66c2ff;
+    color: #12151a;
+    border: none;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* HEADINGS */
+
+h2 {
+    border-bottom: 2px solid #66c2ff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #66c2ff;
+}
+
+/* CARDS */
+
+.tier {
+    background-color: #252b34; /* lighter than page */
+    padding: 1.3rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #333b47;
+}
+
+.tier h3 {
+    color: #66c2ff;
+}
+
+/* OUTPUT BLOCK */
+
+pre {
+    background-color: #1f242c;
+    padding: 1.2rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    color: #7fffd4;
+    border: 1px solid #333b47;
+}
+
+/* LINKS */
+
+a {
+    color: #66c2ff;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+.site-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-left {
+    flex-direction: column;
+}
+
+.buttons {
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+}
 .site-header {
     display: flex;
     justify-content: space-between;
