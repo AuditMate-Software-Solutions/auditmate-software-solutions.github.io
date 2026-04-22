@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuditMate Software Solutions</title>
 
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
 </head>
 
@@ -27,20 +27,21 @@
             Capture system state. Detect drift. No cloud. No telemetry. No installation.
         </p>
 
-        <!-- ✅ RESTORED ORIGINAL HERO BULLETS -->
         <ul class="hero-points">
-            <li>✔ Fully offline</li>
-            <li>✔ No telemetry</li>
-            <li>✔ No cloud dependency</li>
-            <li>✔ No installation required</li>
+            <li>Fully offline</li>
+            <li>Open-source Free version</li>
+            <li>Windows & Linux binaries</li>
+            <li>Real-time drift detection</li>
         </ul>
+
+        <!-- ONLY THING REMOVED: system snapshot box -->
 
         <div class="download-card">
 
             <div class="download-title">Download AuditMate (Free)</div>
 
             <a class="download-btn" onclick="downloadAuditMate()">
-                Download Now
+                Download AuditMate
             </a>
 
             <div class="download-meta">
@@ -61,11 +62,83 @@
 
 </header>
 
-<section id="example-output">
+<section id="about">
+
+    <h2>About</h2>
+
+    <p>
+        AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
+    </p>
+
+    <ul>
+        <li>Users and administrator accounts</li>
+        <li>Running services</li>
+        <li>Installed packages</li>
+        <li>Open ports</li>
+        <li>Firewall state</li>
+        <li>System drift detection</li>
+    </ul>
+
+    <p><strong>Fully offline • No installation required • Portable binary</strong></p>
+
+</section>
+
+<section id="privacy">
+
+    <h2>Privacy & Security</h2>
+
+    <ul>
+        <li>No telemetry</li>
+        <li>No background communication</li>
+        <li>No cloud dependency</li>
+        <li>No data leaves your machine</li>
+        <li>Fully offline execution</li>
+    </ul>
+
+    <p>All analysis is performed locally on the system being audited.</p>
+
+</section>
+
+<section id="tiers">
+
+    <h2>Product Tiers</h2>
+
+    <h3>Free Version</h3>
+
+    <ul>
+        <li>System information (OS, hostname, uptime)</li>
+        <li>User accounts and permissions</li>
+        <li>Services inventory</li>
+        <li>Installed packages</li>
+        <li>Open ports</li>
+        <li>Baseline comparison (drift detection)</li>
+        <li>Fully offline operation</li>
+        <li>Open source (GitHub available)</li>
+    </ul>
+
+    <h3>Pro Version</h3>
+
+    <ul>
+        <li>Historical change tracking</li>
+        <li>System timelines</li>
+        <li>Export reports (JSON / CSV / HTML)</li>
+        <li>Audit-ready reporting formats</li>
+        <li>Multi-system comparison</li>
+        <li>Cryptographic signing of outputs</li>
+        <li>Tamper-evident logs</li>
+    </ul>
+
+    <p><strong>Founding Member Offer:</strong> Early access pricing: $200/year (limited to first 100 users)</p>
+
+    <p>Contact: audit-mate@proton.me</p>
+
+</section>
+
+<section id="example">
 
 <h2>Example Output (Windows)</h2>
 
-<h3>Clean Snapshot</h3>
+<h3>Clean System</h3>
 
 <pre>
 C:\> auditmate.exe
@@ -81,8 +154,13 @@ Services : 128
 Packages : 94
 Ports    : 6
 
-Status   : Clean snapshot recorded
+Status   : Clean
 -----------------------------------
+Warnings : 0
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 52ms
 </pre>
 
 <h3>Drift Detected</h3>
@@ -114,7 +192,13 @@ Changes:
  + Open ports:
   + 22/tcp
   + 3389/tcp
+
 -----------------------------------
+Warnings : 1
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 61ms
 </pre>
 
 </section>
