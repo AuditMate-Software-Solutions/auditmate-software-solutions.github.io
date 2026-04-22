@@ -6,21 +6,131 @@
     <title>AuditMate Software Solutions</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 
 <body>
 
-<section id="example-output">
+<header class="hero">
+    <div class="hero-content">
 
+        <div class="hero-left">
+            <img src="logo.png" class="logo">
+            <div>
+                <h1>AuditMate</h1>
+                <p class="subtitle">Offline System Auditing Tool</p>
+            </div>
+        </div>
+
+        <p class="tagline">
+            Capture system state. Detect drift. No cloud. No telemetry. No installation.
+        </p>
+
+        <ul class="hero-points">
+            <li>Fully offline</li>
+            <li>Open-source Free version</li>
+            <li>Windows & Linux binaries</li>
+            <li>Real-time drift detection</li>
+        </ul>
+
+        <div class="download-card">
+            <div class="download-title">Download AuditMate (Free)</div>
+            <div class="download-subtitle">Automatically detects your system</div>
+
+            <a class="download-btn" onclick="downloadAuditMate()">Download Now</a>
+
+            <div class="download-meta">
+                Windows → .exe • Linux → binary
+            </div>
+
+            <div class="download-links">
+                <a href="https://github.com/AuditMate-Software-Solutions/auditmate" target="_blank">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+
+        <p class="veteran">Veteran-owned and operated</p>
+
+    </div>
+</header>
+
+<section id="about">
+    <h2>About</h2>
+    <p>AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.</p>
+
+    <ul>
+        <li>Users and administrator accounts</li>
+        <li>Running services</li>
+        <li>Installed packages</li>
+        <li>Open ports</li>
+        <li>Firewall state</li>
+        <li>System drift detection</li>
+    </ul>
+
+    <p><strong>Fully offline • No installation required • Portable binary</strong></p>
+</section>
+
+<section id="privacy">
+    <h2>Privacy & Security</h2>
+    <ul>
+        <li>No telemetry</li>
+        <li>No background communication</li>
+        <li>No cloud dependency</li>
+        <li>No data leaves your machine</li>
+        <li>Fully offline execution</li>
+    </ul>
+</section>
+
+<section id="tiers">
+    <h2>Product Tiers</h2>
+
+    <div class="tier">
+        <h3>Free Version</h3>
+        <ul>
+            <li>System information</li>
+            <li>User accounts</li>
+            <li>Services inventory</li>
+            <li>Installed packages</li>
+            <li>Open ports</li>
+            <li>Baseline comparison</li>
+            <li>Fully offline</li>
+            <li>Open source</li>
+        </ul>
+    </div>
+
+    <div class="tier">
+        <h3>Pro Version</h3>
+        <ul>
+            <li>Historical tracking</li>
+            <li>System timelines</li>
+            <li>Export reports</li>
+            <li>Audit-ready output</li>
+            <li>Multi-system comparison</li>
+            <li>Cryptographic signing</li>
+            <li>Tamper-evident logs</li>
+        </ul>
+    </div>
+</section>
+
+<section id="example-output">
 <h2>Example Output (Windows)</h2>
 
 <div class="terminal">
-    <pre id="terminal-output"></pre>
+<pre id="terminal-output"></pre>
 </div>
 
 </section>
 
 <script>
+function downloadAuditMate() {
+    const ua = navigator.userAgent.toLowerCase();
+    let file = "/downloads/auditmate.exe";
+    if (ua.includes("linux")) file = "/downloads/auditmate";
+    window.location.href = file;
+}
+
+/* REAL OUTPUT ANIMATION */
 const cleanOutput = [
 ".\\bin\\auditmate.exe",
 "AuditMate",
@@ -52,7 +162,6 @@ const driftOutput = [
 "AuditMate",
 "-----------------------------------",
 "Hostname : hp",
-"OS       : Microsoft Windows [Version 10.0.26200.8246]",
 "",
 "Users    : 4",
 "Services : 129",
@@ -79,36 +188,29 @@ const driftOutput = [
 "PS Microsoft.PowerShell.Core\\FileSystem::\\\\wsl.localhost\\Ubuntu\\home\\ubuntu\\auditmate>"
 ];
 
-const outputEl = document.getElementById("terminal-output");
-
-let lineIndex = 0;
-let charIndex = 0;
-let currentLines = cleanOutput;
+let i = 0, j = 0, current = cleanOutput;
+const el = document.getElementById("terminal-output");
 
 function type() {
-    if (lineIndex >= currentLines.length) {
-        if (currentLines === cleanOutput) {
+    if (i >= current.length) {
+        if (current === cleanOutput) {
             setTimeout(() => {
-                currentLines = driftOutput;
-                lineIndex = 0;
-                charIndex = 0;
+                current = driftOutput;
+                i = 0;
+                j = 0;
                 type();
             }, 1200);
         }
         return;
     }
 
-    const line = currentLines[lineIndex];
-
-    if (charIndex < line.length) {
-        outputEl.textContent += line.charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 15);
+    if (j < current[i].length) {
+        el.textContent += current[i][j++];
+        setTimeout(type, 10);
     } else {
-        outputEl.textContent += "\n";
-        lineIndex++;
-        charIndex = 0;
-        setTimeout(type, 80);
+        el.textContent += "\n";
+        i++; j = 0;
+        setTimeout(type, 40);
     }
 }
 
