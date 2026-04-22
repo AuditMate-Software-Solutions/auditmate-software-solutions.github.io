@@ -17,7 +17,6 @@ body {
     max-width: 900px;
     margin: 0 auto;
 
-    /* IMPORTANT FIX */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,7 +79,7 @@ h1 {
     padding: 18px;
 
     width: 100%;
-    max-width: 320px;   /* IMPORTANT FIX */
+    max-width: 320px;
     box-sizing: border-box;
 
     display: flex;
@@ -101,16 +100,14 @@ h1 {
 
 .download-btn {
     display: inline-block;
-    margin-top: 6px;
     padding: 10px 14px;
     border-radius: 10px;
     background: #5b2cff;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    cursor: pointer;
-    text-align: center;
     width: 100%;
+    text-align: center;
 }
 
 .download-btn:hover {
@@ -156,7 +153,6 @@ pre {
 }
 
 .veteran {
-    margin-top: 5px;
     font-size: 0.9rem;
     color: #666;
 }
