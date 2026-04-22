@@ -1,21 +1,24 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f2ff;
+    background-color: #f4f4f8;
     color: #1e1e1e;
     margin: 0;
     padding: 0;
 }
 
 /* Header */
+header {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
-    background: linear-gradient(135deg, #6d28d9, #8b5cf6);
-    color: white;
-    padding: 2rem;
+    gap: 20px;
 }
 
 .header-left {
@@ -25,9 +28,21 @@ body {
 }
 
 .logo {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
+}
+
+/* Typography */
+header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    color: #5b2cff;
+}
+
+header p {
+    font-size: 1rem;
+    color: #555;
 }
 
 /* Buttons */
@@ -38,53 +53,58 @@ body {
 
 .btn {
     padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.15);
-    color: white;
     text-decoration: none;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
+    border-radius: 8px;
+    background-color: #eee;
+    color: #5b2cff;
+    font-weight: bold;
     transition: 0.2s;
 }
 
 .btn:hover {
-    background: rgba(255,255,255,0.25);
+    background-color: #e2dbff;
 }
 
 .btn-primary {
-    background: white;
-    color: #6d28d9;
+    background-color: #5b2cff;
+    color: white;
 }
 
 /* Sections */
 section {
     padding: 2rem;
     max-width: 900px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 h2 {
-    color: #6d28d9;
+    color: #5b2cff;
     border-bottom: 2px solid #ddd;
     padding-bottom: 0.5rem;
 }
 
 /* Cards */
 .tier {
-    background: white;
+    background-color: white;
     padding: 1rem;
+    margin-bottom: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
 }
 
-/* Output box */
+/* Code block */
 pre {
-    background: #1e1b2e;
-    color: #d6d3ff;
+    background-color: #ffffff;
     padding: 1rem;
     border-radius: 10px;
     overflow-x: auto;
+    border: 1px solid #eee;
+    color: #111;
+}
+
+/* Links */
+a {
+    color: #5b2cff;
 }
 
 /* Responsive */
@@ -94,8 +114,11 @@ pre {
         text-align: center;
     }
 
+    .header-left {
+        flex-direction: column;
+    }
+
     .buttons {
         flex-wrap: wrap;
-        justify-content: center;
     }
 }
