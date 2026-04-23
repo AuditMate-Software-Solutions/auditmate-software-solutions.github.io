@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
 </head>
 
 <body>
@@ -36,28 +35,21 @@
             <li>Real-time drift detection</li>
         </ul>
 
-        <!-- DOWNLOAD SECTION (2 BUTTONS ONLY) -->
+        <!-- CLEAN CTA BLOCK -->
         <div class="download-card">
 
             <div class="download-title">Download AuditMate (Free)</div>
-            <div class="download-subtitle">Choose your platform</div>
 
-            <a class="download-btn" href="/downloads/auditmate.exe">
+            <a class="download-btn primary" href="/downloads/auditmate.exe">
                 Download for Windows
             </a>
 
-            <div class="download-note">64-bit (x86_64)</div>
-
-            <a class="download-btn" href="/downloads/auditmate">
+            <a class="download-btn secondary" href="/downloads/auditmate">
                 Download for Linux
             </a>
 
-            <div class="download-note">64-bit (x86_64)</div>
-
-            <div class="download-links">
-                <a href="https://github.com/AuditMate-Software-Solutions/auditmate" target="_blank">
-                    View on GitHub
-                </a>
+            <div class="download-note">
+                No installer • Portable binary • Fully offline
             </div>
 
         </div>
@@ -68,94 +60,91 @@
 
 </header>
 
-<section id="about">
-    <h2>About</h2>
+<section>
 
-    <p>
-        AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
-    </p>
+<h2>About</h2>
 
-    <ul>
-        <li>Users and administrator accounts</li>
-        <li>Running services</li>
-        <li>Installed packages</li>
-        <li>Open ports</li>
-        <li>Firewall state</li>
-        <li>System drift detection</li>
-    </ul>
+<p>
+AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
+</p>
 
-    <p><strong>Fully offline • No installation required • Portable binary</strong></p>
+<ul>
+    <li>Users and administrator accounts</li>
+    <li>Running services</li>
+    <li>Installed packages</li>
+    <li>Open ports</li>
+    <li>Firewall state</li>
+    <li>System drift detection</li>
+</ul>
+
+<p><strong>Fully offline • No installation required • Portable binary</strong></p>
+
 </section>
 
-<section id="privacy">
-    <h2>Privacy & Security</h2>
+<section>
 
-    <ul>
-        <li>No telemetry</li>
-        <li>No background communication</li>
-        <li>No cloud dependency</li>
-        <li>No data leaves your machine</li>
-        <li>Fully offline execution</li>
-    </ul>
+<h2>Privacy & Security</h2>
 
-    <p>All analysis is performed locally.</p>
+<ul>
+    <li>No telemetry</li>
+    <li>No background communication</li>
+    <li>No cloud dependency</li>
+    <li>No data leaves your machine</li>
+</ul>
+
 </section>
 
-<section id="tiers">
+<section>
 
-    <h2>Product Tiers</h2>
+<h2 style="text-align:center;">Pricing</h2>
 
-    <div class="tier">
-        <h3>Free Version</h3>
+<div class="pricing-grid">
+
+    <div class="price-card">
+        <h3>Free</h3>
+        <div class="price">$0</div>
         <ul>
-            <li>System information (OS, hostname, uptime)</li>
-            <li>User accounts and permissions</li>
-            <li>Services inventory</li>
-            <li>Installed packages</li>
-            <li>Open ports</li>
-            <li>Baseline comparison (drift detection)</li>
-            <li>Fully offline operation</li>
-            <li>Open source (GitHub available)</li>
+            <li>System info</li>
+            <li>Users & services</li>
+            <li>Ports & packages</li>
+            <li>Drift detection</li>
+            <li>Open source</li>
         </ul>
     </div>
 
-    <div class="tier">
-        <h3>Pro Version</h3>
+    <div class="price-card highlight">
+        <h3>Pro</h3>
+        <div class="price">$25 / month</div>
+        <div class="small">$250 / year</div>
         <ul>
-            <li>Historical change tracking</li>
-            <li>System timelines</li>
+            <li>Historical tracking</li>
             <li>Export reports (JSON / CSV / HTML)</li>
-            <li>Audit-ready reporting formats</li>
-            <li>Multi-system comparison</li>
-            <li>Cryptographic signing of outputs</li>
-            <li>Tamper-evident logs</li>
+            <li>Audit-ready reports</li>
+            <li>Multi-system support</li>
+            <li>Signed outputs</li>
         </ul>
     </div>
 
-</section>
+    <div class="price-card">
+        <h3>Founding Member</h3>
+        <div class="price">$200 / year</div>
+        <div class="small">First 100 users (normally $250/year)</div>
+        <p>audit-mate@proton.me</p>
+    </div>
 
-<section id="founding-members">
-
-    <h2>Founding Member Offer</h2>
-
-    <p>
-        Early access pricing: <strong>$200/year</strong> (limited to first 100 users)
-    </p>
-
-    <p>
-        Contact: <a href="mailto:audit-mate@proton.me">audit-mate@proton.me</a>
-    </p>
+</div>
 
 </section>
 
-<section id="example-output">
+<!-- WINDOWS EXAMPLE OUTPUT (FIXED AS REQUESTED) -->
+<section>
 
 <h2>Example Output (Windows)</h2>
 
 <h3>Clean System</h3>
+
 <pre class="terminal">
 C:\> auditmate.exe
-
 AuditMate
 -----------------------------------
 Hostname : WORKSTATION-01
@@ -168,12 +157,18 @@ Packages : 94
 Ports    : 6
 
 Status   : Clean
+-----------------------------------
+Warnings : 0
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 52ms
 </pre>
 
-<h3>Drift Detected</h3>
+<h3>Drift Detected (Diff)</h3>
+
 <pre class="terminal">
 C:\> auditmate.exe
-
 AuditMate
 -----------------------------------
 Hostname : WORKSTATION-01
@@ -189,15 +184,22 @@ Status   : Drift detected
 
 Changes:
  + Users:
-  + hacker (admin)
+   + hacker (admin)
 
  + Services:
-  + sshd
-  + remote-control
+   + sshd
+   + remote-control
 
  + Open ports:
-  + 22/tcp
-  + 3389/tcp
+   + 22/tcp
+   + 3389/tcp
+
+-----------------------------------
+Warnings : 1
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 61ms
 </pre>
 
 </section>
