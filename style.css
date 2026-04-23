@@ -1,133 +1,213 @@
-body {
-    font-family: "Segoe UI", sans-serif;
-    background: #f6f7fb;
-    margin: 0;
-    color: #1d1d1f;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditMate Software Solutions</title>
 
-/* HERO */
-.hero {
-    padding: 4rem 1rem;
-    text-align: center;
-    background: linear-gradient(180deg, #ffffff, #f3f0ff);
-}
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
 
-.hero-content {
-    max-width: 900px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-}
+<body>
 
-.hero-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+<header class="hero">
 
-.logo {
-    width: 52px;
-}
+    <div class="hero-content">
 
-h1 {
-    margin: 0;
-    color: #5b2cff;
-}
+        <div class="hero-left">
+            <img src="logo.png" class="logo" alt="AuditMate Logo">
 
-/* TAGS */
-.hero-points {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 0;
-}
+            <div>
+                <h1>AuditMate</h1>
+                <p class="subtitle">Offline System Auditing Tool</p>
+            </div>
+        </div>
 
-.hero-points li {
-    background: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-}
+        <p class="tagline">
+            Capture system state. Detect drift. No cloud. No telemetry. No installation.
+        </p>
 
-/* DOWNLOAD */
-.download-card {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 16px;
-    border-radius: 12px;
-    width: 300px;
-    text-align: center;
-}
+        <ul class="hero-points">
+            <li>Fully offline</li>
+            <li>Open-source Free version</li>
+            <li>Windows & Linux binaries</li>
+            <li>Real-time drift detection</li>
+        </ul>
 
-.download-title {
-    font-weight: 600;
-    margin-bottom: 10px;
-}
+        <div class="download-card">
 
-.download-btn {
-    display: block;
-    background: #5b2cff;
-    color: white;
-    padding: 10px;
-    margin-top: 10px;
-    text-decoration: none;
-    border-radius: 8px;
-}
+            <div class="download-title">Download AuditMate (Free)</div>
 
-.download-note {
-    font-size: 12px;
-    color: gray;
-    margin-top: 4px;
-}
+            <a class="download-btn primary" href="/downloads/auditmate.exe">
+                Download for Windows
+            </a>
 
-/* PRICING */
-.pricing-grid {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    text-align: center;
-}
+            <a class="download-btn secondary" href="/downloads/auditmate">
+                Download for Linux
+            </a>
 
-.price-card {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 18px;
-    border-radius: 12px;
-    width: 260px;
-}
+            <div class="download-note">
+                No installer • Portable binary • Fully offline
+            </div>
 
-.price-card.highlight {
-    border: 2px solid #5b2cff;
-}
+        </div>
 
-.price {
-    font-size: 30px;
-    font-weight: bold;
-}
+        <!-- RESTORED LINK -->
+        <div class="hero-links">
+            <a href="https://github.com/AuditMate-Software-Solutions/auditmate-software-solutions.github.io.git">
+                View on GitHub
+            </a>
+        </div>
 
-.small {
-    font-size: 12px;
-    color: gray;
-}
+        <p class="veteran">Veteran-owned and operated</p>
 
-/* TERMINAL */
-.terminal {
-    background: #0d1117;
-    color: #00ff9c;
-    padding: 15px;
-    border-radius: 10px;
-    font-family: monospace;
-    white-space: pre;
-}
+    </div>
 
-/* SECTIONS */
-section {
-    max-width: 900px;
-    margin: auto;
-    padding: 2rem;
-}
+</header>
+
+<section>
+
+<h2>About</h2>
+
+<p>
+AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
+</p>
+
+<ul>
+    <li>Users and administrator accounts</li>
+    <li>Running services</li>
+    <li>Installed packages</li>
+    <li>Open ports</li>
+    <li>Firewall state</li>
+    <li>System drift detection</li>
+</ul>
+
+<p><strong>Fully offline • No installation required • Portable binary</strong></p>
+
+</section>
+
+<section>
+
+<h2>Privacy & Security</h2>
+
+<ul>
+    <li>No telemetry</li>
+    <li>No background communication</li>
+    <li>No cloud dependency</li>
+    <li>No data leaves your machine</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2 style="text-align:center;">Pricing</h2>
+
+<div class="pricing-grid">
+
+    <div class="price-card">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <ul>
+            <li>System info</li>
+            <li>Users & services</li>
+            <li>Ports & packages</li>
+            <li>Drift detection</li>
+            <li>Open source</li>
+        </ul>
+    </div>
+
+    <div class="price-card highlight">
+        <h3>Pro</h3>
+        <div class="price">$25 / month</div>
+        <div class="small">$250 / year</div>
+        <ul>
+            <li>Historical tracking</li>
+            <li>Export reports (JSON / CSV / HTML)</li>
+            <li>Audit-ready reports</li>
+            <li>Multi-system support</li>
+            <li>Signed outputs</li>
+        </ul>
+    </div>
+
+    <div class="price-card">
+        <h3>Founding Member</h3>
+        <div class="price">$200 / year</div>
+        <div class="small">First 100 users (normally $250/year)</div>
+        <p>audit-mate@proton.me</p>
+    </div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Example Output (Windows)</h2>
+
+<h3>Clean System</h3>
+
+<pre class="terminal">
+C:\> auditmate.exe
+AuditMate
+-----------------------------------
+Hostname : WORKSTATION-01
+OS       : Windows 11 Pro
+Uptime   : 1 day, 2 hours
+
+Users    : 3
+Services : 128
+Packages : 94
+Ports    : 6
+
+Status   : Clean
+-----------------------------------
+Warnings : 0
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 52ms
+</pre>
+
+<h3>Drift Detected (Diff)</h3>
+
+<pre class="terminal">
+C:\> auditmate.exe
+AuditMate
+-----------------------------------
+Hostname : WORKSTATION-01
+OS       : Windows 11 Pro
+Uptime   : 1 day, 3 hours
+
+Users    : 4
+Services : 130
+Packages : 96
+Ports    : 8
+
+Status   : Drift detected
+
+Changes:
+ + Users:
+   + hacker (admin)
+
+ + Services:
+   + sshd
+   + remote-control
+
+ + Open ports:
+   + 22/tcp
+   + 3389/tcp
+
+-----------------------------------
+Warnings : 1
+Errors   : false
+Reset    : false
+Report   : auditmate-output\audit.json
+Duration : 61ms
+</pre>
+
+</section>
+
+</body>
+</html>
