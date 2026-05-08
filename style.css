@@ -7,7 +7,7 @@ body {
 
 /* HERO */
 .hero {
-    padding: 70px 20px;
+    padding: 60px 20px;
     text-align: center;
     background: linear-gradient(180deg, #ffffff, #f3f0ff);
 }
@@ -17,7 +17,7 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     align-items: center;
 }
 
@@ -28,24 +28,23 @@ body {
 }
 
 .logo {
-    width: 54px;
+    width: 52px;
 }
 
 h1 {
     margin: 0;
     color: #5b2cff;
-    font-size: 34px;
 }
 
 .subtitle {
     margin: 0;
-    opacity: 0.7;
+    color: #555;
 }
 
+/* TAGLINE */
 .tagline {
-    font-size: 18px;
-    max-width: 600px;
-    opacity: 0.85;
+    font-size: 15px;
+    color: #333;
 }
 
 /* FEATURES */
@@ -63,16 +62,15 @@ h1 {
     border: 1px solid #ddd;
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 14px;
 }
 
 /* DOWNLOAD CARD */
 .download-card {
     background: white;
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 18px;
     border-radius: 12px;
-    width: 340px;
+    width: 320px;
 }
 
 .download-title {
@@ -86,7 +84,7 @@ h1 {
     margin-top: 10px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     color: white;
 }
 
@@ -95,20 +93,16 @@ h1 {
 }
 
 .secondary {
-    background: #2d2d2d;
+    background: #3a3a3a;
 }
 
 .download-note {
     font-size: 12px;
     color: gray;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 /* LINKS */
-.hero-links {
-    margin-top: 10px;
-}
-
 .hero-links a {
     color: #5b2cff;
     text-decoration: none;
@@ -133,7 +127,6 @@ h1 {
 
 .price-card.highlight {
     border: 2px solid #5b2cff;
-    transform: scale(1.03);
 }
 
 .price {
@@ -146,6 +139,12 @@ h1 {
     color: gray;
 }
 
+/* CONTACT */
+.contact-email {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
 /* TERMINAL */
 .terminal {
     background: #0d1117;
@@ -154,7 +153,6 @@ h1 {
     border-radius: 10px;
     font-family: monospace;
     white-space: pre;
-    text-align: left;
 }
 
 /* SECTIONS */
@@ -162,4 +160,13 @@ section {
     max-width: 900px;
     margin: auto;
     padding: 40px 20px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 13px;
+    color: #666;
+    border-top: 1px solid #ddd;
 }
