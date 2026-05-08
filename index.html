@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuditMate Software Solutions</title>
+    <title>AuditMate — Offline System Audit Tool</title>
 
-    <!-- FIX: NO base tag, NO root paths -->
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/png" href="./logo.png">
 </head>
@@ -21,24 +20,24 @@
 
             <div>
                 <h1>AuditMate</h1>
-                <p class="subtitle">Offline System Auditing Tool</p>
+                <p class="subtitle">Offline system change tracking</p>
             </div>
         </div>
 
         <p class="tagline">
-            Capture system state. Detect drift. No cloud. No telemetry. No installation.
+            See exactly what changed on a machine — fully offline, no cloud, no agents.
         </p>
 
         <ul class="hero-points">
-            <li>Fully offline</li>
-            <li>Open-source Free version</li>
+            <li>Offline by default</li>
+            <li>Detect system drift instantly</li>
+            <li>No installation required</li>
             <li>Windows & Linux binaries</li>
-            <li>Real-time drift detection</li>
         </ul>
 
         <div class="download-card">
 
-            <div class="download-title">Download AuditMate (Free)</div>
+            <div class="download-title">Get AuditMate (Free)</div>
 
             <a class="download-btn primary" href="./downloads/auditmate.exe">
                 Download for Windows
@@ -49,16 +48,14 @@
             </a>
 
             <div class="download-note">
-                No installer • Portable binary • Fully offline
+                Portable binary • No installer • No telemetry
             </div>
 
         </div>
 
-        <p class="veteran">Veteran-owned and operated</p>
-
         <div class="hero-links">
             <a href="https://github.com/AuditMate-Software-Solutions/auditmate">
-                View Source on GitHub
+                View source on GitHub
             </a>
         </div>
 
@@ -68,34 +65,41 @@
 
 <section>
 
-<h2>About</h2>
+<h2>What it does</h2>
 
 <p>
-AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
+AuditMate records a snapshot of your system and lets you see exactly what changed later.
 </p>
 
 <ul>
-    <li>Users and administrator accounts</li>
+    <li>Users and admin accounts</li>
     <li>Running services</li>
     <li>Installed packages</li>
     <li>Open ports</li>
-    <li>Firewall state</li>
     <li>System drift detection</li>
 </ul>
-
-<p><strong>Fully offline • No installation required • Portable binary</strong></p>
 
 </section>
 
 <section>
 
-<h2>Privacy & Security</h2>
+<h2>Why it exists</h2>
+
+<p>
+Most tools show dashboards or logs. AuditMate shows <strong>verifiable system state over time</strong> — offline and repeatable.
+</p>
+
+</section>
+
+<section>
+
+<h2>Privacy</h2>
 
 <ul>
     <li>No telemetry</li>
-    <li>No background communication</li>
-    <li>No cloud dependency</li>
-    <li>No data leaves your machine</li>
+    <li>No background services</li>
+    <li>No network communication</li>
+    <li>All data stays local</li>
 </ul>
 
 </section>
@@ -110,10 +114,9 @@ AuditMate is a portable system auditing tool that records the exact state of a m
         <h3>Free</h3>
         <div class="price">$0</div>
         <ul>
-            <li>System info</li>
-            <li>Users & services</li>
-            <li>Ports & packages</li>
+            <li>System snapshot</li>
             <li>Drift detection</li>
+            <li>Local reports</li>
             <li>Open source</li>
         </ul>
     </div>
@@ -125,9 +128,8 @@ AuditMate is a portable system auditing tool that records the exact state of a m
         <ul>
             <li>Historical tracking</li>
             <li>Export reports (JSON / CSV / HTML)</li>
-            <li>Audit-ready reports</li>
+            <li>Signed audit evidence</li>
             <li>Multi-system support</li>
-            <li>Signed outputs</li>
         </ul>
     </div>
 
@@ -135,7 +137,7 @@ AuditMate is a portable system auditing tool that records the exact state of a m
         <h3>Founding Member</h3>
         <div class="price">$40 / year</div>
         <div class="small">First 100 users (normally $50/year)</div>
-        <p>audit-mate@proton.me</p>
+        <p>Early access pricing</p>
     </div>
 
 </div>
@@ -144,14 +146,12 @@ AuditMate is a portable system auditing tool that records the exact state of a m
 
 <section>
 
-<h2>Example Output (Windows)</h2>
+<h2>Example Output</h2>
 
 <h3>Clean System</h3>
 
 <pre class="terminal">
 C:\> auditmate.exe
-AuditMate
------------------------------------
 Hostname : WORKSTATION-01
 OS       : Windows 11 Pro
 Uptime   : 1 day, 2 hours
@@ -162,49 +162,21 @@ Packages : 94
 Ports    : 6
 
 Status   : Clean
------------------------------------
-Warnings : 0
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 52ms
 </pre>
 
-<h3>Drift Detected (Diff)</h3>
+<h3>System Drift</h3>
 
 <pre class="terminal">
-C:\> auditmate.exe
-AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 3 hours
+Status : Drift detected
 
-Users    : 4
-Services : 130
-Packages : 96
-Ports    : 8
++ Users:
+  + hacker (admin)
 
-Status   : Drift detected
++ Services:
+  + sshd
 
-Changes:
- + Users:
-   + hacker (admin)
-
- + Services:
-   + sshd
-   + remote-control
-
- + Open ports:
-   + 22/tcp
-   + 3389/tcp
-
------------------------------------
-Warnings : 1
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 61ms
++ Ports:
+  + 3389/tcp
 </pre>
 
 </section>
