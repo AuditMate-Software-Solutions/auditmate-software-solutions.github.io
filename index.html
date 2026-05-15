@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuditMate Software Solutions</title>
+
+    <title>AuditMate — Offline System Drift Detection</title>
+
+    <meta name="description" content="AuditMate detects system changes and drift using deterministic offline snapshots. No cloud. No telemetry.">
 
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/png" href="./logo.png">
@@ -15,51 +18,34 @@
 
     <div class="hero-content">
 
-        <div class="hero-left">
-            <img src="./logo.png" class="logo" alt="AuditMate Logo">
+        <img src="./logo.png" class="logo" alt="AuditMate Logo">
 
-            <div>
-                <h1>AuditMate</h1>
-                <p class="subtitle">Offline System Auditing Tool</p>
-            </div>
-        </div>
+        <h1>AuditMate</h1>
 
         <p class="tagline">
-            Capture system state. Detect drift. No cloud. No telemetry. No installation.
+            Detect system drift with portable offline snapshots.
         </p>
 
-        <ul class="hero-points">
-            <li>Fully offline</li>
-            <li>Open-source Free version</li>
-            <li>Windows & Linux binaries</li>
-            <li>Real-time drift detection</li>
-        </ul>
+        <div class="hero-buttons">
 
-        <div class="download-card">
-
-            <div class="download-title">Download AuditMate (Free)</div>
-
-            <a class="download-btn primary" href="./downloads/auditmate.exe">
-                Download for Windows
+            <a class="btn primary" href="./downloads/auditmate.exe">
+                Download Windows
             </a>
 
-            <a class="download-btn secondary" href="./downloads/auditmate">
-                Download for Linux
+            <a class="btn secondary" href="./downloads/auditmate">
+                Download Linux
             </a>
 
-            <div class="download-note">
-                No installer • Portable binary • Fully offline
-            </div>
+            <a class="btn github"
+               href="https://github.com/AuditMate-Software-Solutions/auditmate">
+                GitHub
+            </a>
 
         </div>
 
-        <p class="veteran">Veteran-owned and operated</p>
-
-        <div class="hero-links">
-            <a href="https://github.com/AuditMate-Software-Solutions/auditmate">
-                View Source on GitHub
-            </a>
-        </div>
+        <p class="hero-note">
+            No installation • No telemetry • Fully offline
+        </p>
 
     </div>
 
@@ -67,159 +53,121 @@
 
 <section>
 
-<h2>About</h2>
+    <h2>What AuditMate Does</h2>
 
-<p>
-AuditMate is a portable system auditing tool that records the exact state of a machine at a given moment.
-</p>
+    <p>
+        AuditMate records the exact state of a system and detects what changed over time.
+    </p>
 
-<ul>
-    <li>Users and administrator accounts</li>
-    <li>Running services</li>
-    <li>Installed packages</li>
-    <li>Open ports</li>
-    <li>Firewall state</li>
-    <li>System drift detection</li>
-</ul>
+    <div class="feature-grid">
 
-<p><strong>Fully offline • No installation required • Portable binary</strong></p>
+        <div class="feature-card">
+            <h3>System Snapshots</h3>
+            <p>Capture users, services, ports, packages, firewall state, and system metadata.</p>
+        </div>
 
-</section>
+        <div class="feature-card">
+            <h3>Drift Detection</h3>
+            <p>Compare snapshots to detect configuration changes and unexpected system drift.</p>
+        </div>
 
-<section>
+        <div class="feature-card">
+            <h3>Offline by Default</h3>
+            <p>No cloud dependency, telemetry, accounts, or background services.</p>
+        </div>
 
-<h2>Privacy & Security</h2>
-
-<ul>
-    <li>No telemetry</li>
-    <li>No background communication</li>
-    <li>No cloud dependency</li>
-    <li>No data leaves your machine</li>
-</ul>
-
-</section>
-
-<section>
-
-<h2 style="text-align:center;">Pricing</h2>
-
-<div class="pricing-grid">
-
-    <div class="price-card">
-        <h3>Free</h3>
-        <div class="price">$0</div>
-        <ul>
-            <li>System info</li>
-            <li>Users & services</li>
-            <li>Ports & packages</li>
-            <li>Drift detection</li>
-            <li>Open source</li>
-        </ul>
     </div>
 
-    <div class="price-card highlight">
-        <h3>Pro</h3>
-        <div class="price">$5 / month</div>
-        <div class="small">$50 / year</div>
-        <ul>
-            <li>Historical tracking</li>
-            <li>Export reports (JSON / CSV / HTML)</li>
-            <li>Audit-ready reports</li>
-            <li>Multi-system support</li>
-            <li>Signed outputs</li>
-        </ul>
-    </div>
+</section>
 
-    <div class="price-card">
-        <h3>Founding Member</h3>
-        <div class="price">$40 / year</div>
-        <div class="small">First 100 users (normally $50/year)</div>
+<section>
 
-        <p class="contact-email">Contact: audit-mate@proton.me</p>
-    </div>
+    <h2>Why People Use It</h2>
 
-</div>
+    <ul class="simple-list">
+        <li>Track server changes</li>
+        <li>Verify machine state</li>
+        <li>Detect unexpected drift</li>
+        <li>Create portable audit evidence</li>
+        <li>Keep historical system snapshots</li>
+    </ul>
 
 </section>
 
 <section>
 
-<h2>Contact</h2>
-<p>For Pro licensing or enterprise inquiries:</p>
-<p><strong>audit-mate@proton.me</strong></p>
+    <h2>Pricing</h2>
+
+    <div class="pricing-grid">
+
+        <div class="price-card">
+            <h3>Free</h3>
+
+            <div class="price">$0</div>
+
+            <ul>
+                <li>Offline snapshots</li>
+                <li>Drift detection</li>
+                <li>JSON reports</li>
+                <li>Open source</li>
+            </ul>
+        </div>
+
+        <div class="price-card highlight">
+            <h3>Pro</h3>
+
+            <div class="price">$49/year</div>
+
+            <ul>
+                <li>Historical tracking</li>
+                <li>Signed evidence bundles</li>
+                <li>Multi-system comparisons</li>
+                <li>Exportable audit artifacts</li>
+            </ul>
+
+            <p class="contact">
+                Contact: audit-mate@proton.me
+            </p>
+        </div>
+
+    </div>
 
 </section>
 
 <section>
 
-<h2>Example Output (Windows)</h2>
-
-<h3>Clean System</h3>
+<h2>Example Output</h2>
 
 <pre class="terminal">
-C:\> auditmate.exe
 AuditMate
 -----------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 2 hours
+
+Hostname : SERVER-01
+OS       : Ubuntu 24.04
 
 Users    : 3
-Services : 128
-Packages : 94
-Ports    : 6
+Services : 82
+Ports    : 4
 
-Status   : Clean
------------------------------------
-Warnings : 0
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 52ms
-</pre>
-
-<h3>Drift Detected (Diff)</h3>
-
-<pre class="terminal">
-C:\> auditmate.exe
-AuditMate
------------------------------------
-Hostname : WORKSTATION-01
-OS       : Windows 11 Pro
-Uptime   : 1 day, 3 hours
-
-Users    : 4
-Services : 130
-Packages : 96
-Ports    : 8
-
-Status   : Drift detected
+Status   : DRIFT DETECTED
 
 Changes:
- + Users:
-   + hacker (admin)
-
- + Services:
-   + sshd
-   + remote-control
-
- + Open ports:
-   + 22/tcp
-   + 3389/tcp
+ + sshd
+ + port 22/tcp
 
 -----------------------------------
-Warnings : 1
-Errors   : false
-Reset    : false
-Report   : auditmate-output\audit.json
-Duration : 61ms
 </pre>
 
 </section>
 
 <footer class="footer">
-    <p>© AuditMate Software Solutions</p>
-    <p>Contact: audit-mate@proton.me</p>
+
+    <p>AuditMate Software Solutions</p>
+
+    <p>
+        audit-mate@proton.me
+    </p>
+
 </footer>
 
 </body>
