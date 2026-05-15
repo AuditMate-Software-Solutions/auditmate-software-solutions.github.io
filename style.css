@@ -1,203 +1,182 @@
 body {
-    margin: 0;
     font-family: "Segoe UI", sans-serif;
-    background: #f5f7fb;
-    color: #1c1c1c;
-    line-height: 1.6;
+    margin: 0;
+    background: #f6f7fb;
+    color: #1d1d1f;
 }
 
+/* HERO */
 .hero {
-    background: linear-gradient(180deg, #ffffff, #f1efff);
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
+    background: linear-gradient(180deg, #ffffff, #f3f0ff);
 }
 
 .hero-content {
-    max-width: 850px;
+    max-width: 900px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+.hero-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo {
-    width: 72px;
-    margin-bottom: 16px;
+    width: 52px;
 }
 
 h1 {
     margin: 0;
-    font-size: 52px;
     color: #5b2cff;
 }
 
+.subtitle {
+    margin: 0;
+    color: #555;
+}
+
+/* TAGLINE */
 .tagline {
-    font-size: 22px;
+    font-size: 15px;
     color: #333;
-    margin-top: 16px;
 }
 
-.hero-buttons {
+/* FEATURES */
+.hero-points {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 14px;
     flex-wrap: wrap;
-    margin-top: 32px;
+    gap: 8px;
+    justify-content: center;
+    padding: 0;
 }
 
-.btn {
-    padding: 14px 22px;
-    border-radius: 10px;
-    text-decoration: none;
+.hero-points li {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* DOWNLOAD CARD */
+.download-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 18px;
+    border-radius: 12px;
+    width: 320px;
+}
+
+.download-title {
     font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.download-btn {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
 }
 
 .primary {
     background: #5b2cff;
-    color: white;
 }
 
 .secondary {
-    background: #2d2d2d;
-    color: white;
+    background: #3a3a3a;
 }
 
-.github {
-    background: white;
-    border: 1px solid #ccc;
-    color: black;
+.download-note {
+    font-size: 12px;
+    color: gray;
+    margin-top: 8px;
 }
 
-.hero-note {
-    margin-top: 20px;
-    color: #666;
+/* LINKS */
+.hero-links a {
+    color: #5b2cff;
+    text-decoration: none;
 }
 
-section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 34px;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-.feature-card {
-    background: white;
-    border-radius: 14px;
-    padding: 24px;
-    border: 1px solid #ddd;
-}
-
-.simple-list {
-    max-width: 500px;
-    margin: auto;
-}
-
-.pricing-wrapper {
-    background: white;
-    border-radius: 18px;
-    border: 1px solid #ddd;
-    overflow: hidden;
-}
-
-.pricing-main {
+/* PRICING */
+.pricing-grid {
     display: flex;
+    justify-content: center;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
-.pricing-column {
-    flex: 1;
-    min-width: 260px;
-    padding: 32px;
+.price-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 18px;
+    width: 260px;
+    border-radius: 12px;
     text-align: center;
 }
 
-.pricing-divider {
-    width: 1px;
-    background: #e5e5e5;
+.price-card.highlight {
+    border: 2px solid #5b2cff;
 }
 
-.pricing-title {
+.price-card.founding {
+    border: 2px solid #ff9800;
+}
+
+.price {
     font-size: 28px;
     font-weight: bold;
 }
 
-.pricing-price {
-    font-size: 42px;
+.counter {
+    margin: 10px 0;
     font-weight: bold;
-    margin: 18px 0;
+    color: #ff9800;
 }
 
-.pricing-column ul {
-    padding-left: 18px;
-    text-align: left;
+.small {
+    font-size: 12px;
+    color: gray;
 }
 
-.featured {
-    background: #faf8ff;
-}
-
-.founder {
-    background: #fffaf2;
-}
-
-.founder-badge {
-    display: inline-block;
-    background: #ffb347;
-    color: black;
+/* CONTACT */
+.contact-email {
+    margin-top: 10px;
     font-weight: bold;
-    padding: 6px 14px;
-    border-radius: 999px;
-    margin-bottom: 18px;
 }
 
-.founder-counter {
-    margin-top: -4px;
-    margin-bottom: 20px;
-    color: #666;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.pricing-contact {
-    text-align: center;
-    padding: 22px;
-    border-top: 1px solid #eee;
-    font-weight: 600;
-}
-
+/* TERMINAL */
 .terminal {
     background: #0d1117;
     color: #00ff9c;
-    border-radius: 12px;
-    padding: 20px;
-    overflow-x: auto;
+    padding: 16px;
+    border-radius: 10px;
+    font-family: monospace;
+    white-space: pre;
 }
 
+/* SECTIONS */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* FOOTER */
 .footer {
     text-align: center;
-    padding: 40px 20px;
-    border-top: 1px solid #ddd;
+    padding: 30px;
+    font-size: 13px;
     color: #666;
-    background: white;
-}
-
-@media (max-width: 900px) {
-
-    .pricing-main {
-        flex-direction: column;
-    }
-
-    .pricing-divider {
-        width: 100%;
-        height: 1px;
-    }
-
+    border-top: 1px solid #ddd;
 }
