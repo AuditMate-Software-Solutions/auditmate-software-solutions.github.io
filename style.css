@@ -100,35 +100,77 @@ h2 {
     margin: auto;
 }
 
-.pricing-grid {
+.pricing-wrapper {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.pricing-main {
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
 }
 
-.price-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 14px;
-    padding: 28px;
-    width: 300px;
+.pricing-column {
+    flex: 1;
+    min-width: 260px;
+    padding: 32px;
     text-align: center;
 }
 
-.highlight {
-    border: 2px solid #5b2cff;
+.pricing-divider {
+    width: 1px;
+    background: #e5e5e5;
 }
 
-.price {
-    font-size: 40px;
+.pricing-title {
+    font-size: 28px;
     font-weight: bold;
-    margin: 20px 0;
 }
 
-.contact {
-    margin-top: 20px;
+.pricing-price {
+    font-size: 42px;
     font-weight: bold;
+    margin: 18px 0;
+}
+
+.pricing-column ul {
+    padding-left: 18px;
+    text-align: left;
+}
+
+.featured {
+    background: #faf8ff;
+}
+
+.founder {
+    background: #fffaf2;
+}
+
+.founder-badge {
+    display: inline-block;
+    background: #ffb347;
+    color: black;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+}
+
+.founder-counter {
+    margin-top: -4px;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pricing-contact {
+    text-align: center;
+    padding: 22px;
+    border-top: 1px solid #eee;
+    font-weight: 600;
 }
 
 .terminal {
@@ -145,4 +187,17 @@ h2 {
     border-top: 1px solid #ddd;
     color: #666;
     background: white;
+}
+
+@media (max-width: 900px) {
+
+    .pricing-main {
+        flex-direction: column;
+    }
+
+    .pricing-divider {
+        width: 100%;
+        height: 1px;
+    }
+
 }
